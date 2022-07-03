@@ -1,20 +1,14 @@
-
-
 export default () =>{
-    const viewLoginTemplate = `
-   
+    const viewLoginTemplate = `        
         <form>
             <input id="idEmailLogin" type="email">
             <input id="idPasswordLogin" type="password">
             <button id="idButtonLogin" type="submit">Ingresar</button>
-        </form> 
-      
+        </form>       
   `;
   const divElement = document.createElement("div");
   divElement.innerHTML = viewLoginTemplate;
-
   return divElement;
-
 }
 /*
 
