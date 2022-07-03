@@ -1,0 +1,65 @@
+/*
+font-family: 'Press Start 2P', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Slab', serif;
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/*LOGIN*/
+
+.divForm {
+  /*padre de los dos*/
+  background-color: red;
+  height: 100%;
+  padding: 1em;
+  display: flex;
+}
+
+.divImgLogin {
+  /*div hijo izquierda*/
+  background-color: blue;
+  width: 50%;
+}
+
+.divFormLogin {
+  /*div hijo derecha */
+  background-color: green;
+  width: 50%;
+}
+
+.formLogin {
+  background-color: #cee5d0;
+  width: 50%;
+  margin: auto;
+  padding: 1.5em 1em 2.5em 1em;
+}
+
+.group {
+  background-color: yellow;
+  padding: 0.5em;
+}
+
+.buttonClass {
+  padding: 0.5em;
+  margin-top: 1.5em;
+  background-color: pink;
+  text-align: center;
+}
+
+.buttons {
+  padding: 0.3em;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #ff7878;
+}
