@@ -58,6 +58,7 @@ figure {
   background-color: #cee5d0; /*aqui colocamos #cee5d0;*/
   width: 70%;
   margin: auto;
+  margin-top: 5em;
 }
 
 .formLogin {
