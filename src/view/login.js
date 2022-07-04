@@ -1,70 +1,53 @@
 
 export default () =>{
     const viewLoginTemplate = `        
-
-        <div class ="divImgLogin">
-        <img src ="">
-        </div>
-
-    <div class="divFormLogin"> 
-
-        <div class="form-container">
-        <figure>
-        <img scr="../imagenes/pawn.png" alt="imagen">
-        </figure>
-
-        <h3>Login</h3>
-
-        <form class='formLogin'>
-            <div class="group">
-            <label class="labelLogin" for = "idEmailLogin">E-mail</label>
-            </div>
-            <div class="group">
-
-            <input id="idEmailLogin" type="email">
-            </div>
-
-            <div class="group">
-            <label class="labelLogin" for = "idPasswordLogin">Password</label>
-            </div>
-            <div class="group">
-            <input id="idPasswordLogin" type="password">
-
-            <button id="idButtonLogin" type="submit">Ingresar</button>
-        </form>       
-
-            </div>
-
-            <div class="buttonClass">
-            <button class="buttons" id="idButtonLogin" type="submit">Inciar sesión</button>
-            </div>
-        </form> 
-<<<<<<< HEAD
-        </div>   
-=======
-
-        <div class="socialmedia">
-          <h4>o inicia sesión con</h4>
-        
-          <div class="socialmediaOptions">
-          <ul>
-          <li><img src="" alt="ícono Facebook"></li>
-          <li><img src="" alt="ícono Google"></li>
-          </ul>
-        </div> 
-      </div> 
+    <div class="divHeaderLogin">
+        <h4>¿Aún no tienes una cuenta?</h4>      
+        <button class="buttons">Crear Cuenta</button>    
     </div>
->>>>>>> f734c087259a9af1ae59b5541f65f20115f8fdaa
 
+    <div class="divContainerImgForm">
+        <div class ="divImgLogin">
+            <img src ="./imagenes/portada-dogs.png" alt="imágen de perritos y redes sociales">
+        </div>    
+       
+        <div class="divFormLogin"> 
+          <figure>
+            <img src="./imagenes/dog.png" alt="logo">
+          </figure>
+          <div class="form-container">        
+            <h3>Login</h3>
+            <form class='formLogin'>
+                <div class="group">
+                  <label class="labelLogin" for = "idEmailLogin">E-mail</label>
+                </div>
+                <div class="group">
+                  <input id="idEmailLogin" type="email">
+                </div>
+                <div class="group">
+                  <label class="labelLogin" for = "idPasswordLogin">Password</label>
+                </div>
+                <div class="group">
+                  <input id="idPasswordLogin" type="password">
+                </div>
+                <div class="buttonClass">
+                  <button class="buttons" id="idButtonLogin" type="submit">Inciar sesión</button>
+                </div>
+            </form>             
+            <div class="socialmedia">
+              <h4>o inicia sesión con</h4>            
+              <div class="socialmediaOptions">
+                <img src="./imagenes/facebook.png" alt="ícono Facebook">
+                <img src="./imagenes/google.png" alt="ícono Google">
+              </div> 
+            </div> 
+          </div> 
+        </div>
+    </div>
   `;
   const divElement = document.createElement("div");
   divElement.innerHTML = viewLoginTemplate;
-<<<<<<< HEAD
   divElement.setAttribute('class', 'divForm');
-=======
-  divElement.setAttribute("class", "divForm");
-
->>>>>>> f734c087259a9af1ae59b5541f65f20115f8fdaa
   return divElement;
 };
 
