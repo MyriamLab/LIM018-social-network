@@ -21,6 +21,7 @@ export default () =>{
       
   `;
   const divElement = document.createElement("div");
+  
   divElement.innerHTML = viewRegisterTemplate;
 
   return divElement;

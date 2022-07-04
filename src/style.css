@@ -29,11 +29,37 @@ h3 {
 }
 
 /*LOGIN*/
-
 .divForm {
   /*padre de los dos*/
   background-color: red;
   padding: 1em;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.divHeaderLogin{
+  
+  background-color: aqua;
+  width: 100%;  
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5em;
+  
+}
+.divHeaderLogin button{
+  margin-left: 1em;
+  margin-right: 2em;
+}
+.divHeaderLogin h4{
+  margin-top: 1em;
+}
+
+
+
+.divContainerImgForm{
+  background-color:#ff7878;
+  width: 100%;
   display: flex;
 }
 
@@ -52,13 +78,23 @@ h3 {
 figure {
   padding: 0.5em;
   text-align: center;
+  background-color: blue;
+  
+}
+figure img{
+  width: 15%;
+  height: 15%;
+  
 }
 
 .form-container {
-  background-color: #cee5d0; /*aqui colocamos #cee5d0;*/
+  background-color: orange; /*aqui colocamos #cee5d0;*/
   width: 70%;
   margin: auto;
-  margin-top: 5em;
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+
 }
 
 .formLogin {
@@ -103,12 +139,13 @@ figure {
   margin-bottom: 1em;
  }
 
-.socialmediaOptions ul {
-  display: flex;
-}
+
 
 .socialmediaOptions img {
   margin-bottom: 3em;
+  width: 10%;
+  height: 10%;
+  padding: 0.5em;
 }
 
 
@@ -120,15 +157,15 @@ figure {
 
   .divFormLogin {
     /*div hijo derecha */
-    background-color: skyblue;
+    background-color: green;
     width: 100%;
   }
   
   
 .form-container {
-  background-color: brown; /*aqui colocamos #cee5d0;*/
+  background-color: orange; /*aqui colocamos #cee5d0;*/
   width: 100%;
-  margin: auto;
+  
 }
 
   .formLogin {
@@ -136,8 +173,12 @@ figure {
     width: 60%;
     margin: auto;
     padding: 1.5em 1em 2.5em 1em;
+    
   }
   
-
+  .divHeaderLogin button{
+    margin-left: 1em;
+    margin-right: 0.5em;
+  }
 
 }
