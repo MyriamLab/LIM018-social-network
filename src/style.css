@@ -9,10 +9,23 @@ font-family: 'Roboto Slab', serif;
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5em;
   text-align: center;
+  margin-top: 1.5em;
+}
+
+/*HEADER*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff7878;
 }
 
 /*LOGIN*/
@@ -20,7 +33,6 @@ h3 {
 .divForm {
   /*padre de los dos*/
   background-color: red;
-  height: 100%;
   padding: 1em;
   display: flex;
 }
@@ -37,21 +49,36 @@ h3 {
   width: 50%;
 }
 
+figure {
+  padding: 0.5em;
+  text-align: center;
+}
+
+.form-container {
+  background-color: #cee5d0; /*aqui colocamos #cee5d0;*/
+  width: 70%;
+  margin: auto;
+}
+
 .formLogin {
   background-color: #cee5d0;
   width: 50%;
   margin: auto;
-  padding: 1.5em 1em 2.5em 1em;
+  padding: 1.5em 1em 1em 1em;
 }
 
 .group {
   background-color: yellow;
-  padding: 0.5em;
+  padding: 0.3em;
+}
+
+.group input {
+  height: 2em;
 }
 
 .buttonClass {
   padding: 0.5em;
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   background-color: pink;
   text-align: center;
 }
@@ -62,4 +89,54 @@ h3 {
   border-radius: 0.5em;
   border: none;
   background-color: #ff7878;
+  height: 2em;
+  width: 9em;
+}
+
+.socialmedia {
+  text-align: center;
+
+}
+
+.socialmedia h4 {
+  margin-bottom: 1em;
+ }
+
+.socialmediaOptions ul {
+  display: flex;
+}
+
+.socialmediaOptions img {
+  margin-bottom: 3em;
+}
+
+
+ /*  MEDIA QUERIES */
+@media (max-width: 400px) {
+  .divImgLogin {
+    display: none;
+  }
+
+  .divFormLogin {
+    /*div hijo derecha */
+    background-color: skyblue;
+    width: 100%;
+  }
+  
+  
+.form-container {
+  background-color: brown; /*aqui colocamos #cee5d0;*/
+  width: 100%;
+  margin: auto;
+}
+
+  .formLogin {
+    background-color: #cee5d0;
+    width: 60%;
+    margin: auto;
+    padding: 1.5em 1em 2.5em 1em;
+  }
+  
+
+
 }
