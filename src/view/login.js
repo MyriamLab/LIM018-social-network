@@ -1,7 +1,7 @@
 
 export default () =>{
     const viewLoginTemplate = `        
-        <form>
+
         <div class ="divImgLogin">
         <img src ="">
         </div>
@@ -36,9 +36,7 @@ export default () =>{
             <button class="buttons" id="idButtonLogin" type="submit">Inciar sesión</button>
             </div>
         </form> 
-        </div>
-
-      
+        </div>   
 
   `;
   const divElement = document.createElement('div');

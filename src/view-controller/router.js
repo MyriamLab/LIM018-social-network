@@ -5,7 +5,7 @@ const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (route) {
-    case '#/login': {
+    case '': case '#/login': {
       container.appendChild(components.login());
       break;
       //    rompe el ciclo, y retorna solo el form de login
