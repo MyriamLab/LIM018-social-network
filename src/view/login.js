@@ -1,3 +1,4 @@
+import { userLogin } from '../firebase/config.js';
 
 export default () =>{
     const viewLoginTemplate = `        
@@ -12,12 +13,10 @@ export default () =>{
         </div>    
        
         <div class="divFormLogin"> 
-          <figure>
-            <img src="./imagenes/dog.png" alt="logo">
-          </figure>
+          <img src="./imagenes/dog.png" alt="logo">       
           <div class="form-container">        
             <h3>Login</h3>
-            <form class='formLogin'>
+            <form class='formLogin' id="idFormLogin">
                 <div class="group">
                   <label class="labelLogin" for = "idEmailLogin">E-mail</label>
                 </div>
@@ -51,6 +50,32 @@ export default () =>{
   return divElement;
 };
 
+export const iniciarSesion = (selectorForm) => {
+  let formLogin = document.getElementById(selectorForm);
+  formLogin.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    let emailLogin=document.getElementById('idEmailLogin');
+    let passwordLogin=document.getElementById('idPasswordLogin');
+
+    // metodo que reciba email y pass y que inicie sesion
+    userLogin(emailLogin,passwordLogin)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user + 'logeado');
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("no se logeó");
+      // ..
+    });
+
+  })   
+
+}
 
 /*
 

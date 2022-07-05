@@ -75,15 +75,10 @@ h3 {
   width: 50%;
 }
 
-figure {
-  padding: 0.5em;
-  text-align: center;
-  background-color: blue;
-  
-}
-figure img{
+.divFormLogin img{
   width: 15%;
   height: 15%;
+  margin-left: 10em;
   
 }
 

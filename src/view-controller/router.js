@@ -1,12 +1,15 @@
 import { components } from '../view/index.js';
 import { registroCorreo } from '../view/register.js';
+import { iniciarSesion } from  '../view/login.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (route) {
-    case '': case '#/login': {
+    case '': case '#/':case '#/login': {
       container.appendChild(components.login());
+      iniciarSesion('idFormLogin');
+
       break;
       //    rompe el ciclo, y retorna solo el form de login
     }
