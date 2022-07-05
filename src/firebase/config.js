@@ -13,7 +13,7 @@ const firebaseConfig = {
   storageBucket: 'red-social-pets.appspot.com',
   messagingSenderId: '259749306706',
   appId: '1:259749306706:web:c858d0cfbfd2cb7f409a8b',
-  measurementId: 'G-QL5ZQEZL55'
+  measurementId: 'G-QL5ZQEZL55',
 };
 
 // Initialize Firebase
@@ -21,5 +21,3 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 // creamos un const registroUsuario que nos permite almacenar el email y pass y pasar los valores para crearlos en la BD
 export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-  
- 

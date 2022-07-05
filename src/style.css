@@ -40,22 +40,23 @@ h3 {
 
 .divHeaderLogin{
   
-  background-color: aqua;
+  background-color: #ff7878;
   width: 100%;  
   display: flex;
   justify-content: flex-end;
   padding: 1.5em;
   
 }
-.divHeaderLogin button{
+
+
+.divHeaderLogin button{ /*cambialre la clase buttons para darle sus propios estilos*/
   margin-left: 1em;
   margin-right: 2em;
+  background-color: #cee5d0;
 }
 .divHeaderLogin h4{
-  margin-top: 1em;
+  padding: 0.5em;
 }
-
-
 
 .divContainerImgForm{
   background-color:#ff7878;
@@ -75,7 +76,10 @@ h3 {
   width: 50%;
 }
 
+
+/*retirar elemento figure y maquetar sobre img*/ 
 figure {
+
   padding: 0.5em;
   text-align: center;
   background-color: blue;
@@ -111,6 +115,7 @@ figure img{
 
 .group input {
   height: 2em;
+  width: 100%;
 }
 
 .buttonClass {
@@ -127,7 +132,7 @@ figure img{
   border: none;
   background-color: #ff7878;
   height: 2em;
-  width: 9em;
+  width: 80%;
 }
 
 .socialmedia {

@@ -1,7 +1,7 @@
-import {userRegister} from '../firebase/config.js';
+import { userRegister } from '../firebase/config.js';
 
-export default () =>{
-    const viewRegisterTemplate = `
+export default () => {
+  const viewRegisterTemplate = `
    
         <form id="formRegister">
             <label>NOMBRE</label>
@@ -20,24 +20,23 @@ export default () =>{
         </form> 
       
   `;
-  const divElement = document.createElement("div");
-  
+  const divElement = document.createElement('div');
+
   divElement.innerHTML = viewRegisterTemplate;
 
   return divElement;
-
 };
 
-//Aqui creamos una const registroCorreo donde almacenamos el evento submit del form
-export const registroCorreo = (selectorForm)=>{
-    let formRegister = document.getElementById(selectorForm);
-    formRegister.addEventListener("submit",(event)=>{
+// Aqui creamos una const registroCorreo donde almacenamos el evento submit del form
+export const registroCorreo = (selectorForm) => {
+  const formRegister = document.getElementById(selectorForm);
+  formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
-    
-       let emailRegister=document.getElementById("idEmailRegister").value;
-       let passwordRegister=document.getElementById("idPasswordRegister").value;
-       userRegister(emailRegister,passwordRegister)
-       .then((userCredential) => {
+
+    const emailRegister = document.getElementById('idEmailRegister').value;
+    const passwordRegister = document.getElementById('idPasswordRegister').value;
+    userRegister(emailRegister, passwordRegister)
+      .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
@@ -46,9 +45,8 @@ export const registroCorreo = (selectorForm)=>{
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        crossOriginIsolated.log("correos inválidos");
+        crossOriginIsolated.log('correos inválidos');
         // ..
       });
-    })
-}
-
+  });
+};
