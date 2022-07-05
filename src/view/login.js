@@ -12,8 +12,11 @@ export default () =>{
             <img src ="./imagenes/portada-dogs.png" alt="imágen de perritos y redes sociales">
         </div>    
        
-        <div class="divFormLogin"> 
-          <img src="./imagenes/dog.png" alt="logo">       
+        <div class="divFormLogin">
+          <figure>
+              <img src="./imagenes/dog.png" alt="logo">      
+           </figure>
+           
           <div class="form-container">        
             <h3>Login</h3>
             <form class='formLogin' id="idFormLogin">
