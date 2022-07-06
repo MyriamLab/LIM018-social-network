@@ -9,111 +9,98 @@ font-family: 'Roboto Slab', serif;
   margin: 0;
 }
 
-ul {
-  list-style: none;
-}
-
 h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5em;
   text-align: center;
-  margin-top: 1.5em;
 }
-
+/*clases globales*/
+.justificar {
+  margin-left: 0.6em;
+  margin-top: 0.5em;
+}
 /*HEADER*/
 
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #ff7878;
 }
 
 /*LOGIN*/
 .divForm {
   /*padre de los dos*/
-  background-color: red;
-  padding: 1em;
+  background-color: #f6e3be;
+
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.divHeaderLogin{
-  
+.divHeaderLogin {
   background-color: #ff7878;
-  width: 100%;  
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   padding: 1.5em;
-  
 }
-
-
-.divHeaderLogin button{ /*cambialre la clase buttons para darle sus propios estilos*/
+.divHeaderLogin h4 {
+  margin-top: 0.5em;
+}
+.divHeaderLogin button {
   margin-left: 1em;
   margin-right: 2em;
   background-color: #cee5d0;
 }
-.divHeaderLogin h4{
-  padding: 0.5em;
-}
 
-.divContainerImgForm{
-  background-color:#ff7878;
+.divContainerImgForm {
   width: 100%;
   display: flex;
 }
 
 .divImgLogin {
   /*div hijo izquierda*/
-  background-color: blue;
   width: 50%;
 }
-
 .divFormLogin {
   /*div hijo derecha */
-  background-color: green;
   width: 50%;
 }
 
-.divFormLogin img{
+figure {
+  text-align: center;
+  background-color: #8ae2de;
+  width: 60%;
+  margin: auto;
+  margin-top: 4.5em;
+}
+figure img {
+  padding: 0.5em;
   width: 15%;
-  height: 15%;
-  margin-left: 10em;
-  
+  height: 10%;
+  top: 2%;
 }
 
 .form-container {
-  background-color: orange; /*aqui colocamos #cee5d0;*/
-  width: 70%;
+  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
+  width: 60%;
   margin: auto;
-
-  margin-top: 2em;
   margin-bottom: 2em;
-
 }
 
 .formLogin {
-  background-color: #cee5d0;
-  width: 50%;
+  background-color: #8ae2de;
+  width: 70%;
   margin: auto;
   padding: 1.5em 1em 1em 1em;
 }
 
 .group {
-  background-color: yellow;
   padding: 0.3em;
-}
-
-.group input {
-  height: 2em;
-  width: 100%;
 }
 
 .buttonClass {
   padding: 0.5em;
   margin-top: 0.5em;
-  background-color: pink;
   text-align: center;
 }
 
@@ -122,20 +109,20 @@ h3 {
   font-size: 1em;
   border-radius: 0.5em;
   border: none;
-  background-color: #ff7878;
+  background-color: #cee5d0;
   height: 2em;
-  width: 80%;
+  width: 9em;
 }
-
+.buttons:hover {
+  background-color: #ff7878;
+}
 .socialmedia {
   text-align: center;
-
 }
 
 .socialmedia h4 {
   margin-bottom: 1em;
- }
-
+}
 
 .socialmediaOptions img {
   margin-bottom: 3em;
@@ -143,8 +130,29 @@ h3 {
   height: 10%;
   padding: 0.5em;
 }
+/*REGISTRARSE*/
 
- /*  MEDIA QUERIES */
+.formLogin input {
+  width: 100%;
+  height: 70%;
+  padding: 0.3em;
+  margin: 0.5em;
+  border-radius: 8px;
+  border: none;
+}
+#idDateRegister {
+  width: 70%;
+  padding: 0.3em 0 0.3em 0;
+}
+.gender {
+  margin-top: 0.5em;
+}
+.divGender {
+  display: flex;
+  padding: 0.3em;
+}
+
+/*  MEDIA QUERIES */
 @media (max-width: 400px) {
   .divImgLogin {
     display: none;
@@ -152,28 +160,23 @@ h3 {
 
   .divFormLogin {
     /*div hijo derecha */
-    background-color: green;
     width: 100%;
   }
-  
-  
-.form-container {
-  background-color: orange; /*aqui colocamos #cee5d0;*/
-  width: 100%;
-  
-}
 
+  .form-container {
+    width: 90%;
+  }
+  figure {
+    width: 90%;
+  }
   .formLogin {
-    background-color: #cee5d0;
-    width: 60%;
+    width: 80%;
     margin: auto;
     padding: 1.5em 1em 2.5em 1em;
-    
   }
-  
-  .divHeaderLogin button{
+
+  .divHeaderLogin button {
     margin-left: 1em;
     margin-right: 0.5em;
   }
-
 }
