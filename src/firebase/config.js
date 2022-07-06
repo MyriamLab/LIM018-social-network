@@ -33,24 +33,19 @@ const db = getFirestore(app);
 
 export const auth = getAuth();
 // creamos usuarios en autenthication
-export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+export const userRegister = (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password);
+};
 
 //  registrar usuario en la BD
-export const userRegisterBD = (uid, email, name, lastname, date, sex, password) => {
-  //  const colRefId = doc(db, 'usuarios', id);
-  //  await setDoc(colRefId, {
-  setDoc(doc(db, 'users', uid), {
-    // eslint-disable-next-line object-shorthand
+export const userRegisterBD = async (uid, email, name, lastname, date, sex, password) => {
+  const userRef = doc(db, 'users', uid);
+  await setDoc(userRef, {
     email: email,
-    // eslint-disable-next-line object-shorthand
     name: name,
-    // eslint-disable-next-line object-shorthand
     lastname: lastname,
-    // eslint-disable-next-line object-shorthand
     date: date,
-    // eslint-disable-next-line object-shorthand
     sex: sex,
-    // eslint-disable-next-line object-shorthand
     password: password,
   });
 };
