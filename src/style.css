@@ -76,18 +76,10 @@ h3 {
   width: 50%;
 }
 
-
-/*retirar elemento figure y maquetar sobre img*/ 
-figure {
-
-  padding: 0.5em;
-  text-align: center;
-  background-color: blue;
-  
-}
-figure img{
+.divFormLogin img{
   width: 15%;
   height: 15%;
+  margin-left: 10em;
   
 }
 
@@ -145,14 +137,12 @@ figure img{
  }
 
 
-
 .socialmediaOptions img {
   margin-bottom: 3em;
   width: 10%;
   height: 10%;
   padding: 0.5em;
 }
-
 
  /*  MEDIA QUERIES */
 @media (max-width: 400px) {

@@ -1,6 +1,8 @@
+import { userLogin } from "../firebase/config.js";
+
 export default () => {
   const viewLoginTemplate = `        
-    <div class='divHeaderLogin'>
+    <div class="divHeaderLogin">
         <h4>¿Aún no tienes una cuenta?</h4>      
         <button class="buttons">Crear Cuenta</button>  
     </div>
@@ -11,12 +13,10 @@ export default () => {
         </div>    
        
         <div class="divFormLogin"> 
-          <figure>
-            <img src="./imagenes/dog.png" alt="logo">
-          </figure>
+          <img src="./imagenes/dog.png" alt="logo">       
           <div class="form-container">        
             <h3>Login</h3>
-            <form class='formLogin'>
+            <form class='formLogin' id="idFormLogin">
                 <div class="group">
                   <label class="labelLogin" for = "idEmailLogin">E-mail</label>
                 </div>
@@ -44,10 +44,35 @@ export default () => {
         </div>
     </div>
   `;
-  const divElement = document.createElement('div');
+  const divElement = document.createElement("div");
   divElement.innerHTML = viewLoginTemplate;
-  divElement.setAttribute('class', 'divForm');
+  divElement.setAttribute("class", "divForm");
   return divElement;
+};
+
+export const iniciarSesion = (selectorForm) => {
+  const formLogin = document.getElementById(selectorForm);
+  formLogin.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const emailLogin = document.getElementById("idEmailLogin");
+    const passwordLogin = document.getElementById("idPasswordLogin");
+
+    // metodo que reciba email y pass y que inicie sesion
+    userLogin(emailLogin, passwordLogin)
+      .then((userCredential) => {
+        // Signed in
+        //const user = userCredential.user;
+        //  console.log(`${user}logeado`);
+        // ...
+      })
+      .catch((error) => {
+        //  const errorCode = error.code;
+        //  const errorMessage = error.message;
+        console.log("no se logeó", error);
+        // ..
+      });
+  });
 };
 
 /*
