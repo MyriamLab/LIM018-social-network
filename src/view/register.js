@@ -68,18 +68,15 @@ export const registroCorreo = (selectorForm) => {
         sexUser = sexRegister[i].value;
       }
     }
-
     const emailRegister = document.getElementById('idEmailRegister').value;
     const passwordRegister = document.getElementById('idPasswordRegister').value;
     // registra el email y password autenticar
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {
-        // Signed in
+        console.log('se registró el correo');
         const user = userCredential.user;
-        console.log(user);
-        // registra el los datos el dusuario
-        userRegisterBD(
-          user.uid,
+        userRegisterBD(//  registro de usuario BD
+          user.id,
           emailRegister,
           nameRegister,
           lastnameRegister,
@@ -87,12 +84,12 @@ export const registroCorreo = (selectorForm) => {
           sexUser,
           passwordRegister,
         );
+        console.log('se registró el correo y VERIFICADO');
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log('falló el registro', errorCode, errorMessage);
-        // ..
       });
   });
 };
