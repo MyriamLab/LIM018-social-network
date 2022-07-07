@@ -1,4 +1,5 @@
-import { userLogin,
+import {
+  userLogin,
   proveedorGoogle,
   googleInicioSesion,
   proveedorFacebook,
@@ -69,7 +70,7 @@ export const iniciarSesion = (selectorForm) => {
       // Signed in
         const user = userCredential.user;
         console.log(`${user}logeado`);
-      // ...
+      // ...llamar const de agregar mascota
       })
       .catch((error) => {
         const errorCode = error.code;
