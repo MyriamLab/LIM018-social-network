@@ -41,12 +41,12 @@ export const userRegister = (email, password) => {
 export const userRegisterBD = async (uid, email, name, lastname, date, sex, password) => {
   const userRef = doc(db, 'users', uid);
   await setDoc(userRef, {
-    email: email,
-    name: name,
-    lastname: lastname,
-    date: date,
-    sex: sex,
-    password: password,
+    email,
+    name,
+    lastname,
+    date,
+    sex,
+    password,
   });
 };
 
