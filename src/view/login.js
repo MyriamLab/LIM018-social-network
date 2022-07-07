@@ -14,6 +14,12 @@ export default () => {
         <button class="buttons">Crear Cuenta</button> 
         </a>   
       </div>
+     <div class="divHeaderLogin">
+        <h4>¿Aún no tienes una cuenta?</h4>   
+        <a href="#/registerPets">   
+        <button class="buttons">Crear mascota</button> 
+        </a>   
+    </div>
 
     <div class="divContainerImgForm">
         <div class ="divImgLogin">
