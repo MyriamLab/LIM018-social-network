@@ -70,7 +70,6 @@ export const registroCorreo = (selectorForm) => {
     }
     const emailRegister = document.getElementById('idEmailRegister').value;
     const passwordRegister = document.getElementById('idPasswordRegister').value;
-
     // registra el email y password autenticar
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {

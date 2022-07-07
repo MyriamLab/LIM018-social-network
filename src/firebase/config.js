@@ -9,7 +9,8 @@ import {
   FacebookAuthProvider,
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
-import { getFirestore,
+import {
+  getFirestore,
   doc,
   setDoc,
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
@@ -36,17 +37,16 @@ export const auth = getAuth();
 export const userRegister = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password);
 };
-
 //  registrar usuario en la BD
 export const userRegisterBD = async (uid, email, name, lastname, date, sex, password) => {
   const userRef = doc(db, 'users', uid);
   await setDoc(userRef, {
-    email: email,
-    name: name,
-    lastname: lastname,
-    date: date,
-    sex: sex,
-    password: password,
+    email,
+    name,
+    lastname,
+    date,
+    sex,
+    password,
   });
 };
 
