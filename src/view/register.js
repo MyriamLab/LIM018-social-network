@@ -63,7 +63,7 @@ export const registroCorreo = (selectorForm) => {
     const dateRegister = document.getElementById('idDateRegister').value;
     const sexRegister = document.getElementsByName('genderRegister');
     let sexUser;
-    for (let i = 0; i < sexRegister.length; i + 1) {
+    for (let i = 0; i < sexRegister.length; i += 1) {
       if (sexRegister[i].checked) {
         sexUser = sexRegister[i].value;
       }
@@ -76,7 +76,7 @@ export const registroCorreo = (selectorForm) => {
         console.log('se registró el correo');
         const user = userCredential.user;
         userRegisterBD(//  registro de usuario BD
-          user.id,
+          user.uid,
           emailRegister,
           nameRegister,
           lastnameRegister,
