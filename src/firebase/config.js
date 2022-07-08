@@ -7,6 +7,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   FacebookAuthProvider,
+  sendEmailVerification,
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
 import {
@@ -66,3 +67,5 @@ export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor
 export const proveedorFacebook = new FacebookAuthProvider();
 //  iniciar sesión con facebook
 export const facebookInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
+
+export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);

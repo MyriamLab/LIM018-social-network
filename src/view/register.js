@@ -1,4 +1,4 @@
-import { userRegister, userRegisterBD } from '../firebase/config.js';
+import { userRegister, userRegisterBD, sendEmailVerificationUser } from '../firebase/config.js';
 
 export default () => {
   const viewRegisterTemplate = `
@@ -46,11 +46,11 @@ export default () => {
         </div>
       </div>
   `;
-  const divElement = document.createElement('div');
-  divElement.setAttribute('class', 'divForm');
-  divElement.innerHTML = viewRegisterTemplate;
+  const sectionElement = document.createElement('section');
+  sectionElement.setAttribute('class', 'divForm');
+  sectionElement.innerHTML = viewRegisterTemplate;
 
-  return divElement;
+  return sectionElement;
 };
 
 // Aqui creamos una const registroCorreo donde almacenamos el evento submit del form
@@ -73,18 +73,20 @@ export const registroCorreo = (selectorForm) => {
     // registra el email y password autenticar
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {
-        console.log('se registró el correo');
         const user = userCredential.user;
-        userRegisterBD(//  registro de usuario BD
-          user.uid,
-          emailRegister,
-          nameRegister,
-          lastnameRegister,
-          dateRegister,
-          sexUser,
-          passwordRegister,
-        );
-        console.log('se registró el correo y VERIFICADO');
+        sendEmailVerificationUser()
+          .then(() => {
+            userRegisterBD(//  registro de usuario BD
+              user.uid,
+              emailRegister,
+              nameRegister,
+              lastnameRegister,
+              dateRegister,
+              sexUser,
+              passwordRegister,
+            );
+            console.log('se registró el correo ');
+          });
       })
       .catch((error) => {
         const errorCode = error.code;

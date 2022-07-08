@@ -1,5 +1,5 @@
-export const contenidoHeader = () => {
-  const headerMuro = `
+export default () => {
+  const headerMuroTemplate = `
         <div class="navHeaderIcons">
             <img src="#logo" class=titulo-header" alt="logo">
             <label>buscador</label>
@@ -16,5 +16,9 @@ export const contenidoHeader = () => {
         </div>
                  
         `;
-  return headerMuro;
+  const headerElement = document.createElement('header');
+  headerElement.setAttribute('class', 'headerSec');
+  headerElement.innerHTML = headerMuroTemplate;
+
+  return headerElement;
 };
