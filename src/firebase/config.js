@@ -7,6 +7,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   FacebookAuthProvider,
+  sendEmailVerification,
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
 import {
@@ -34,20 +35,24 @@ const db = getFirestore(app);
 
 export const auth = getAuth();
 // creamos usuarios en autenthication
-export const userRegister = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password);
-};
+// eslint-disable-next-line max-len
+export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 //  registrar usuario en la BD
 export const userRegisterBD = async (uid, email, name, lastname, date, sex, password) => {
-  const userRef = doc(db, 'users', uid);
-  await setDoc(userRef, {
-    email,
-    name,
-    lastname,
-    date,
-    sex,
-    password,
-  });
+  try {
+    const userRef = doc(db, 'users', uid);
+
+    await setDoc(userRef, {
+      email,
+      name,
+      lastname,
+      date,
+      sex,
+      password,
+    });
+  } catch (error) {
+    console.log('error', error);
+  }
 };
 
 //  inicio de sesión de usuario con correo y contraseña
@@ -62,3 +67,5 @@ export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor
 export const proveedorFacebook = new FacebookAuthProvider();
 //  iniciar sesión con facebook
 export const facebookInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
+
+export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);

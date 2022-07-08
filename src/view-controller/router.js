@@ -6,9 +6,7 @@ const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (route) {
-    case '':
-    case '#/':
-    case '#/login': {
+    case '': case '#/': case '#/login': {
       container.appendChild(components.login());
       iniciarSesion('idFormLogin');
 

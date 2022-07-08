@@ -56,10 +56,10 @@ export default () => {
         </div>
      </div>
   `;
-  const divElement = document.createElement('div');
-  divElement.innerHTML = viewLoginTemplate;
-  divElement.setAttribute('class', 'divForm');
-  return divElement;
+  const sectionElement = document.createElement('section');
+  sectionElement.innerHTML = viewLoginTemplate;
+  sectionElement.setAttribute('class', 'divForm');
+  return sectionElement;
 };
 
 export const iniciarSesion = (selectorForm) => {
@@ -75,8 +75,12 @@ export const iniciarSesion = (selectorForm) => {
       .then((userCredential) => {
       // Signed in
         const user = userCredential.user;
-        console.log(`${user}logeado`);
-      // ...
+        if (!user.emailVerified) {
+          console.log('NO SE VERIFICO EL CORREO - FALSE');
+        } else {
+          console.log('logeado CORREO VERIFICADO');
+        }
+      // ...llamar const de agregar mascota
       })
       .catch((error) => {
         const errorCode = error.code;
