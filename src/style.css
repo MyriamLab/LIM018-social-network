@@ -43,9 +43,11 @@ h3 {
   justify-content: flex-end;
   padding: 1.5em;
 }
+
 .divHeaderLogin h4 {
   margin-top: 0.5em;
 }
+
 .divHeaderLogin button {
   margin-left: 1em;
   margin-right: 2em;
@@ -61,6 +63,7 @@ h3 {
   /*div hijo izquierda*/
   width: 50%;
 }
+
 .divFormLogin {
   /*div hijo derecha */
   width: 50%;
@@ -73,6 +76,7 @@ figure {
   margin: auto;
   margin-top: 4.5em;
 }
+
 figure img {
   padding: 0.5em;
   width: 15%;
@@ -113,9 +117,11 @@ figure img {
   height: 2em;
   width: 9em;
 }
+
 .buttons:hover {
   background-color: #ff7878;
 }
+
 .socialmedia {
   text-align: center;
 }
@@ -130,9 +136,10 @@ figure img {
   height: 10%;
   padding: 0.5em;
 }
+
 /*REGISTRARSE*/
 
-.formLogin input {
+.formLogin  input {
   width: 100%;
   height: 70%;
   padding: 0.3em;
@@ -140,10 +147,12 @@ figure img {
   border-radius: 8px;
   border: none;
 }
+
 #idDateRegister {
   width: 70%;
   padding: 0.3em 0 0.3em 0;
 }
+
 .gender {
   margin-top: 0.5em;
 }
@@ -166,6 +175,7 @@ figure img {
   .form-container {
     width: 90%;
   }
+
   figure {
     width: 90%;
   }
@@ -179,4 +189,79 @@ figure img {
     margin-left: 1em;
     margin-right: 0.5em;
   }
+}
+
+/******* Vista RegisterPets ********/
+
+.divContainerRegisterPets { /*padre*/
+  display: flex;
+  width: 100%;
+  background-color: #f6e3be; /*blue*/
+}
+
+.divRegisterPets {
+  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
+  width: 50%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.divRegisterPets h3 {
+  padding: 1em;
+  margin: auto;
+  background-color: #8ae2de;
+}
+
+.divRegisterPets figure img {
+  padding: 0.5em;
+  width: 30%;
+  height: 20%;
+  top: 2%;
+}
+
+.divFormPets {
+ background-color: #8ae2de;
+ width: 90%;
+ margin: auto;
+
+}
+
+.groupPets {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.groupPets input, textarea, select {
+  width: 85%;
+  height: 70%;
+  padding: 0.7em;
+  margin: 0.5em;
+  border-radius: 8px;
+  border: none;
+}
+
+.buttonsRegister {
+  display: flex;
+  padding: 0.5em;
+  margin: 1em;
+  margin-bottom: 5.5em;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+@media (max-width: 400px) {
+.divRegisterPets {
+  width: 90%;
+}
+
+.buttonsRegister {
+  justify-content: space-between;
+}
+
+.buttonsRegister  button:first-child {
+  margin-right: 1em ;
+}
+
 }
