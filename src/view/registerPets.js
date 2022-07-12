@@ -1,48 +1,62 @@
 export default () => {
   const viewRegisterPetsTemplate = ` 
-    
-  <div class = "divRegisterPets>
+ 
+  <div class = "divRegisterPets">
+     <figure>
+    <img src="./imagenes/dog.png" alt="logo">      
+    </figure>
     <h3>Registra a tu mascota</h3>
-
-        <form class = "divFormPets"  id="formRegisterPets>
+   
+    <form class = "divFormPets"  id="formRegisterPets>
             
-            <div class = "divFormPets">
-                <input id="idNameRegister" type="text" placeholder="Name" required>
+        <div class = "divFormPets" >
 
+            <div class="groupPets">
+                <input id="idNameRegister" type="text" placeholder="Name" required>
+            </div>
+
+            <div class="groupPets">
                 <select name="typePets" id="selectTypePets">
                     <option value="disable">Tipo</option>
                     <option value="dog">Perro</option>
                     <option value="cat">Gato</option>
                     <option value="other">Otros</option>
                 </select>
+            </div>
 
+            <div class="groupPets">
                 <select name="genderPets" id="selectGenderPets">
                     <option value="disable">Género</option>
                     <option value="f">femenino</option>
                     <option value="m">masculino</option>
                 </select>
+            </div>
 
+            <div class="groupPets">
                 <input id="idDateRegisterPets" type="date" placeholder="Date" required>
-                <textarea id="idTextareaRegPets" name="textareaRegPets" rows="4" cols="50">
+            </div>
+
+            <div class="groupPets">
+                <textarea id="idTextareaRegPets" name="textareaRegPets" rows="4" cols="50">Cuéntamos sobre tu mascota:
                 </textarea>
             </div>
 
-            <div class = "divImgPets">
-              
-                <label class="label-Img" data-tittle="add photo"> 
-                    ::before
-                    <span class="file-name" data-tittle="No file...">
-                        <i class="icon-pet-dog">
-                        ::before
-                        </i>
-                    </span>
-                    ::after
-                </label>
-
-                <button class="buttons id="idButtonRegisterPets" type="submit">Registrarse</button>
+            <div class="groupPets">
+            <input type="file" id="file" accept="image/*">
+            <br>
+            <img id="img"/>
             </div>
-        </form>
-    </div>
+        
+
+            <div class="buttonsRegister">
+                <button class="buttons" id="idButtonRegisterPets" type="submit">Registrar</button>
+
+                <button class="buttons" id="idButtonRegisterPets">Omitir este paso</button>
+            </div>
+
+        </div> 
+    </form>
+</div>
  `;
   const divElement = document.createElement('div');
   divElement.setAttribute('class', 'divContainerRegisterPets');

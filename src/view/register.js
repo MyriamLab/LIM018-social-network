@@ -85,7 +85,8 @@ export const registroCorreo = (selectorForm) => {
               sexUser,
               passwordRegister,
             );
-            console.log('se registró el correo ');
+            //  alert('se registró el correo');
+            window.location.hash = '#/registerPets';
           });
       })
       .catch((error) => {
