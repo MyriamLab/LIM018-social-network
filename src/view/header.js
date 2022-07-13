@@ -2,6 +2,7 @@ export default () => {
   const headerMuroTemplate = `
         <div class="navHeaderIcons">
             <img src="#logo" class=titulo-header" alt="logo">
+            
             <label>buscador</label>
             <img src="#inicio" id="imgHome" class=titulo-header" alt="logo">
             <img src="#amigos" id="imgFriends"class=titulo-header" alt="logo">

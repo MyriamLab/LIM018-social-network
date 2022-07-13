@@ -5,6 +5,9 @@ import { iniciarSesion } from '../view/login.js';
 const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
+  /*  const headerContainer = document.querySelector('header');
+  headerContainer.appendChild(components.header()); */
+
   switch (route) {
     case '': case '#/': case '#/login': {
       container.appendChild(components.login());

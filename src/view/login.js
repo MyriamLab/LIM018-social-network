@@ -8,12 +8,17 @@ import {
 
 export default () => {
   const viewLoginTemplate = `        
-    <div class="divHeaderLogin">
-        
-        <p>¿Aún no tienes una cuenta?</p>   
-        <a href="#/register">   
-          <button>Crear Cuenta</button> 
-        </a>   
+    <div class="flex-direction divHeaderLogin">
+        <div class="divLogo">
+          <img src="./imagenes/logo-pets.png" alt="logo">      
+        </div>
+        <div class="flex-direction">
+          <p>¿Aún no tienes una cuenta?</p>   
+          <a href="#/register">   
+            <button>Crear Cuenta</button> 
+          </a> 
+        </div>
+          
       </div>
 
     <div class="divContainerImgForm">
@@ -32,9 +37,13 @@ export default () => {
               
                 <div class="group">
                   <input id="idEmailLogin" type="email" placeholder="example@gmail.com" required>
+                       
                 </div>
                 <div class="group">
                   <input id="idPasswordLogin" type="password" placeholder="password" required>
+                  <div class="divPaswwordImg">
+                      <img src="./imagenes/circulo-patita.png" alt="logo">      
+                  </div>
                 </div>
                 <div class="buttonClassCenter">                
                   <button  id="idButtonLogin" type="submit">Iniciar sesión</button>                
