@@ -3,7 +3,7 @@ import { userRegister, userRegisterBD, sendEmailVerificationUser } from '../fire
 export default () => {
   const viewRegisterTemplate = `
       <div class="divHeaderLogin">
-        <h4>¿Ya tienes una cuenta?</h4>   
+        <p>¿Ya tienes una cuenta?</p>   
         <a href="#/login">   
         <button class="buttons">Iniciar Sesión</button> 
         </a>   
@@ -30,13 +30,13 @@ export default () => {
                     <input type="radio" name="genderRegister" value="Male">Male
                     <input type="radio" name="genderRegister" value="Female" checked="checked">Female
                   </div>
-                  <div class="buttonClass">              
-                    <button class="buttons id="idButtonRegister" type="submit">Registrarse</button>
+                  <div class="buttonClassCenter">              
+                    <button  id="idButtonRegister" type="submit">Registrarse</button>
                   </div>
                   
               </form>
               <div class="socialmedia">
-              <h4>o inicia sesión con</h4>            
+              <p>o inicia sesión con</p>            
               <div class="socialmediaOptions">
                 <img src="./imagenes/facebook.png" alt="ícono Facebook">
                 <img src="./imagenes/google.png" alt="ícono Google">

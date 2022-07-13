@@ -9,14 +9,12 @@ import {
 export default () => {
   const viewLoginTemplate = `        
     <div class="divHeaderLogin">
-        <h4>¿Aún no tienes una cuenta?</h4>   
+        
+        <p>¿Aún no tienes una cuenta?</p>   
         <a href="#/register">   
-        <button class="buttons">Crear Cuenta</button> 
+          <button>Crear Cuenta</button> 
         </a>   
       </div>
-
-   
-
 
     <div class="divContainerImgForm">
         <div class ="divImgLogin">
@@ -25,28 +23,28 @@ export default () => {
        
         <div class="divFormLogin">
           <figure>
-              <img src="./imagenes/dog.png" alt="logo">      
+              <img src="./imagenes/circulo-patita.png" alt="logo">      
            </figure>
            
           <div class="form-container">        
-            <h3>Login</h3>
+            <h3>Iniciar Sesión</h3>
             <form class='formLogin' id="idFormLogin">
-               
+              
                 <div class="group">
                   <input id="idEmailLogin" type="email" placeholder="example@gmail.com" required>
                 </div>
                 <div class="group">
                   <input id="idPasswordLogin" type="password" placeholder="password" required>
                 </div>
-                <div class="buttonClass">                
-                  <button class="buttons id="idButtonLogin" type="submit">Inciar sesión</button>                
+                <div class="buttonClassCenter">                
+                  <button  id="idButtonLogin" type="submit">Iniciar sesión</button>                
                 </div>
             </form>             
             <div class="socialmedia">
-              <h4>o inicia sesión con</h4>            
-              <div class="socialmediaOptions">
-                <img id="idImgFacebook" src="./imagenes/facebook.png" alt="ícono Facebook">
-                <img  id="idImgGoogle" src="./imagenes/google.png" alt="ícono Google">
+              <p> o inicia sesión con</p>            
+              <div class="socialmediaOptions">                
+               <button  id="idImgGoogle" ><span class="icon-google"></span>  Regístrate con Google </button>
+             
               </div> 
             </div> 
           </div> 
