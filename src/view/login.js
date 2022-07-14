@@ -101,7 +101,12 @@ export const iniciarSesion = (selectorForm) => {
   //  implementar método de conexión
     googleInicioSesion(proveedorGoogle)
       .then((userCredential) => {
+
+        console.log(proveedorGoogle.uid);
+        // Signed in
+
         // un objeto para manipular los datos de google de cada usuario por medio del IUD
+
         const user = userCredential.user;
         //  registrar usuario desde gmail
         userRegisterBD(user.uid, user.email, user.displayName, '', user.photoURL, 'imagenes/portada.png');

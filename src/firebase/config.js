@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+// eslint-disable-next-line import/no-unresolved
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js';
 
 import {
@@ -8,12 +9,14 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   sendEmailVerification,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
 import {
   getFirestore,
   doc,
   setDoc,
+// eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
 //  configuración de firebase con nuestro proyecto
@@ -39,7 +42,11 @@ export const auth = getAuth();
 export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
 //  registrar usuario en la BD
+
+export const userRegisterBD = async (uid, email, name, lastname, password, imgUsuario, imgPortada) => {
+
 export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
+
   const userRef = doc(db, 'users', uid);
 
   await setDoc(userRef, {
