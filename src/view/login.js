@@ -9,12 +9,13 @@ import {
 export default () => {
   const viewLoginTemplate = `        
     <div class="divHeaderLogin">
-        
+   
         <p>¿Aún no tienes una cuenta?</p>   
         <a href="#/register">   
           <button>Crear Cuenta</button> 
-        </a>   
-      </div>
+        </a>  
+  
+    </div>
 
     <div class="divContainerImgForm">
         <div class ="divImgLogin">
