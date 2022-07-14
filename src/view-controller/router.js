@@ -5,6 +5,8 @@ import { iniciarSesion } from '../view/login.js';
 const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
+  // const headerContainer = document.querySelector('header');
+
   switch (route) {
     case '': case '#/': case '#/login': {
       container.appendChild(components.login());
@@ -23,6 +25,11 @@ const changeView = (route) => {
     }
     case '#/registerPets': {
       container.appendChild(components.registerPets());
+      break;
+      //    rompe el ciclo, y retorna solo el form de login
+    }
+    case '#/home': {
+      container.appendChild(components.homeUser());
       break;
       //    rompe el ciclo, y retorna solo el form de login
     }

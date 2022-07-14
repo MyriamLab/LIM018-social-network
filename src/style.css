@@ -23,8 +23,10 @@ font-family: 'Roboto Slab', serif;
   margin: 0;
 }
 
-
-/*clases globales*/
+body {
+  background-color: var(--color-secundario);
+}
+/***************Selectores ******************/
 h3 {
   font-family: 'fuente-primaria';
   font-size: 2.5em;
@@ -33,7 +35,7 @@ h3 {
 }
 
 button{
-  width: 9em;
+  width: 80%;
   height: 2em;
   font-family: 'fuente-primaria';
   font-size: 1.3em;
@@ -47,7 +49,7 @@ button{
 
 p{
   font-family:var(--font-secundaria);
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: var(--color-cuaternario);
 }
 
@@ -61,14 +63,22 @@ input{
   border: none;
 }
 
-/*HEADER*/
+/*****************************clases globales*************************/
+.flex-direction{
+  display: flex;
+}
+
+/************HEADER************
 
 .header {
   display: flex;
   justify-content: space-between;
 }
+**/
+
 
 /*LOGIN*/
+
 .divForm {
   /*padre de los dos*/
   background-color: var(--color-secundario);
@@ -77,55 +87,78 @@ input{
   height: 100%;
 }
 
-.divHeaderLogin {
+.divHeader {
   background-color: var(--color-primario);
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1.5em;
+  justify-content:space-between;
+  padding: 1em;
+  align-items: center;
 }
 
-.divHeaderLogin button {
+.divHeader p{
+  padding-top:  1.1em;
+  text-align: right;  
+}
+
+.divLogo{
+  width: 3.5em;
+
+}
+.divLogo img{
+  width: 100%;
+  height: 100%;
+}
+.divHeader button {
+  font-size: 1em;
   margin-left: 1em;
   margin-right: 2em;
   background-color: #cee5d0;
 }
 
-
 .divContainerImgForm {
   width: 100%;
   display: flex;
+  max-height: 100%;
 }
 
 .divImgLogin {
   /*div hijo izquierda*/
   width: 50%;
+  height: 100%;
+  display: flex;
+  padding-bottom: 3em;
+  justify-content:center;
+  align-items: center;
+  padding-top: 4em;
+}
+
+.divImgLogin img{
+  width: 80%;
 }
 
 .divFormLogin {
   /*div hijo derecha */
   width: 50%;
+  height: auto;
   position: relative;
   justify-content: center;
   align-items: center;
-  background-color:var(--color-secundario)
- 
+  padding: 4em 0 3em 0;
 }
 
 figure {
   text-align: center;  
   position: absolute;
-  top: 1em;
+  top: 4.5em;
   width: 60%;
   right: 20%;
 }
 figure img {
   padding: 0.5em;
-  width: 22%;
-  height: 15%;
-  top: 2%;
-  
+  width: 5em;
+  top: 4%;
 }
+
 .form-container {
   background-color:var(--color-terciario); /*aqui colocamos #cee5d0;*/
   width: 60%;
@@ -138,15 +171,27 @@ figure img {
   padding-top: 1.5em;
 }
 .formLogin {
-  
   width: 90%;
   margin: auto;
   padding: 1em; 
-  
 }
 
 .group {
   padding: 0.3em;
+  position: relative;
+
+}
+
+.divPaswwordImg{
+  position: absolute;
+  top:.4em;
+  left: 80%;
+}
+
+.divPaswwordImg img {
+  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .buttonClassCenter {
@@ -172,7 +217,7 @@ figure img {
   border: 3px solid;
   border-color: var(--color-primario);
   margin-top: 1em;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 
@@ -191,42 +236,12 @@ figure img {
   display: flex;
   padding: 0.3em;
 }
-
-/*  MEDIA QUERIES */
-@media (max-width: 400px) {
-  .divImgLogin {
-    display: none;
-  }
-
-  .divFormLogin {
-    /*div hijo derecha */
-    width: 100%;
-  }
-
-  .form-container {
-    width: 90%;
-    
-  }
-
-  figure {
-    width: 90%;
-    right: 5%;
-  }
-  figure img{
-    width: 23%;
-    height: 18%;
-  }
-  .formLogin {
-    width: 80%;
-    margin: auto;
-    padding: 1.5em 1em 2.5em 1em;
-  }
-
-  .divHeaderLogin button {
-    margin-left: 1em;
-    margin-right: 0.5em;
-  }
+.divGender input{
+  width: 50%;
+  height: 1.2em;
 }
+
+
 
 /******* Vista RegisterPets ********/
 
@@ -287,18 +302,74 @@ figure img {
   text-align: center;
 }
 
-
-@media (max-width: 400px) {
-.divRegisterPets {
-  width: 90%;
+/*********Header*******/
+.navHeaderIcons img{
+  width: 3em;
 }
 
-.buttonsRegister {
-  justify-content: space-between;
+
+/*********************************** *********** MEDIA QUERIES ************************************/
+@media (max-width: 760px) {
+  /* login */
+  .divImgLogin {
+    width: 35%;
+  }
+
+  .divFormLogin {
+    /*div hijo derecha */
+    width: 65%;
+    
+  }
+  .form-container{
+    width: 83%;
+  }
+  
+
 }
 
-.buttonsRegister  button:first-child {
-  margin-right: 1em ;
+@media (max-width: 420px) {
+  /* login */
+  .divImgLogin {
+    display: none;
+  }
+
+  .divFormLogin {
+    /*div hijo derecha */
+    width: 100%;
+  }
+
+  .form-container {
+    width: 90%;    
+  }
+
+  figure {
+    width: 90%;
+    right: 5%;
+  }
+  
+  .formLogin {
+    width: 80%;
+    margin: auto;
+    padding: 1.5em 1em 1.2em 1em;
+  }
+
+  .divHeader button {
+    margin-left: 1em;
+    margin-right: 0.5em;
+  }
+
+  /*registrar */
+  .divRegisterPets {
+    width: 90%;
+  }
+  
+  .buttonsRegister {
+    justify-content: space-between;
+  }
+  
+  .buttonsRegister  button:first-child {
+    margin-right: 1em ;
+  }
 }
 
-}
+
