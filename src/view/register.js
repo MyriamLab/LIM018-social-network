@@ -67,7 +67,6 @@ export const registroCorreo = (selectorForm) => {
               emailRegister,
               nameRegister,
               lastnameRegister,
-              passwordRegister,
               'imagenes/usuario.png',
               'imagenes/portada.png',
             );

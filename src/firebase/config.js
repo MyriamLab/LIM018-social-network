@@ -7,7 +7,6 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  FacebookAuthProvider,
   sendEmailVerification,
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
@@ -38,15 +37,15 @@ export const auth = getAuth();
 // creamos usuarios en autenthication
 // eslint-disable-next-line max-len
 export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+
 //  registrar usuario en la BD
-export const userRegisterBD = async (uid, email, name, lastname,password, imgUsuario, imgPortada) => {
+export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
   const userRef = doc(db, 'users', uid);
 
   await setDoc(userRef, {
     email,
     name,
     lastname,
-    password,
     imgUsuario,
     imgPortada,
   });
@@ -61,22 +60,3 @@ export const proveedorGoogle = new GoogleAuthProvider();
 export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
 
 export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);
-
-/* / Agregar  usuario a firestore desde boton de google
-export const userRegisterGoogle = async (uid, email, name, lastname, date, sex, password) => {
-  try {
-    const userRef = doc(db, 'users', uid);
-
-    await setDoc(userRef, {
-      email,
-      name,
-      lastname,
-      date,
-      sex,
-      password,
-    });
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-  */
