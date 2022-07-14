@@ -102,7 +102,7 @@ export const iniciarSesion = (selectorForm) => {
     googleInicioSesion(proveedorGoogle)
       .then((userCredential) => {
         console.log(proveedorGoogle.uid);
-      // Signed in
+        // Signed in
         const user = userCredential.user;
         console.log(user);
 
