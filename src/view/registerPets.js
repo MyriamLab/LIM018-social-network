@@ -3,7 +3,7 @@ export default () => {
  
   <div class = "divRegisterPets">
      <figure>
-    <img src="./imagenes/dog.png" alt="logo">      
+         <img src="./imagenes/dog.png" alt="logo">      
     </figure>
     <h3>Registra a tu mascota</h3>
    

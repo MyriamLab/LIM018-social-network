@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js';
 
 import {
@@ -38,7 +39,33 @@ export const auth = getAuth();
 // eslint-disable-next-line max-len
 export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 //  registrar usuario en la BD
-export const userRegisterBD = async (uid, email, name, lastname, date, sex, password) => {
+export const userRegisterBD = async (uid, email, name, lastname, date, sex, password, imgUsuario, imgPortada) => {
+  const userRef = doc(db, 'users', uid);
+
+  await setDoc(userRef, {
+    email,
+    name,
+    lastname,
+    date,
+    sex,
+    password,
+    imgUsuario,
+    imgPortada,
+  });
+};
+
+//  inicio de sesión de usuario con correo y contraseña
+export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
+//  se inicializa el proveedor de de firebase para que inicie sesión con google
+export const proveedorGoogle = new GoogleAuthProvider();
+// inicia sesión con cuenta de Google
+export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
+
+export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);
+
+/* / Agregar  usuario a firestore desde boton de google
+export const userRegisterGoogle = async (uid, email, name, lastname, date, sex, password) => {
   try {
     const userRef = doc(db, 'users', uid);
 
@@ -54,18 +81,4 @@ export const userRegisterBD = async (uid, email, name, lastname, date, sex, pass
     console.log('error', error);
   }
 };
-
-//  inicio de sesión de usuario con correo y contraseña
-export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
-
-//  se inicializa el proveedor de de firebase para que inicie sesión con google
-export const proveedorGoogle = new GoogleAuthProvider();
-// inicia sesión con cuenta de Google
-export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
-
-//  proveedor de facebook
-export const proveedorFacebook = new FacebookAuthProvider();
-//  iniciar sesión con facebook
-export const facebookInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
-
-export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);
+  */

@@ -2,11 +2,17 @@ import { userRegister, userRegisterBD, sendEmailVerificationUser } from '../fire
 
 export default () => {
   const viewRegisterTemplate = `
-      <div class="divHeaderLogin">
-        <p>¿Ya tienes una cuenta?</p>   
-        <a href="#/login">   
-        <button class="buttons">Iniciar Sesión</button> 
-        </a>   
+  <div class="flex-direction divHeader">
+        <div class="divLogo">
+          <img src="./imagenes/logo-pets.png" alt="logo">      
+        </div>
+        <div class="flex-direction">
+          <p>¿Ya tienes una cuenta?</p>   
+          <a href="#/login">   
+            <button>Iniciar sesión</button> 
+          </a> 
+        </div>
+          
       </div>
       <div class="divContainerImgForm">
         <div class ="divImgLogin">
@@ -14,7 +20,7 @@ export default () => {
         </div>
         <div class="divFormLogin">
           <figure>
-              <img src="./imagenes/dog.png" alt="logo">      
+          <img src="./imagenes/circulo-patita.png" alt="logo">        
            </figure>
            <div class="form-container">
               <h3>Regístrate</h3>
@@ -36,12 +42,11 @@ export default () => {
                   
               </form>
               <div class="socialmedia">
-              <p>o inicia sesión con</p>            
-              <div class="socialmediaOptions">
-                <img src="./imagenes/facebook.png" alt="ícono Facebook">
-                <img src="./imagenes/google.png" alt="ícono Google">
-              </div> 
-            </div>
+                <p> o regístrate con</p>            
+                <div class="socialmediaOptions">                
+                    <button  id="idImgGoogle" ><span class="icon-google"></span>  Regístrate con Google </button>             
+                </div> 
+            </div> 
             </div>
         </div>
       </div>
@@ -84,6 +89,8 @@ export const registroCorreo = (selectorForm) => {
               dateRegister,
               sexUser,
               passwordRegister,
+              'imagenes/usuario.png',
+              'imagenes/portada.png',
             );
             //  alert('se registró el correo');
             window.location.hash = '#/registerPets';

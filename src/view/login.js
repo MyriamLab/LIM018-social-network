@@ -2,13 +2,11 @@ import {
   userLogin,
   proveedorGoogle,
   googleInicioSesion,
-  proveedorFacebook,
-  facebookInicioSesion,
 } from '../firebase/config.js';
 
 export default () => {
   const viewLoginTemplate = `        
-    <div class="flex-direction divHeaderLogin">
+    <div class="flex-direction divHeader">
         <div class="divLogo">
           <img src="./imagenes/logo-pets.png" alt="logo">      
         </div>
@@ -37,12 +35,14 @@ export default () => {
               
                 <div class="group">
                   <input id="idEmailLogin" type="email" placeholder="example@gmail.com" required>
-                       
+                  <div class="divPaswwordImg">
+                      <img src="./imagenes/perro.png" alt="logo">      
+                  </div>     
                 </div>
                 <div class="group">
                   <input id="idPasswordLogin" type="password" placeholder="password" required>
                   <div class="divPaswwordImg">
-                      <img src="./imagenes/circulo-patita.png" alt="logo">      
+                      <img src="./imagenes/mascara.png" alt="logo">      
                   </div>
                 </div>
                 <div class="buttonClassCenter">                
@@ -52,7 +52,7 @@ export default () => {
             <div class="socialmedia">
               <p> o inicia sesión con</p>            
               <div class="socialmediaOptions">                
-               <button  id="idImgGoogle" ><span class="icon-google"></span>  Regístrate con Google </button>
+               <button  id="idImgGoogle" ><span class="icon-google"></span>  Inicia sesión con Google </button>
              
               </div> 
             </div> 
@@ -80,16 +80,17 @@ export const iniciarSesion = (selectorForm) => {
       // Signed in
         const user = userCredential.user;
         if (!user.emailVerified) {
-          console.log('NO SE VERIFICO EL CORREO - FALSE');
+          alert('NO SE VERIFICÓ EL CORREO');
         } else {
-          console.log('logeado CORREO VERIFICADO');
+          window.location.hash = '#/home';
+          alert('logeado CORREO VERIFICADO');
         }
       // ...llamar const de agregar mascota
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('no se logeó', errorCode, errorMessage); // ..
+        alert('no se logeó', errorCode, errorMessage); // ..
       });
   });
 
@@ -101,30 +102,14 @@ export const iniciarSesion = (selectorForm) => {
       .then((userCredential) => {
       // Signed in
         const user = userCredential.user;
+        window.location.hash = '#/home';
         console.log(`${user} inicó sesión desde google`);
       // ... REDIRIGIR A UNA VISTA
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('no se logeó con GOOGLE', errorCode, errorMessage); // ..
-      });
-  });
-
-  //  inicio sesión con facebook
-  const facebookLogin = document.getElementById('idImgFacebook');
-  facebookLogin.addEventListener('click', () => {
-    facebookInicioSesion(proveedorFacebook)
-      .then((userCredential) => {
-      // Signed in
-        const user = userCredential.user;
-        console.log(`${user} inicó sesión desde FACEBOOK`);
-      // ... REDIRIGIR A UNA VISTA
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('no se logeó con FACEBOOK', errorCode, errorMessage); // ..
+        alert('no se logeó con GOOGLE', errorCode, errorMessage); // ..
       });
   });
 };
