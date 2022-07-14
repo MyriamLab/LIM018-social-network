@@ -39,15 +39,13 @@ export const auth = getAuth();
 // eslint-disable-next-line max-len
 export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 //  registrar usuario en la BD
-export const userRegisterBD = async (uid, email, name, lastname, date, sex, password, imgUsuario, imgPortada) => {
+export const userRegisterBD = async (uid, email, name, lastname,password, imgUsuario, imgPortada) => {
   const userRef = doc(db, 'users', uid);
 
   await setDoc(userRef, {
     email,
     name,
     lastname,
-    date,
-    sex,
     password,
     imgUsuario,
     imgPortada,

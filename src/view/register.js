@@ -16,7 +16,7 @@ export default () => {
       </div>
       <div class="divContainerImgForm">
         <div class ="divImgLogin">
-            <img src ="./imagenes/portada-dogs.png" alt="imágen de perritos y redes sociales">
+            <img src ="./imagenes/perts-redondo.png" alt="imágen de perritos y redes sociales">
         </div>
         <div class="divFormLogin">
           <figure>
@@ -29,24 +29,13 @@ export default () => {
                   <input id="idLastNameRegister" type="text" placeholder="LastName" required>
                   <input id="idEmailRegister" type="email" placeholder="email" required>
                   <input id="idPasswordRegister" type="password" placeholder="Password" required> 
-                  <label class="date justificar">Date: </label>
-                  <input id="idDateRegister" type="date" placeholder="Date" required>
-                  <label for="gender" class="gender justificar">Gender: </label>
-                  <div class="divGender">
-                    <input type="radio" name="genderRegister" value="Male">Male
-                    <input type="radio" name="genderRegister" value="Female" checked="checked">Female
-                  </div>
+                  
                   <div class="buttonClassCenter">              
                     <button  id="idButtonRegister" type="submit">Registrarse</button>
                   </div>
-                  
+            
               </form>
-              <div class="socialmedia">
-                <p> o regístrate con</p>            
-                <div class="socialmediaOptions">                
-                    <button  id="idImgGoogle" ><span class="icon-google"></span>  Regístrate con Google </button>             
-                </div> 
-            </div> 
+              
             </div>
         </div>
       </div>
@@ -65,14 +54,6 @@ export const registroCorreo = (selectorForm) => {
     event.preventDefault();
     const nameRegister = document.getElementById('idNameRegister').value;
     const lastnameRegister = document.getElementById('idLastNameRegister').value;
-    const dateRegister = document.getElementById('idDateRegister').value;
-    const sexRegister = document.getElementsByName('genderRegister');
-    let sexUser;
-    for (let i = 0; i < sexRegister.length; i += 1) {
-      if (sexRegister[i].checked) {
-        sexUser = sexRegister[i].value;
-      }
-    }
     const emailRegister = document.getElementById('idEmailRegister').value;
     const passwordRegister = document.getElementById('idPasswordRegister').value;
     // registra el email y password autenticar
@@ -86,8 +67,6 @@ export const registroCorreo = (selectorForm) => {
               emailRegister,
               nameRegister,
               lastnameRegister,
-              dateRegister,
-              sexUser,
               passwordRegister,
               'imagenes/usuario.png',
               'imagenes/portada.png',

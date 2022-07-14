@@ -2,6 +2,7 @@ import {
   userLogin,
   proveedorGoogle,
   googleInicioSesion,
+  userRegisterBD,
 } from '../firebase/config.js';
 
 export default () => {
@@ -21,7 +22,7 @@ export default () => {
 
     <div class="divContainerImgForm">
         <div class ="divImgLogin">
-            <img src ="./imagenes/portada-dogs.png" alt="imágen de perritos y redes sociales">
+            <img src ="./imagenes/perts-redondo.png " alt="imágen de perritos y redes sociales">
           </div>    
        
         <div class="divFormLogin">
@@ -100,8 +101,11 @@ export const iniciarSesion = (selectorForm) => {
   //  implementar método de conexión
     googleInicioSesion(proveedorGoogle)
       .then((userCredential) => {
+        console.log(proveedorGoogle.uid);
       // Signed in
         const user = userCredential.user;
+        console.log(user);
+
         window.location.hash = '#/home';
         console.log(`${user} inicó sesión desde google`);
       // ... REDIRIGIR A UNA VISTA
