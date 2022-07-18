@@ -1,4 +1,5 @@
-import { userRegister, userRegisterBD, sendEmailVerificationUser } from '../firebase/config.js';
+import { userRegister, sendEmailVerificationUser } from '../firebase/funcionesAuth.js';
+import { userRegisterBD } from '../firebase/funcionesFirestore.js';
 
 export default () => {
   const viewRegisterTemplate = `

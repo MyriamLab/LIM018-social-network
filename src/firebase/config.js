@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // eslint-disable-next-line import/no-unresolved
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js';
 
@@ -16,8 +15,14 @@ import {
   getFirestore,
   doc,
   setDoc,
+  getDoc,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
+
+import {
+  getStorage,
+  // eslint-disable-next-line import/no-unresolved
+} from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js';
 
 //  configuración de firebase con nuestro proyecto
 const firebaseConfig = {
@@ -32,38 +37,25 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-// creando DB
-const db = getFirestore(app);
-
+// Inicializar authentication
 export const auth = getAuth();
-// creamos usuarios en autenthication
-// eslint-disable-next-line max-len
-export const userRegister = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-
-//  registrar usuario en la BD
-
-export const userRegisterBD = async (uid, email, name, lastname, password, imgUsuario, imgPortada) => {
-
-export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
-
-  const userRef = doc(db, 'users', uid);
-
-  await setDoc(userRef, {
-    email,
-    name,
-    lastname,
-    imgUsuario,
-    imgPortada,
-  });
-};
-
-//  inicio de sesión de usuario con correo y contraseña
-export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
-
-//  se inicializa el proveedor de de firebase para que inicie sesión con google
+// inicializa el firestore
+export const db = getFirestore(app);
+// inicializa el storage
+export const storage = getStorage(app);
+//  se inicializa el proveedor de google
 export const proveedorGoogle = new GoogleAuthProvider();
-// inicia sesión con cuenta de Google
-export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor);
 
-export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);
+export {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  sendEmailVerification,
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  getStorage,
+};

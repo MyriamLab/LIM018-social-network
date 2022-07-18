@@ -1,5 +1,5 @@
 export default () => {
-  const headerMuroTemplate = `
+  const headerHomeTemplate = `
         <div class="flex-direction divHeader navHeaderIcons">
 
             <div class="divLogo">
@@ -23,7 +23,7 @@ export default () => {
             </div>
             
             <div class="enlacePerfil">
-                <a href="#/rutaPerfilUsuario"><img src="" class="imagenUsuario"></a>                
+                <a href="#/rutaPerfilUsuario"><img src="#" class="imagenUsuario"></a>                
             </div>
 
             <div>
@@ -36,7 +36,7 @@ export default () => {
         `;
   const headerElement = document.createElement('header');
   headerElement.setAttribute('class', 'headerSec');
-  headerElement.innerHTML = headerMuroTemplate;
+  headerElement.innerHTML = headerHomeTemplate;
 
   return headerElement;
 };

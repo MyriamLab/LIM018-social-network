@@ -1,9 +1,17 @@
 import {
-  userLogin,
   proveedorGoogle,
-  googleInicioSesion,
-  userRegisterBD,
+
 } from '../firebase/config.js';
+
+import {
+  userLogin,
+  googleInicioSesion,
+} from '../firebase/funcionesAuth.js';
+
+import {
+  userRegisterBD,
+  getUserBD,
+} from '../firebase/funcionesFirestore.js';
 
 export default () => {
   const viewLoginTemplate = `        
@@ -42,8 +50,8 @@ export default () => {
                 </div>
                 <div class="group">
                   <input id="idPasswordLogin" type="password" placeholder="password" required>
-                  <div class="divPaswwordImg">
-                      <img src="./imagenes/mascara.png" alt="logo">      
+                 <div class="divPaswwordImg">
+                      <img src="./imagenes/eye.png" alt="logo">      
                   </div>
                 </div>
                 <div class="buttonClassCenter">                
@@ -81,6 +89,7 @@ export const iniciarSesion = (selectorForm) => {
       // Signed in
         const user = userCredential.user;
         if (!user.emailVerified) {
+          console.log(user);
           alert('NO SE VERIFICÓ EL CORREO');
         } else {
           window.location.hash = '#/home';
@@ -101,16 +110,13 @@ export const iniciarSesion = (selectorForm) => {
   //  implementar método de conexión
     googleInicioSesion(proveedorGoogle)
       .then((userCredential) => {
-
-        console.log(proveedorGoogle.uid);
-        // Signed in
-
         // un objeto para manipular los datos de google de cada usuario por medio del IUD
-
         const user = userCredential.user;
+        console.log(getUserBD(user.uid));
         //  registrar usuario desde gmail
         userRegisterBD(user.uid, user.email, user.displayName, '', user.photoURL, 'imagenes/portada.png');
-        console.log(user);
+        console.log('elisabeth');
+        console.log(getUserBD(user.uid));
 
         window.location.hash = '#/home';
         console.log(`${user} inicó sesión desde google`);

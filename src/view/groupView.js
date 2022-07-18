@@ -1,7 +1,7 @@
 import formLogin from './login.js';
 import formRegisters from './register.js';
 import formRegisterPets from './registerPets.js';
-import home from './muro.js';
+import home from './home.js';
 
 const components = {
   login: formLogin,
