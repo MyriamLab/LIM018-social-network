@@ -44,9 +44,6 @@ export const userRegister = (email, password) => createUserWithEmailAndPassword(
 //  registrar usuario en la BD
 
 export const userRegisterBD = async (uid, email, name, lastname, password, imgUsuario, imgPortada) => {
-
-export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
-
   const userRef = doc(db, 'users', uid);
 
   await setDoc(userRef, {
