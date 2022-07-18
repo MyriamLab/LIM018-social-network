@@ -39,11 +39,11 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 // Inicializar authentication
 export const auth = getAuth();
-// inicializa el firestore
-export const db = getFirestore(app);
-// inicializa el storage
-export const storage = getStorage(app);
-//  se inicializa el proveedor de google
+
+//  inicio de sesión de usuario con correo y contraseña
+export const userLogin = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
+//  se inicializa el proveedor de de firebase para que inicie sesión con google
 export const proveedorGoogle = new GoogleAuthProvider();
 
 export {
