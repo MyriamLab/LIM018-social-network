@@ -2,43 +2,65 @@ import { userRegister, userRegisterBD, sendEmailVerificationUser } from '../fire
 
 export default () => {
   const viewRegisterTemplate = `
-  <div class="flex-direction divHeader">
-        <div class="divLogo">
-          <img src="./imagenes/logo-pets.png" alt="logo">      
+  
+<div class="flex-direction divContainerImgForm">
+  <div class="flex-direction center divImgLogin">
+    <img
+    src="./imagenes/portada-dogs.png "
+    alt="imágen de perritos y redes sociales"
+    />
+  </div>
+  <!--DIV DERECHO-->
+  <div class="row-center divFormLogin">
+  <figure class="center padd-05">
+  <img src="./imagenes/logo-pets.png" alt="logo" />
+</figure>
+
+    <!--inicio form register-->
+    <div class="form-container">
+      <h3 class="center">Regístrate</h3>
+      <form class="formLogin" id="formRegister">
+        <label class="group m-label">Nombre</label>
+        <input
+          id="idNameRegister"
+          type="text"
+          placeholder="Ej: María"
+          required
+        />
+
+        <label class="group m-label">Apellido</label>
+        <input
+          id="idLastNameRegister"
+          type="text"
+          placeholder="Ej: Flores"
+          required
+        />
+
+        <label class="group m-label">E-mail</label>
+
+        <input
+          id="idEmailRegister"
+          type="email"
+          placeholder="pets@gmail.com"
+          required
+        />
+
+        <label class="group m-label">Contraseña </label>
+
+        <input
+          id="idPasswordRegister"
+          type="password"
+          placeholder="Mínimo de 8 caracteres"
+          required
+        />
+
+        <div class="buttonClass center">
+          <button id="idButtonRegister" type="submit">Registrarse</button>
         </div>
-        <div class="flex-direction">
-          <p>¿Ya tienes una cuenta?</p>   
-          <a href="#/login">   
-            <button>Iniciar sesión</button> 
-          </a> 
-        </div>
-          
-      </div>
-      <div class="divContainerImgForm">
-        <div class ="divImgLogin">
-            <img src ="./imagenes/perts-redondo.png" alt="imágen de perritos y redes sociales">
-        </div>
-        <div class="divFormLogin">
-          <figure>
-          <img src="./imagenes/circulo-patita.png" alt="logo">        
-           </figure>
-           <div class="form-container">
-              <h3>Regístrate</h3>
-              <form class='formLogin' id="formRegister">          
-                  <input id="idNameRegister" type="text" placeholder="Name" required>
-                  <input id="idLastNameRegister" type="text" placeholder="LastName" required>
-                  <input id="idEmailRegister" type="email" placeholder="email" required>
-                  <input id="idPasswordRegister" type="password" placeholder="Password" required> 
-                  
-                  <div class="buttonClassCenter">              
-                    <button  id="idButtonRegister" type="submit">Registrarse</button>
-                  </div>
-            
-              </form>
-              
-            </div>
-        </div>
-      </div>
+      </form>
+    </div>
+  </div>
+</div>
   `;
   const sectionElement = document.createElement('section');
   sectionElement.setAttribute('class', 'divForm');
