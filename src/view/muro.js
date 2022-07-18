@@ -23,8 +23,7 @@ export default () => {
             </div>
             
             <div class="enlacePerfil">
-                <a href="#/rutaPerfilUsuario"><img src="#foto del suaurio" class="imagenUsuario"></a>
-                
+                <a href="#/rutaPerfilUsuario"><img src="" class="imagenUsuario"></a>                
             </div>
 
             <div>
