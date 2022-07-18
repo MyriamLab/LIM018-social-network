@@ -7,59 +7,69 @@ import {
 
 export default () => {
   const viewLoginTemplate = `        
-    <div class="flex-direction divHeader">
-        <div class="divLogo">
-          <img src="./imagenes/logo-pets.png" alt="logo">      
-        </div>
-        <div class="flex-direction">
-          <p>¿Aún no tienes una cuenta?</p>   
-          <a href="#/register">   
-            <button>Crear Cuenta</button> 
-          </a> 
-        </div>
-          
-      </div>
+ 
+  <!--DIV IZQUIERDO-->
+  <div class="flex-direction divContainerImgForm">
+    <div class="divImgLogin">
+      <img
+        src="./imagenes/portada-dogs.png "
+        alt="imágen de perritos y redes sociales"
+      />
+    </div>
 
-    <div class="divContainerImgForm">
-        <div class ="divImgLogin">
-            <img src ="./imagenes/perts-redondo.png " alt="imágen de perritos y redes sociales">
-          </div>    
-       
-        <div class="divFormLogin">
-          <figure>
-              <img src="./imagenes/circulo-patita.png" alt="logo">      
-           </figure>
-           
-          <div class="form-container">        
-            <h3>Iniciar Sesión</h3>
-            <form class='formLogin' id="idFormLogin">
-              
-                <div class="group">
-                  <input id="idEmailLogin" type="email" placeholder="example@gmail.com" required>
-                  <div class="divPaswwordImg">
-                      <img src="./imagenes/perro.png" alt="logo">      
-                  </div>     
-                </div>
-                <div class="group">
-                  <input id="idPasswordLogin" type="password" placeholder="password" required>
-                  <div class="divPaswwordImg">
-                      <img src="./imagenes/mascara.png" alt="logo">      
-                  </div>
-                </div>
-                <div class="buttonClassCenter">                
-                  <button  id="idButtonLogin" type="submit">Iniciar sesión</button>                
-                </div>
-            </form>             
-            <div class="socialmedia">
-              <p> o inicia sesión con</p>            
-              <div class="socialmediaOptions">                
-               <button  id="idImgGoogle" ><span class="icon-google"></span>  Inicia sesión con Google </button>
-             
-              </div> 
-            </div> 
-          </div> 
+    <!--DIV DERECHO-->
+    <div class="row-center divFormLogin">
+    <figure class="center padd-05">
+        <img src="./imagenes/logo-pets.png" alt="logo" />
+      </figure>
+
+      <!--inicio form register-->
+      <div class="form-container">
+        <h3 class="center">¡Únete a nuestra comunidad!</h3>
+
+        <form class="formLogin" id="idFormLogin">
+          <label class="group m-label">E-mail</label>
+
+          <input
+            id="idEmailLogin"
+            type="email"
+            placeholder=" Ej:pets@gmail.com"
+            required
+          />
+
+          <label class="group m-label"> Contraseña</label>
+          <input
+            id="idPasswordLogin"
+            type="password"
+            placeholder=" Mínimo 8 caracteres"
+            required
+          />
+
+          <div class="center">
+            <button id="idButtonLogin " type="submit">Iniciar sesión</button>
+          </div>
+        </form>
+
+        <div class="center">
+          <p>--- o ---</p>
+
+          <div>
+            <button id="idImgGoogle">
+              <span><img src="imagenes/google.png"></span>  Acceder con Google
+            </button>
+          </div>
+
+          <div class="flex-direction space-around padd-05">
+            <p>¿Aún no tienes una cuenta?</p>
+            <a href="#/register">
+             Regístrate
+            </a>
+          </div>
+
         </div>
-     </div>
+      </div>
+    </div>
+  </div>
   `;
   const sectionElement = document.createElement('section');
   sectionElement.innerHTML = viewLoginTemplate;
