@@ -1,4 +1,13 @@
+//  import objectsLocalStorage from '../firebase/funcionesLocalStorage.js';
+
 export default () => {
+  const userInfo = localStorage.getItem('users');
+  console.log(userInfo);
+  const userObject = JSON.parse(userInfo);
+  console.log(userObject.imgUsuario);
+  /* const userLocal = objectsLocalStorage.userLocalStorage();
+  console.log(userLocal); */
+
   const headerHomeTemplate = `
         <div class="flex-direction divHeader navHeaderIcons">
 
@@ -23,7 +32,8 @@ export default () => {
             </div>
             
             <div class="enlacePerfil">
-                <a href="#/rutaPerfilUsuario"><img src="#" class="imagenUsuario"></a>                
+                <a href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"></a>
+                <p>${userObject.name}</p>              
             </div>
 
             <div>

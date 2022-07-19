@@ -1,6 +1,7 @@
 import { components } from '../view/groupView.js';
 import { registroCorreo } from '../view/register.js';
 import { iniciarSesion } from '../view/login.js';
+import { crearPost } from '../view/crearPost.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -29,6 +30,9 @@ const changeView = (route) => {
     }
     case '#/home': {
       container.appendChild(components.homeUser());
+      container.appendChild(components.createPost());
+      crearPost('buttonCrearPost');
+      container.appendChild(components.postCollect());
       break;
       //    rompe el ciclo, y retorna solo el form de login
     }

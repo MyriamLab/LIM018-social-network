@@ -1,10 +1,14 @@
 import { userRegister, sendEmailVerificationUser } from '../firebase/funcionesAuth.js';
 import { userRegisterBD } from '../firebase/funcionesFirestore.js';
+// eslint-disable-next-line import/no-cycle
+//  import { components } from './groupView.js';
+import { modalRegistro } from './modales.js';
 
 export default () => {
   const viewRegisterTemplate = `
   
 <div class="flex-direction divContainerImgForm">
+  
   <div class="flex-direction center divImgLogin">
     <img
     src="./imagenes/portada-dogs.png "
@@ -19,6 +23,7 @@ export default () => {
 
     <!--inicio form register-->
     <div class="form-container">
+      
       <h3 class="center">Regístrate</h3>
       <form class="formLogin" id="formRegister">
         <label class="group m-label">Nombre</label>
@@ -58,6 +63,8 @@ export default () => {
         <div class="buttonClass center">
           <button id="idButtonRegister" type="submit">Registrarse</button>
         </div>
+        <div id="modal"></div>
+
       </form>
     </div>
   </div>
@@ -94,7 +101,9 @@ export const registroCorreo = (selectorForm) => {
               'imagenes/portada.png',
             );
             //  alert('se registró el correo');
-            window.location.hash = '#/registerPets';
+            const modalExito = document.getElementById('modal');
+            modalExito.innerHTML = modalRegistro.exito();
+            // window.location.hash = '#/registerPets';
           });
       })
       .catch((error) => {

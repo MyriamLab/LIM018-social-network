@@ -16,6 +16,8 @@ import {
   doc,
   setDoc,
   getDoc,
+  addDoc,
+  collection,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
@@ -58,4 +60,6 @@ export {
   setDoc,
   getDoc,
   getStorage,
+  addDoc,
+  collection,
 };

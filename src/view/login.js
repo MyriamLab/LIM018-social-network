@@ -1,6 +1,5 @@
 import {
   proveedorGoogle,
-
 } from '../firebase/config.js';
 
 import {
@@ -122,11 +121,14 @@ export const iniciarSesion = (selectorForm) => {
       .then((userCredential) => {
         // un objeto para manipular los datos de google de cada usuario por medio del IUD
         const user = userCredential.user;
-        console.log(getUserBD(user.uid));
-        //  registrar usuario desde gmail
         userRegisterBD(user.uid, user.email, user.displayName, '', user.photoURL, 'imagenes/portada.png');
-        console.log('elisabeth');
-        console.log(getUserBD(user.uid));
+        getUserBD(user.uid).then((userData) => {
+          const data = userData;
+          const uidUser = user.uid;
+          data.uid = uidUser;
+          //  guardando datos en el localstorage
+          localStorage.setItem('users', JSON.stringify(data));
+        });
 
         window.location.hash = '#/home';
         console.log(`${user} inicó sesión desde google`);
