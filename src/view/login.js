@@ -69,7 +69,7 @@ export default () => {
           <div class="flex-direction space-around padd-05">
             <p>¿Aún no tienes una cuenta?</p>
             <a href="#/register">
-             Regístrate
+             Regístrate aqui
             </a>
           </div>
 

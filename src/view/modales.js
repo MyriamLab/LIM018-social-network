@@ -2,9 +2,13 @@ export const modalRegistro = {
 
   correoInvalido: () => {
     const errorMensaje = `
-        <div class= "modalError" id="modalCorreoInvalido">
-          <i class="fas fa-exclamation-triangle"></i>
-          <p>Ingresaste un correo inválido.</p>
+        <div class= "smsModal modalError" id="modalCorreoInvalido">
+          <div class= "modalMedio modalArriba center">
+            <i class="material-icons center" style="font-size:48px;color:#ffff">error</i>
+          </div>
+          <div  class= "modalMedio modalAbajo">
+            <p  class= "center">Ingresaste un correo inválido.</p>
+          </div>    
         </div>
       `;
     return errorMensaje;
@@ -12,7 +16,7 @@ export const modalRegistro = {
 
   correoExistente: () => {
     const exitoMensaje = `
-        <div class= "modalError" id="modalCorreoExistente">
+        <div class= "smsModal modalError" id="modalCorreoExistente">
           <i class="fas fa-check-circle"></i>
           <p>Ya tienes una cuenta existente.</p>
         </div>
@@ -22,7 +26,7 @@ export const modalRegistro = {
 
   contraseñaDebil: () => {
     const exitoMensaje = `
-        <div class= "modalError" id="modalContraseñaDebil">
+        <div class= "smsModal modalError" id="modalContraseñaDebil">
           <i class="fas fa-check-circle"></i>
           <p>La contraseña debe contener al menos 6 carácteres.</p>
         </div>
@@ -32,7 +36,7 @@ export const modalRegistro = {
 
   exito: () => {
     const exitoMensaje = `
-        <div class= "modalExito" id="modalExito">
+        <div class= "smsModal modalExito" id="modalExito">
           <i class="fas fa-check-circle"></i>
           <p>Revisa tu correo electrónico para confirmar registro.</p>
         </div>

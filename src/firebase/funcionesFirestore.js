@@ -6,6 +6,7 @@ import {
   setDoc,
   addDoc,
   collection,
+  onSnapshot,
 } from './config.js';
 
 export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
@@ -34,7 +35,7 @@ export const createPost = async (uid, post, datePost, state) => {
 };
 
 //  jalar datos desde firestore de los post
-export const getPostBD = () => {
-  const dataPost = getDoc(doc(db, 'post')).then((postData) => postData.data());
+export const getPostBD = (documento) => {
+  const dataPost = onSnapshot(collection(db, 'post'), (documento));
   return dataPost;
 };

@@ -124,7 +124,6 @@ font-family: 'Roboto Slab', serif;
   .divForm {
     /*padre de los dos*/
     background-color: var(--color-secundario);
-    display: block;
     width: 100%;
     height: 100%;
   }
@@ -204,6 +203,10 @@ font-family: 'Roboto Slab', serif;
     margin-top: 3em;
     border-radius: 1em;
     padding: 2.8em 0 3em 0;
+    /*
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;*/
   }
   
   .formLogin {
@@ -289,6 +292,32 @@ font-family: 'Roboto Slab', serif;
   .navHeaderIcons img {
     width: 3em;
   }
+  /* MODALES DE REGISTRO */
+  #modalPadre{
+    z-index: 10;
+    position: fixed;
+    top:40%;
+    left: 65%;
+    width: 15em;
+    border: none;    
+    height: 8em; 
+    padding:0;
+    flex-direction: column;
+
+  }
+  
+  .modalMedio{
+    width: 100%;
+    height: 50%;
+    padding: 1em 0.5em 0.5em 0.5em;
+  }
+ .modalArriba{
+  background-color:var(--color-primario);
+ }
+  .modalAbajo{
+    background-color: #FFFFFF;
+    /* padding: 0.5em 0.3em 0 1.5em; */
+   }
   
   /****************** MEDIA QUERIES ************************************/
    
@@ -301,6 +330,10 @@ font-family: 'Roboto Slab', serif;
     .divFormLogin {
       width: 70%;
       margin: auto;
+    }
+    #modalPadre{
+      left: 35%;    
+  
     }
 
   }
@@ -340,6 +373,10 @@ font-family: 'Roboto Slab', serif;
   
     .buttonsRegister button:first-child {
       margin-right: 1em;
+    }
+    #modalPadre{
+      left: 20%;    
+  
     }
   }
  

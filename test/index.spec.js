@@ -8,9 +8,8 @@ jest.mock('../src/firebase/config.js');
 console.log(config);
 
 /*
-describe('myFunction', () => {
+describe('createUserWithEmailAndPassword', () => {
   it('debería ser una función', () => {
     expect(typeof myFunction).toBe('function');
   });
-});
-*/
+}); */

@@ -1,4 +1,13 @@
+import { getPostBD } from '../firebase/funcionesFirestore.js';
+
 export default () => {
+  getPostBD((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, ' => ', doc.data());
+    });
+  });
+
   const userInfo = localStorage.getItem('users');
   const userObject = JSON.parse(userInfo);
 

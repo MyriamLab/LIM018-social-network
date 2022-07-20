@@ -25,6 +25,8 @@ export default () => {
                 </div>
               </div>       
           </div>
+          <div class = "postDiv">
+          </div>
                    
           `;
   const crearPostElement = document.createElement('section');
@@ -46,13 +48,5 @@ export const crearPost = (idButton) => {
     //  createPost = (uid, post, datePost, state)
     createPost(userObject.uid, post, '', '');
     console.log('éxito');
-    /*
-    getPostBD().then((postData) => {
-      const dataPost = postData;
-      console.log('éxito');
-      //  guardando datos en el localstorage
-      localStorage.setItem('post', JSON.stringify(dataPost));
-      console.log(dataPost);
-    }); */
   });
 };

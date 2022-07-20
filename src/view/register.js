@@ -63,8 +63,13 @@ export default () => {
         <div class="buttonClass center">
           <button id="idButtonRegister" type="submit">Registrarse</button>
         </div>
-        <div id="modal"></div>
-
+        <dialog id="modalPadre" class="row-center"></dialog>
+        <div class="flex-direction space-around padd-05">
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="#/login">
+         Inicia Sesión
+        </a>
+      </div>
       </form>
     </div>
   </div>
@@ -101,15 +106,21 @@ export const registroCorreo = (selectorForm) => {
               'imagenes/portada.png',
             );
             //  alert('se registró el correo');
-            const modalExito = document.getElementById('modal');
+            const modalExito = document.getElementById('modalPadre');
             modalExito.innerHTML = modalRegistro.exito();
             // window.location.hash = '#/registerPets';
           });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('falló el registro', errorCode, errorMessage);
+        const mostrarModal = document.getElementById('modalPadre');
+
+        if (error.message === 'Firebase: Error (auth/invalid-email).') {
+          mostrarModal.innerHTML = modalRegistro.correoInvalido();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        }
       });
   });
 };
