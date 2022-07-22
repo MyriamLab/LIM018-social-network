@@ -2,7 +2,7 @@ export const modalRegistro = {
 
   correoInvalido: () => {
     const errorMensaje = `
-        <div class= "smsModal modalError" id="modalCorreoInvalido">
+        <div class= "smsModal modalError">
           <div class= "modalMedio modalArriba center">
             <i class="material-icons center" style="font-size:48px;color:#ffff">error</i>
           </div>
@@ -14,32 +14,44 @@ export const modalRegistro = {
     return errorMensaje;
   },
 
-  correoExistente: () => {
-    const exitoMensaje = `
-        <div class= "smsModal modalError" id="modalCorreoExistente">
-          <i class="fas fa-check-circle"></i>
-          <p>Ya tienes una cuenta existente.</p>
-        </div>
+  contraseñaDebil: () => {
+    const contraseñaError = `
+    <div class= "smsModal modalError" >
+      <div class= "modalMedio modalArriba center">
+        <i class="material-icons center" style="font-size:48px;color:#ffff">error</i>
+      </div>
+      <div  class= "modalMedio modalAbajo">
+        <p  class= "center">Tu contraseña debe tener 6 carcateres como mínimo</p>
+      </div>    
+    </div>
       `;
-    return exitoMensaje;
+    return contraseñaError;
   },
 
-  contraseñaDebil: () => {
-    const exitoMensaje = `
-        <div class= "smsModal modalError" id="modalContraseñaDebil">
-          <i class="fas fa-check-circle"></i>
-          <p>La contraseña debe contener al menos 6 carácteres.</p>
-        </div>
+  correoExistente: () => {
+    const correoExistent = `
+    <div class= "smsModal modalError">
+      <div class= "modalMedio modalArriba center">
+        <i class="material-icons center" style="font-size:48px;color:#ffff">error</i>
+      </div>
+      <div  class= "modalMedio modalAbajo">
+        <p  class= "center">Ya tienes una cuenta</p>
+      </div>    
+    </div>
       `;
-    return exitoMensaje;
+    return correoExistent;
   },
 
   exito: () => {
     const exitoMensaje = `
-        <div class= "smsModal modalExito" id="modalExito">
-          <i class="fas fa-check-circle"></i>
-          <p>Revisa tu correo electrónico para confirmar registro.</p>
-        </div>
+    <div class= "smsModal modalError" >
+      <div class= "modalMedio modalArriba center">
+        <i class="material-icons center" style="font-size:48px;color:#ffff">error</i>
+      </div>
+      <div  class= "modalMedio modalAbajo">
+        <p  class= "center">Revisa tu correo electrónico para confirmar registro</p>
+      </div>    
+     </div>
       `;
     return exitoMensaje;
   },

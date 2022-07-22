@@ -91,6 +91,9 @@ export const registroCorreo = (selectorForm) => {
     const lastnameRegister = document.getElementById('idLastNameRegister').value;
     const emailRegister = document.getElementById('idEmailRegister').value;
     const passwordRegister = document.getElementById('idPasswordRegister').value;
+
+    const mostrarModal = document.getElementById('modalPadre');
+
     // registra el email y password autenticar
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {
@@ -106,20 +109,38 @@ export const registroCorreo = (selectorForm) => {
               'imagenes/portada.png',
             );
             //  alert('se registró el correo');
-            const modalExito = document.getElementById('modalPadre');
-            modalExito.innerHTML = modalRegistro.exito();
-            // window.location.hash = '#/registerPets';
+            mostrarModal.innerHTML = '';
+            mostrarModal.innerHTML = modalRegistro.exito();
+            mostrarModal.showModal();
+            setTimeout(() => {
+              mostrarModal.close();
+              window.location.hash = '#/login';
+            }, 5000);
           });
       })
       .catch((error) => {
-        const mostrarModal = document.getElementById('modalPadre');
-
         if (error.message === 'Firebase: Error (auth/invalid-email).') {
           mostrarModal.innerHTML = modalRegistro.correoInvalido();
           mostrarModal.showModal();
           setTimeout(() => {
             mostrarModal.close();
           }, 4000);
+        } else if (error.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalRegistro.contraseñaDebil();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        } else if (error.message === 'Firebase: Error (auth/email-already-exists).') {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalRegistro.correoExistente();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        } else {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = error;
         }
       });
   });
