@@ -98,6 +98,7 @@ export const registroCorreo = (selectorForm) => {
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log(userCredential);
         sendEmailVerificationUser()
           .then(() => {
             userRegisterBD(//  registro de usuario BD
@@ -132,15 +133,20 @@ export const registroCorreo = (selectorForm) => {
           setTimeout(() => {
             mostrarModal.close();
           }, 4000);
-        } else if (error.message === 'Firebase: Error (auth/email-already-exists).') {
+        } else if (error.code === 'auth/email-already-in-use') {
           mostrarModal.innerHTML = '';
           mostrarModal.innerHTML = modalRegistro.correoExistente();
+          mostrarModal.showModal();
           setTimeout(() => {
             mostrarModal.close();
           }, 4000);
         } else {
           mostrarModal.innerHTML = '';
-          mostrarModal.innerHTML = error;
+          mostrarModal.innerHTML = modalRegistro.error();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
         }
       });
   });

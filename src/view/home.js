@@ -2,14 +2,12 @@
 
 export default () => {
   const userInfo = localStorage.getItem('users');
-  console.log(userInfo);
   const userObject = JSON.parse(userInfo);
-  console.log(userObject.imgUsuario);
   /* const userLocal = objectsLocalStorage.userLocalStorage();
   console.log(userLocal); */
 
   const headerHomeTemplate = `
-        <div class="flex-direction divHeader navHeaderIcons">
+        <div class="flex-direction padd-05 space-around">
 
             <div class="divLogo">
                 <img src="./imagenes/logo-pets.png" alt="logo">      
