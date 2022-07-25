@@ -12,6 +12,8 @@ import {
   getUserBD,
 } from '../firebase/funcionesFirestore.js';
 
+import { modalLogin } from './modales.js';
+
 export default () => {
   const viewLoginTemplate = `        
  
@@ -65,7 +67,7 @@ export default () => {
               <span><img src="imagenes/google.png"></span>  Acceder con Google
             </button>
           </div>
-
+          <dialog id="modalPadre" class="row-center"></dialog>
           <div class="flex-direction space-around padd-05">
             <p>¿Aún no tienes una cuenta?</p>
             <a href="#/register">
@@ -92,31 +94,56 @@ export const iniciarSesion = (selectorForm) => {
     const emailLogin = document.getElementById('idEmailLogin').value;
     const passwordLogin = document.getElementById('idPasswordLogin').value;
 
+    const mostrarModal = document.getElementById('modalPadre');
+
     // metodo que reciba email y pass y que inicie sesion
     userLogin(emailLogin, passwordLogin)
       .then((userCredential) => {
       // Signed in
         const user = userCredential.user;
         if (!user.emailVerified) {
-          console.log(user);
-          alert('NO SE VERIFICÓ EL CORREO');
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalLogin.correoNoVerificado();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 5000);
         } else {
           window.location.hash = '#/home';
-          alert('logeado CORREO VERIFICADO');
         }
       // ...llamar const de agregar mascota
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('no se logeó', errorCode, errorMessage); // ..
+        if (error.code === 'auth/wrong-password') {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalLogin.passwordIncorrecto();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        } else if (error.code === 'auth/user-not-found') {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalLogin.correoNoExistente();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        } else {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalLogin.error();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        }
       });
   });
 
   //  inicio de sesión con cuenta de google
   const googleLogin = document.getElementById('idImgGoogle');
   googleLogin.addEventListener('click', () => {
-  //  implementar método de conexión
+    const mostrarModal = document.getElementById('modalPadre');
+    //  implementar método de conexión
     googleInicioSesion(proveedorGoogle)
       .then((userCredential) => {
         // un objeto para manipular los datos de google de cada usuario por medio del IUD
@@ -131,13 +158,17 @@ export const iniciarSesion = (selectorForm) => {
         });
 
         window.location.hash = '#/home';
-        console.log(`${user} inicó sesión desde google`);
       // ... REDIRIGIR A UNA VISTA
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert('no se logeó con GOOGLE', errorCode, errorMessage); // ..
+        if (error.code === 'auth/popup-closed-by-user') {
+          mostrarModal.innerHTML = '';
+          mostrarModal.innerHTML = modalLogin.error();
+          mostrarModal.showModal();
+          setTimeout(() => {
+            mostrarModal.close();
+          }, 4000);
+        }
       });
   });
 };

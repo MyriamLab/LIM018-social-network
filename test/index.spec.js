@@ -1,15 +1,15 @@
-// importamos la funcion que vamos a testear
-// eslint-disable-next-line no-unused-vars
-import { iniciarSesion } from '../src/view/login.js';
-import * as config from '../src/firebase/config.js';
+import { createUserWithEmailAndPassword } from '../src/firebase/config.js';
+import { userRegister } from '../src/firebase/funcionesAuth.js';
 
-jest.mock('../src/firebase/config.js');
+jest.myMock('../src/firebase/config.js');
 // eslint-disable-next-line no-console
-console.log(config);
 
-/*
-describe('createUserWithEmailAndPassword', () => {
+describe('register correo', () => {
   it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+    expect(typeof userRegister()).toBe('function');
   });
-}); */
+
+  it('Debería retornar un objeto email y pass', () => userRegister('elisabeth@gmail.com', '12345678').then((user) => {
+    expect(createUserWithEmailAndPassword(user, 'elisabeth@gmail.com', '12345678')).toBe('elisabeth@gmail.com', '12345678');
+  }));
+});

@@ -3,7 +3,7 @@ import formRegisters from './register.js';
 import formRegisterPets from './registerPets.js';
 import home from './home.js';
 import postCollection from './postCollection.js';
-import crearPost from './crearPost.js';
+import crearPos from './crearPost.js';
 //  import mensajeExito from './modalesMensajes.js';
 
 const components = {
@@ -12,7 +12,7 @@ const components = {
   registerPets: formRegisterPets,
   homeUser: home,
   postCollect: postCollection,
-  createPost: crearPost,
+  createPost: crearPos,
   // mensajeExito: modalesMensajes,
 };
 
