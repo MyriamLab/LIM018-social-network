@@ -16,24 +16,32 @@ export default () => {
   console.log(postObject);
 
   const postCollectionTemplate = `
-            <div class="">  
-                <div id="MainPost" class="flex-direction">
-                    <img src="${userObject.imgUsuario}" alt="foto de perfil del usuario">
-                    <div id="namePublic">
+            <div class="margin-t  padd-15">  
+                <div id="MainPost" class="flex-direction size-70">
+                    <img src="${userObject.imgUsuario}" alt="foto usuario">
+                    <div class="padd-05" id="namePublic">
                       <h2>${userObject.name}</h2>
-                      <p>Hola a todos</p>                      
+                      <p>¡Hola a todos!</p>                      
                     </div>
-                    <img src="#" alt="icono de menú">   
-                </div>
-              
-                <div>
-                  <img src="#" alt="icono like">
-                  <p>comentar</P>
-                  <img src="#" alt="icono de publico">
-                  <select>Publico</select>                  
-                 
-                </div>       
+                    
+          <textarea name="textarea" rows="4" cols="50">Comentar</textarea>
+                
             </div>
+            <div class=" m-label size-70" >
+               
+          <div class=" public flex-direction row-end " >
+            
+              <img src="#" alt="Foto">
+              <img src="#" alt="">
+              <select id="selectPublic">
+                <option>Público</option>
+                <option>Privado</option>
+              </select>
+           
+              <button id="buttonCrearPost">Comentar</button>
+            
+          </div>
+        </div> 
                      
             `;
   const PostCollectionElement = document.createElement('section');
