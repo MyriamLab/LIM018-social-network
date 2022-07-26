@@ -9,347 +9,399 @@ font-family: 'Roboto Slab', serif;
     src: url('fonts/RobotoFlex-Regular.ttf');
     
   } */
- 
 
-  :root {
-    --color-primario: #ff7878;
-    --color-secundario: #f4e1bc;
-    --color-terciario: #8ae2de;
-    --color-cuaternario: #352228;
-  }
-  
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  
-  body {
-    background-color: var(--color-secundario);
-    /* font-family: "Roboto Flex"; */
-    font-family: "Roboto Slab", serif;
-  }
-  
-  h3 {
-    font-family: "Roboto Slab", serif;
-    font-size: 2em;
-    color: var(--color-cuaternario);
-    padding-top: 1.5em;
-  }
-  
-  p {
-    font-family: var(--font-secundaria);
-    font-size: 0.8em;
-    color: var(--color-cuaternario);
-  }
-  
-  input {
-    width: 100%;
-    /*height: 2.5em;*/
-    padding: 0.9em 1em;
-    /* margin: 0.5em;*/
-    margin: auto;
-    border-radius: 8px;
-    border: none;
-  }
-  
-  button {
-    width: 100%;
-    height: 2em;
-    /* font-family: "Roboto Flex"; */
-    font-family: "Roboto Slab", serif;
-    font-size: 1.2em;
-    color: #ffff;
-    background-color: var(--color-primario);
-    border-radius: 0.5em;
-    padding: 0.3em;
-    border: none;
-    cursor: pointer;
-    margin-top: 2em;
-  }
-  figure {
-    position: absolute;
-    top: 4.5em;
-    width: 60%;
-    right: 20%;
-  }
-  
-  figure img {
-    width: 6em;
-    top: 4%;
-  }
-  #account{
-    width: 60%; 
-  }
-  
-  #idImgGoogle {
-    background-color: #FFFFFF;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 1em;
-    margin-bottom: 2em;
-    width: 80%;
-  }
-  
-  span img {
-    width: 8%;
-    margin-right: 1em;
-  }
-  
-  /*********CLASES GLOBALES********/
-  
-  .padd-05 {
-    padding: 0.5em;
-  }
-  /*antes .socialmedia*/
-  .group {
-    display: block;
-  }
-  
-  .m-label {
-    margin: 1em 0 1em 0;
-  }
-  
-  .flex-direction {
-    display: flex;
-  }
-  
-  .center {
-    text-align: center;
-  }
-  
-  .row-center {
-    justify-content: center;
-  }
-  
-  .space-around {
-    justify-content:space-around;
-  }
-  
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-  
-  /*LOGIN*/
-  
-  .divForm {
-    /*padre de los dos*/
-    background-color: var(--color-secundario);
-    width: 100%;
-    height: 100%;
-  }
-  
-  .divLogo {
-    width: 3.8em;
-    margin-left: 1em;
-  }
+:root {
+  --color-primario: #ff7878;
+  --color-secundario: #f4e1bc;
+  --color-terciario: #8ae2de;
+  --color-cuaternario: #352228;
+}
 
-  .divLogo img {
-    width: 100%;
-    height: 100%;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
+body {
+  background-color: var(--color-secundario);
+  /* font-family: "Roboto Flex"; */
+  font-family: "Roboto Slab", serif;
+}
 
-  .divContainerImgForm {
-    width: 100%;
-    max-height: 100%;
-  }
-  
-  .divImgLogin {
-    /*div hijo izquierda*/
+h2,
+h3,
+p {
+  color: var(--color-cuaternario);
+}
+
+h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 1em;
+}
+h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 2em;
+
+  padding-top: 1.5em;
+}
+
+p {
+  font-family: var(--font-secundaria);
+  font-size: 0.8em;
+}
+
+input {
+  width: 100%;
+  /*height: 2.5em;*/
+  padding: 0.9em 1em;
+  /* margin: 0.5em;*/
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  height: 2em;
+  /* font-family: "Roboto Flex"; */
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2em;
+  color: #ffff;
+  background-color: var(--color-primario);
+  border-radius: 0.5em;
+  padding: 0.3em;
+  border: none;
+  cursor: pointer;
+  margin-top: 2em;
+}
+
+#buttonCrearPost,
+#selectPublic {
+  width: 18%;
+  margin: 0 3% 0 3%;
+}
+
+figure {
+  position: absolute;
+  top: 4.5em;
+  width: 60%;
+  right: 20%;
+}
+
+figure img {
+  width: 6em;
+  top: 4%;
+}
+#account {
+  width: 60%;
+}
+
+#idImgGoogle {
+  background-color: #ffffff;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 80%;
+}
+
+span img {
+  width: 8%;
+  margin-right: 1em;
+}
+
+/*********CLASES GLOBALES********/
+
+.padd-05 {
+  padding: 0.5em;
+}
+
+.padd-15 {
+  padding: 1.5em;
+}
+
+.margin-t {
+  margin-top: 2.5em;
+}
+/*antes .socialmedia*/
+.group {
+  display: block;
+}
+
+.m-label {
+  margin: 1em 0 1em 0;
+}
+
+.flex-direction {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.row-center {
+  justify-content: center;
+}
+.row-end {
+  justify-content: flex-end;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.size-70 {
+  width: 70%;
+}
+/*muro*/
+.imgSize {
+  width: 85%;
+  height: 4.5em;
+}
+
+.header {
+  background-color: var(--color-primario);
+}
+
+.header .divLogo {
+  width: 8%;
+  height: 5%;
+}
+
+.header div:nth-child(2) {
+  margin-top: 2.8%;
+}
+
+.header div:nth-child(1),
+div:nth-child(3),
+div:nth-child(4),
+div:nth-child(5) {
+  margin-top: 1em;
+}
+
+/********** VISTA LOGIN *********/
+
+.divForm {
+  /*padre de los dos*/
+  background-color: var(--color-secundario);
+  width: 100%;
+  height: 100%;
+}
+
+.divLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.divContainerImgForm {
+  width: 100%;
+  max-height: 100%;
+}
+
+.divImgLogin {
+  /*div hijo izquierda*/
   flex-direction: column;
-  align-items:stretch ;
+  align-items: stretch;
   width: 50%;
+}
+
+.divImgLogin img {
+  width: 100%;
+  height: 100%;
+}
+
+.divFormLogin {
+  /*div hijo derecha */
+  background-color: var(--color-terciario);
+  width: 50%;
+  height: auto;
+  position: relative;
+  padding: 4em 0 3em 0;
+}
+
+.form-container {
+  background-color: var(--color-terciario); /*aqui colocamos #cee5d0;*/
+  width: 60%;
+  margin: auto;
+  margin-bottom: 3em;
+  margin-top: 3em;
+  border-radius: 1em;
+  padding: 2.8em 0 3em 0;
+}
+
+.formLogin {
+  width: 90%;
+  margin: auto;
+  padding: 1em;
+}
+
+.divPaswwordImg {
+  position: absolute;
+  top: 0.4em;
+  left: 80%;
+}
+
+.divPaswwordImg img {
+  padding: 0.5em;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+/******* Vista RegisterPets ********/
+
+.divContainerRegisterPets {
+  /*padre*/
+  display: flex;
+  width: 100%;
+  background-color: #f6e3be; /*blue*/
+}
+
+.divRegisterPets {
+  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
+  width: 50%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.divRegisterPets h3 {
+  padding: 1em;
+  margin: auto;
+  background-color: #8ae2de;
+}
+
+.divRegisterPets figure img {
+  padding: 0.5em;
+  width: 30%;
+  height: 20%;
+  top: 2%;
+}
+
+.divFormPets {
+  background-color: #8ae2de;
+  width: 90%;
+  margin: auto;
+}
+
+.groupPets {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.groupPets input,
+textarea,
+select {
+  width: 85%;
+  height: 70%;
+  padding: 0.7em;
+  margin: 0.5em;
+  border-radius: 8px;
+  border: none;
+}
+
+.buttonsRegister {
+  display: flex;
+  padding: 0.5em;
+  margin: 1em;
+  margin-bottom: 5.5em;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* MODALES DE REGISTRO */
+#modalPadre {
+  z-index: 10;
+  position: fixed;
+  top: 40%;
+  left: 65%;
+  width: 15em;
+  border: none;
+  height: 8em;
+  padding: 0;
+  flex-direction: column;
+}
+.modalMedio {
+  width: 100%;
+  height: 50%;
+  padding: 1em 0.5em 0.5em 0.5em;
+}
+.modalArriba {
+  background-color: var(--color-primario);
+}
+.modalAbajo {
+  background-color: #ffffff;
+  /* padding: 0.5em 0.3em 0 1.5em; */
+}
+
+/******** HEADER DEL MURO **********/
+
+/****************** MEDIA QUERIES ************************************/
+
+@media (max-width: 800px) {
+  .divImgLogin {
+    display: none;
   }
-  
-  .divImgLogin img {
-    width: 100%;
-    height: 100%;
+
+  .divFormLogin {
+    width: 70%;
+    margin: auto;
   }
-  
+  #modalPadre {
+    left: 35%;
+  }
+}
+
+@media (max-width: 420px) {
+  /* VISTA LOGIN*/
+  .divContainerImgForm {
+    background-color: var(--color-terciario);
+  }
+
+  .divImgLogin {
+    display: none;
+  }
+
   .divFormLogin {
     /*div hijo derecha */
-    background-color: var(--color-terciario);
-    width: 50%;
-    height: auto;
-    position: relative;
-    padding: 4em 0 3em 0;
-
+    width: 100%;
   }
-  
- 
+
   .form-container {
-    background-color: var(--color-terciario); /*aqui colocamos #cee5d0;*/
-    width: 60%;
-    margin: auto;
-    margin-bottom: 3em;
-    margin-top: 3em;
-    border-radius: 1em;
-    padding: 2.8em 0 3em 0;
-  }
-  
-  .formLogin {
-    width: 90%;
-    margin: auto;
-    padding: 1em;
-  }
-  
-  .divPaswwordImg {
-    position: absolute;
-    top: 0.4em;
-    left: 80%;
-  }
-  
-  .divPaswwordImg img {
-    padding: 0.5em;
-    width: 2.5em;
-    height: 2.5em;
-  }
-  
-  /******* Vista RegisterPets ********/
-  
-  .divContainerRegisterPets {
-    /*padre*/
-    display: flex;
     width: 100%;
-    background-color: #f6e3be; /*blue*/
   }
-  
+
+  figure {
+    width: 90%;
+    right: 5%;
+  }
+
+  /*registrar *********/
   .divRegisterPets {
-    background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
-    width: 50%;
-    margin: auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
-  
-  .divRegisterPets h3 {
-    padding: 1em;
-    margin: auto;
-    background-color: #8ae2de;
-  }
-  
-  .divRegisterPets figure img {
-    padding: 0.5em;
-    width: 30%;
-    height: 20%;
-    top: 2%;
-  }
-  
-  .divFormPets {
-    background-color: #8ae2de;
     width: 90%;
-    margin: auto;
   }
-  
-  .groupPets {
-    margin-top: 1em;
-    text-align: center;
-  }
-  
-  .groupPets input,
-  textarea,
-  select {
-    width: 85%;
-    height: 70%;
-    padding: 0.7em;
-    margin: 0.5em;
-    border-radius: 8px;
-    border: none;
-  }
-  
+
   .buttonsRegister {
-    display: flex;
-    padding: 0.5em;
-    margin: 1em;
-    margin-bottom: 5.5em;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: space-between;
   }
-  
-   /* MODALES DE REGISTRO */
-  #modalPadre{
-    z-index: 10;
-    position: fixed;
-    top:40%;
-    left: 65%;
-    width: 15em;
-    border: none;    
-    height: 8em; 
-    padding:0;
-    flex-direction: column;
 
-  }  
-  .modalMedio{
-    width: 100%;
-    height: 50%;
-    padding: 1em 0.5em 0.5em 0.5em;
+  .buttonsRegister button:first-child {
+    margin-right: 1em;
   }
- .modalArriba{
-  background-color:var(--color-primario);
- }
-  .modalAbajo{
-    background-color: #FFFFFF;
-    /* padding: 0.5em 0.3em 0 1.5em; */
-   }
-  
-  /****************** MEDIA QUERIES ************************************/
-   
-  @media (max-width: 800px){
-   
-    .divImgLogin {
-     display: none;
-    }
+  #modalPadre {
+    left: 20%;
+  }
 
-    .divFormLogin {
-      width: 70%;
-      margin: auto;
-    }
-    #modalPadre{
-      left: 35%;    
-  
-    }
+  /* VISTA MURO */
+  .divLogo {
+    display: none;
+  }
 
-  }
-  
-  @media (max-width: 420px) {
-    /* login */
-    .divContainerImgForm {
-      background-color: var(--color-terciario);
-    }
-  
-    .divImgLogin {
-      display: none;
-    }
-  
-    .divFormLogin {
-      /*div hijo derecha */
-      width: 100%;
-    }
-  
-    .form-container {
-      width: 100%;
-    }
-  
-    figure {
-      width: 90%;
-      right: 5%;
-    }
-  
-    /*registrar *********/
-    .divRegisterPets {
-      width: 90%;
-    }
-  
-    .buttonsRegister {
-      justify-content: space-between;
-    }
-  
-    .buttonsRegister button:first-child {
-      margin-right: 1em;
-    }
-    #modalPadre{
-      left: 20%;    
-  
-    }
-  }
- 
+  /*div:nth-child(2){
+    display: none;
+  }*/
+}

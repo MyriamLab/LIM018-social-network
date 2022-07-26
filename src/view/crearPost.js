@@ -4,24 +4,33 @@ export default () => {
   const userInfo = localStorage.getItem('users');
   const userObject = JSON.parse(userInfo);
   const crearPostTemplate = `
-          <div class="">  
-              <div id="MainPost" class="flex-direction">
+          <div class="padd-15">  
+              <div  id="MainPost" class="flex-direction size-70">
+
+                <div>
                   <img src="${userObject.imgUsuario}" alt="foto de perfil del usuario">
+
                   <div id="namePublic" class="">
-                    <h2>${userObject.name}</h2>
-                    <img src="#" alt="icono de publico">
-                    <select>
-                      <option>público</option>
-                      <option>privado</option>
-                    </select>
-                  </div>   
+                    <h2>${userObject.name}</h2> 
+                  </div>  
+                </div> 
+
+                <textarea id="idPostTextarea" name="textarea" rows="4" cols="50">¿Qué estás pensando ${userObject.name}?</textarea>
+    
               </div>
             
-              <div>
-                <textarea id="idPostTextarea" placeholder="¿Quieres compartir algo?"></textarea>
-                <div>
-                    <img src="#" alt="cargar foto">
+              <div class=" size-70" >
+               
+                <div class=" public flex-direction row-end " >
+                    <img src="#" alt="Foto">
+                    <img src="#" alt="">
+                    <select id="selectPublic">
+                      <option>Público</option>
+                      <option>Privado</option>
+                    </select>
+                 
                     <button id="buttonCrearPost">Publicar</button>
+                  
                 </div>
               </div>       
           </div>

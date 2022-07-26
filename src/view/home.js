@@ -7,36 +7,34 @@ export default () => {
   console.log(userLocal); */
 
   const headerHomeTemplate = `
-        <div class="flex-direction padd-05 space-around">
+        <div class="header flex-direction padd-05 space-around">
 
             <div class="divLogo">
-                <img src="./imagenes/logo-pets.png" alt="logo">      
+                <img class="imgSize" src="./imagenes/logo-pets.png" alt="logo">      
             </div>
 
             <div>
-                <input placeholder="search">
-            </div>       
+            <input placeholder="Buscar amigos">
+            </div>
+
             
             <div>
-                <img src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">
+                <img class="imgSize center" src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">
             </div>
             
             <div>
-                <img src="./imagenes/amigos.png" id="imgFriends"class=titulo-header" alt="amigos">
+                <img class="imgSize" src="./imagenes/amigos.png" id="imgFriends"class=titulo-header" alt="amigos">
             </div>
             
             <div>
-                <img src="./imagenes/pets.png" id="imgPets"class=titulo-header" alt="home mascotas">
+                <img class="imgSize" src="./imagenes/pets.png" id="imgPets"class=titulo-header" alt="home mascotas">
             </div>
             
             <div class="enlacePerfil">
-                <a href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"></a>
+                <a imgSize href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"></a>
                 <p>${userObject.name}</p>              
             </div>
 
-            <div>
-               <img id="cerrar-sesion" src="imagenes/menu.png">
-            </div>
         </div>
         <div>
         </div>
