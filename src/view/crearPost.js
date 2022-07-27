@@ -19,7 +19,7 @@ export default () => {
     
               </div>
             
-              <div class=" size-70" >
+              <div class="size-70" >
                
                 <div class=" public flex-direction row-end " >
                     <img src="#" alt="Foto">

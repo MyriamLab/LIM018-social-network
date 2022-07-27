@@ -64,7 +64,7 @@ export default () => {
 
           <div>
             <button id="idImgGoogle">
-              <span><img src="imagenes/google.png"></span>  Acceder con Google
+              <span ><img src="imagenes/google.png">Acceder con Google </span> 
             </button>
           </div>
           <dialog id="modalPadre" class="row-center"></dialog>

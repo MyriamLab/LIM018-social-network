@@ -132,6 +132,7 @@ span img {
   margin: 1em 0 1em 0;
 }
 
+
 .flex-direction {
   display: flex;
 }
@@ -173,16 +174,21 @@ span img {
   height: 5%;
 }
 
-.header div:nth-child(2) {
-  margin-top: 2.8%;
-}
-
 .header div:nth-child(1),
 div:nth-child(3),
 div:nth-child(4),
 div:nth-child(5) {
   margin-top: 1em;
 }
+
+.header div:nth-child(2) {
+  margin-top: 2.8%;
+}
+
+#MainPost{
+  background-color: white;
+}
+
 
 /********** VISTA LOGIN *********/
 
