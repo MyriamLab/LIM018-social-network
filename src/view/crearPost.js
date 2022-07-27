@@ -1,4 +1,5 @@
 import { createPost } from '../firebase/funcionesFirestore.js';
+import { mostrarPost } from './postCollection.js';
 
 export default () => {
   const userInfo = localStorage.getItem('users');
@@ -34,8 +35,7 @@ export default () => {
                 </div>
               </div>       
           </div>
-          <div class = "postDiv">
-          </div>
+          <div id = "post-container"></div>
                    
           `;
   const crearPostElement = document.createElement('section');
@@ -56,6 +56,6 @@ export const crearPost = (idButton) => {
     //  llamar al método crear post
     //  createPost = (uid, post, datePost, state)
     createPost(userObject.uid, post, '', '');
-    console.log('éxito');
   });
+  mostrarPost('post-container');
 };

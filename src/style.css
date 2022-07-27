@@ -176,13 +176,13 @@ span img {
 .header div:nth-child(2) {
   margin-top: 2.8%;
 }
-
+/* 
 .header div:nth-child(1),
 div:nth-child(3),
 div:nth-child(4),
 div:nth-child(5) {
   margin-top: 1em;
-}
+} */
 
 /********** VISTA LOGIN *********/
 
