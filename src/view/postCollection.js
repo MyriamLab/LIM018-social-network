@@ -1,4 +1,4 @@
-import { getPostBD } from '../firebase/funcionesFirestore.js';
+import { getPostBD, deletePost } from '../firebase/funcionesFirestore.js';
 
 export default () => {
   const userInfo = localStorage.getItem('users');
@@ -27,9 +27,16 @@ export const mostrarPost = async (idPostContainer) => {
       html += `
             <div> 
                 <p>${data.post}</p>
+                <button class = 'btn-delete-post' data-id = "${doc.id}">Delete</button>
             </div>                    
         `;
     });
     postContainer.innerHTML = html;
+    const btnDelete = postContainer.querySelectorAll('.btn-delete-post');
+    btnDelete.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        deletePost(event.target.dataset.id);// el target saca el id
+      });
+    });
   });
 };
