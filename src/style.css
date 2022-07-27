@@ -174,12 +174,19 @@ span img {
   height: 5%;
 }
 
+<<<<<<< HEAD
+=======
+.header div:nth-child(2) {
+  margin-top: 2.8%;
+}
+/* 
+>>>>>>> 9b792df6a393c6ab6ace614bcb87d293c83a3ff7
 .header div:nth-child(1),
 div:nth-child(3),
 div:nth-child(4),
 div:nth-child(5) {
   margin-top: 1em;
-}
+} */
 
 .header div:nth-child(2) {
   margin-top: 2.8%;

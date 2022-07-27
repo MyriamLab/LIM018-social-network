@@ -98,7 +98,6 @@ export const registroCorreo = (selectorForm) => {
     userRegister(emailRegister, passwordRegister)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(userCredential);
         sendEmailVerificationUser()
           .then(() => {
             userRegisterBD(//  registro de usuario BD

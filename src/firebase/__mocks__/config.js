@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const createUserWithEmailAndPassword = () => new Promise((resolve) => {
   resolve(
     {
@@ -20,3 +21,10 @@ export default jest.fn(() => createUserWithEmailAndPassword);
 // resolve({user:'élcorreo'})
 // })
 //  .reject para catch  document.html.innerHTML = "<div></div>"
+=======
+export const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve());
+export const signInWithEmailAndPassword = jest.fn(() => Promise.resolve());
+export const signInWithPopup = jest.fn(() => Promise.resolve());
+export const sendEmailVerification = jest.fn(() => Promise.resolve());
+// jest.fn --> falsa función
+>>>>>>> 9b792df6a393c6ab6ace614bcb87d293c83a3ff7

@@ -7,6 +7,7 @@ import {
   addDoc,
   collection,
   onSnapshot,
+  deleteDoc,
 } from './config.js';
 
 export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
@@ -39,3 +40,5 @@ export const getPostBD = (documento) => {
   const dataPost = onSnapshot(collection(db, 'post'), (documento));
   return dataPost;
 };
+
+export const deletePost = (id) => deleteDoc(doc(db, 'post', id));

@@ -32,7 +32,8 @@ const changeView = (route) => {
       container.appendChild(components.homeUser());
       container.appendChild(components.createPost());
       crearPost('buttonCrearPost');
-      container.appendChild(components.postCollect());
+      // mostrarPost('post-container');
+      // container.appendChild(components.postCollect());
       break;
       //    rompe el ciclo, y retorna solo el form de login
     }
