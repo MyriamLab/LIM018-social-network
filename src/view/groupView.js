@@ -1,16 +1,18 @@
 import formLogin from './login.js';
 import formRegisters from './register.js';
 import formRegisterPets from './registerPets.js';
-import home from './home.js';
+import header from './home.js';
 import crearPos from './crearPost.js';
+import asideHome from './aside.js';
 //  import mensajeExito from './modalesMensajes.js';
 
 const components = {
   login: formLogin,
   register: formRegisters,
   registerPets: formRegisterPets,
-  homeUser: home,
+  headerNet: header,
   createPost: crearPos,
+  aside: asideHome,
   // mensajeExito: modalesMensajes,
 };
 

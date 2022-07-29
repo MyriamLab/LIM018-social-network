@@ -117,6 +117,7 @@ span img {
 
 .padd-15 {
   padding: 1.5em;
+  background-color:#ffffff;
 }
 
 .margin-t {
@@ -157,7 +158,11 @@ span img {
 .size-70 {
   width: 70%;
 }
-/*muro*/
+/******** CONTENEDOR PRINCIPAL **********/
+main{
+  display: flex;
+}
+/*****************muro**********/
 .imgSize {
   width: 85%;
   height: 4.5em;
@@ -337,6 +342,11 @@ select {
   /* padding: 0.5em 0.3em 0 1.5em; */
 }
 
+/******** ASIDE **********/
+.containerAside{
+  background-color: var(--color-terciario);
+  padding: 2em;
+}
 /******** HEADER DEL MURO **********/
 
 /****************** MEDIA QUERIES ************************************/

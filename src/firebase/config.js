@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   sendEmailVerification,
+  signOut,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
@@ -72,4 +73,5 @@ export {
   deleteDoc,
   serverTimestamp,
   updateDoc,
+  signOut,
 };

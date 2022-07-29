@@ -1,4 +1,5 @@
 //  import objectsLocalStorage from '../firebase/funcionesLocalStorage.js';
+import { singOut } from '../firebase/funcionesAuth.js';
 
 export default () => {
   const userInfo = localStorage.getItem('users');
@@ -34,15 +35,27 @@ export default () => {
                 <a imgSize href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"></a>
                 <p>${userObject.name}</p>              
             </div>
-
+            <div>
+                <button id="btnCerrarSesion">Cerrar Sesión</button>
+            </div>
         </div>
-        <div>
-        </div>
+       
                  
         `;
-  const headerElement = document.createElement('header');
+  const headerElement = document.createElement('section');
   headerElement.setAttribute('class', 'headerSec');
   headerElement.innerHTML = headerHomeTemplate;
 
   return headerElement;
+};
+
+export const cerrarSesion = (btnCerrarSesion) => {
+  document.getElementById(btnCerrarSesion).addEventListener('click', () => {
+    singOut().then(() => {
+      // Sign-out successful.
+      window.location.hash = '#/login';
+    }).catch(() => {
+
+    });
+  });
 };

@@ -1,5 +1,7 @@
 /* eslint-disable no-use-before-define */
-import { getPostBD, deletePost, getPostEdit, updatePost } from '../firebase/funcionesFirestore.js';
+import {
+  getPostBD, deletePost, getPostEdit, updatePost,
+} from '../firebase/funcionesFirestore.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 
 const dataUser = objectsLocalStorage();
@@ -97,7 +99,6 @@ const templateEditModal = (newPost) => {
   return editModalContent;
 };
 
-
 function actualizarPost(contenedorPost) {
   const btnEdit = contenedorPost.querySelector('#update-post');
   const postUser = document.querySelectorAll('.postByUser');
@@ -122,5 +123,3 @@ function actualizarPost(contenedorPost) {
     });
   });
 }
-
-

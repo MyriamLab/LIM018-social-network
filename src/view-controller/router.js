@@ -2,9 +2,11 @@ import { components } from '../view/groupView.js';
 import { registroCorreo } from '../view/register.js';
 import { iniciarSesion } from '../view/login.js';
 import { crearPost } from '../view/crearPost.js';
+import { cerrarSesion } from '../view/home.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
+  const header = document.querySelector('#headerContainer');
   container.innerHTML = '';
   // const headerContainer = document.querySelector('header');
 
@@ -29,7 +31,9 @@ const changeView = (route) => {
       //    rompe el ciclo, y retorna solo el form de login
     }
     case '#/home': {
-      container.appendChild(components.homeUser());
+      header.appendChild(components.headerNet());
+      cerrarSesion('btnCerrarSesion');
+      container.appendChild(components.aside());
       container.appendChild(components.createPost());
       crearPost('buttonCrearPost');
       // mostrarPost('post-container');

@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  signOut,
 } from './config.js';
 
 // eslint-disable-next-line max-len
@@ -18,3 +19,5 @@ export const googleInicioSesion = (proveedor) => signInWithPopup(auth, proveedor
 
 // verificación por correo
 export const sendEmailVerificationUser = () => sendEmailVerification(auth.currentUser);
+
+export const singOut = () => signOut(auth);
