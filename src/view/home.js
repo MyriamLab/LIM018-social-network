@@ -32,7 +32,7 @@ export default () => {
             </div>
             
             <div class="enlacePerfil">
-                <a imgSize href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"></a>
+                <a imgSize href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"  width="50px"></a>
                 <p>${userObject.name}</p>              
             </div>
             <div>
@@ -54,6 +54,7 @@ export const cerrarSesion = (btnCerrarSesion) => {
     singOut().then(() => {
       // Sign-out successful.
       window.location.hash = '#/login';
+      document.getElementById('headerContainer').style.display = 'none';
     }).catch(() => {
 
     });

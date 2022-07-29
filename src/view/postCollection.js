@@ -24,7 +24,7 @@ function TemplateViewPost(
       </div>
       <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}"></div>
         <p> ${contentPost} </p>   
-        <img src='${urlImg}'>
+        <img src='${urlImg}' width="50px">
       <div id="containerDelete"></div>
       <dialog id="modalUpdatePost" class="row-center"></dialog>`;
   return postCollectionTemplate;
@@ -113,6 +113,7 @@ function actualizarPost(contenedorPost) {
         modalUpdate.showModal();
         modalUpdate.querySelector('#saveUpdate').addEventListener('click', () => {
           const newTextPost = document.querySelector('#inputUpdatedText').value;
+          console.log(newTextPost);
           updatePost(post.id, {
             contentPost: newTextPost,
           });

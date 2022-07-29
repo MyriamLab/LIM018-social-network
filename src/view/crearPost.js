@@ -1,17 +1,18 @@
 import { createPost } from '../firebase/funcionesFirestore.js';
 import { mostrarPost } from './postCollection.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
+import { cargarImg } from '../firebase/funcionesStorage.js';
 // <img src="../imagenes/galeria.png" alt="imagen de galeria"  width ="30px"  >
 
 const userDate = objectsLocalStorage();
 
 export default () => {
   const crearPostTemplate = `
-        <div class="padd-15">
+        <div>
 
               <div  id="MainPost" class="flex-direction size-70">
                 <div>
-                  <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario">
+                  <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario"  width="50px">
                   <div id="namePublic" class="">
                     <h2>${userDate.name}</h2> 
                   </div>  
@@ -22,7 +23,7 @@ export default () => {
             
               <div class="size-70" >  
                 <input id="cargarImg" type="file">
-                <img id = "imgLoad" src="" height="200" alt="Image preview...">            
+                <img id = "imgLoad" src="" height="200" alt="Image preview..."  >            
                 <div class="public flex-direction row-end" >                                     
                     <select id="status">
                       <option value="publico"> &#127758; Público</option>
@@ -45,29 +46,36 @@ export default () => {
 
 export const crearPost = (idButton) => {
   const idButtonPost = document.getElementById(idButton);
-  idButtonPost.addEventListener('click', () => {
+
+  const inputImg = document.getElementById('cargarImg');
+  inputImg.addEventListener('change', previewFile);
+  
+  idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
-
+    const file = document.querySelector('input[type=file]').files[0];
+    console.log(file);
+    const imgPost = await cargarImg(file.name, file);
     // llamar al método crear post
 
-    createPost(userDate.uid, contentPost, 'urlImg', userDate.name, userDate.imgUsuario, status);
+    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
   });
   mostrarPost('post-container');
 };
 
-// function previewFile() {
-//   const preview = document.querySelector('img');
-//   const file = document.querySelector('input[type=file]').files[0];
-//   const reader = new FileReader();
+function previewFile() {
+  const preview = document.querySelector('#imgLoad');
+  console.log(preview);
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
 
-//   reader.addEventListener('load', () => {
-//     // convierte la imagen a una cadena en base64
-//     preview.src = reader.result;
-//   }, false);
+  reader.addEventListener('load', () => {
+    // convierte la imagen a una cadena en base64
+    preview.src = reader.result;
+  }, false);
 
-//   if (file) {
-//     reader.readAsDataURL(file);
-//   }
-// }
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}

@@ -345,10 +345,27 @@ select {
 /******** ASIDE **********/
 .containerAside{
   background-color: var(--color-terciario);
+  padding: 1em;
+  
+}
+
+#contImg{
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+#imgUser {
+  position: absolute;
+}
+
+/******** POST **********/
+#post-container{
+  background-color: rgb(159, 214, 159);
+  width: 100%;
   padding: 2em;
 }
-/******** HEADER DEL MURO **********/
-
 /****************** MEDIA QUERIES ************************************/
 
 @media (max-width: 800px) {

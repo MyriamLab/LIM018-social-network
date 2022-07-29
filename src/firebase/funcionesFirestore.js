@@ -12,11 +12,10 @@ import {
   serverTimestamp,
 } from './config.js';
 
-export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
+export const userRegisterBD = async (uid, email, name, imgUsuario, imgPortada) => {
   await setDoc(doc(db, 'users', uid), {
     email,
     name,
-    lastname,
     imgUsuario,
     imgPortada,
   });

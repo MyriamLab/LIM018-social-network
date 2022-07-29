@@ -1,5 +1,5 @@
 import { userRegister, sendEmailVerificationUser } from '../firebase/funcionesAuth.js';
-import { userRegisterBD } from '../firebase/funcionesFirestore.js';
+import { userRegisterBD, getUserBD } from '../firebase/funcionesFirestore.js';
 // eslint-disable-next-line import/no-cycle
 //  import { components } from './groupView.js';
 import { modalRegistro } from './modales.js';
@@ -26,19 +26,11 @@ export default () => {
       
       <h3 class="center">Regístrate</h3>
       <form class="formLogin" id="formRegister">
-        <label class="group m-label">Nombre</label>
+        <label class="group m-label">Nombre Completo</label>
         <input
           id="idNameRegister"
           type="text"
           placeholder="Ej: María"
-          required
-        />
-
-        <label class="group m-label">Apellido</label>
-        <input
-          id="idLastNameRegister"
-          type="text"
-          placeholder="Ej: Flores"
           required
         />
 
@@ -88,7 +80,6 @@ export const registroCorreo = (selectorForm) => {
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
     const nameRegister = document.getElementById('idNameRegister').value;
-    const lastnameRegister = document.getElementById('idLastNameRegister').value;
     const emailRegister = document.getElementById('idEmailRegister').value;
     const passwordRegister = document.getElementById('idPasswordRegister').value;
 
@@ -104,9 +95,8 @@ export const registroCorreo = (selectorForm) => {
               user.uid,
               emailRegister,
               nameRegister,
-              lastnameRegister,
               'imagenes/usuario.png',
-              'imagenes/portada.png',
+              'imagenes/portada.jpg',
             );
             //  alert('se registró el correo');
             mostrarModal.innerHTML = '';
@@ -114,6 +104,13 @@ export const registroCorreo = (selectorForm) => {
             mostrarModal.showModal();
             setTimeout(() => {
               mostrarModal.close();
+              getUserBD(user.uid).then((userData) => {
+                const data = userData;
+                const uidUser = user.uid;
+                data.uid = uidUser;
+                //  guardando datos en el localstorage
+                localStorage.setItem('users', JSON.stringify(data));
+              });
               window.location.hash = '#/login';
             }, 5000);
           });
