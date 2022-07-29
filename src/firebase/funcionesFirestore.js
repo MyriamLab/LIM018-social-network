@@ -8,6 +8,8 @@ import {
   collection,
   onSnapshot,
   deleteDoc,
+  updateDoc,
+  serverTimestamp,
 } from './config.js';
 
 export const userRegisterBD = async (uid, email, name, lastname, imgUsuario, imgPortada) => {
@@ -26,12 +28,15 @@ export const getUserBD = (uid) => {
   return dataUser;
 };
 
-export const createPost = async (uid, post, datePost, state) => {
+export const createPost = async (idUser, contentPost, urlImg, userName, userImg, status) => {
   await addDoc(collection(db, 'post'), {
-    uid,
-    post,
-    datePost,
-    state,
+    idUser,
+    contentPost,
+    urlImg,
+    userName,
+    userImg,
+    status,
+    time: serverTimestamp(),
   });
 };
 
@@ -42,3 +47,6 @@ export const getPostBD = (documento) => {
 };
 
 export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
+
+export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
+export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);

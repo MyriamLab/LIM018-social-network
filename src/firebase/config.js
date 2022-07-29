@@ -21,6 +21,8 @@ import {
   getDocs,
   onSnapshot,
   deleteDoc,
+  serverTimestamp,
+  updateDoc,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
@@ -68,4 +70,6 @@ export {
   getDocs,
   onSnapshot,
   deleteDoc,
+  serverTimestamp,
+  updateDoc,
 };

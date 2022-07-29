@@ -1,22 +1,24 @@
 import { createPost } from '../firebase/funcionesFirestore.js';
 import { mostrarPost } from './postCollection.js';
+import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
+
+const userDate = objectsLocalStorage();
 
 export default () => {
-  const userInfo = localStorage.getItem('users');
-  const userObject = JSON.parse(userInfo);
   const crearPostTemplate = `
           <div class="padd-15">  
               <div  id="MainPost" class="flex-direction size-70">
 
                 <div>
-                  <img src="${userObject.imgUsuario}" alt="foto de perfil del usuario">
+                  <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario">
 
                   <div id="namePublic" class="">
-                    <h2>${userObject.name}</h2> 
+                    <h2>${userDate.name}</h2> 
                   </div>  
                 </div> 
 
-                <textarea id="idPostTextarea" name="textarea" rows="4" cols="50">¿Qué estás pensando ${userObject.name}?</textarea>
+                <textarea id = "idPostTextarea" name="textarea"
+                placeholder = "¿Quieres contarnos algo...?"></textarea>
     
               </div>
             
@@ -31,6 +33,7 @@ export default () => {
                     </select>
                  
                     <button id="buttonCrearPost">Publicar</button>
+                    <button>Cancelar</button>
                   
                 </div>
               </div>       
@@ -46,16 +49,10 @@ export default () => {
 };
 
 export const crearPost = (idButton) => {
-  const userInfo = localStorage.getItem('users');
-  const userObject = JSON.parse(userInfo);
-
   const idButtonPost = document.getElementById(idButton);
   idButtonPost.addEventListener('click', () => {
-    const post = document.getElementById('idPostTextarea').value;
-
-    //  llamar al método crear post
-    //  createPost = (uid, post, datePost, state)
-    createPost(userObject.uid, post, '', '');
+    const contentPost = document.getElementById('idPostTextarea').value;
+    createPost(userDate.uid, contentPost, 'urlImg', userDate.name, userDate.imgUsuario, 'público');
   });
   mostrarPost('post-container');
 };
