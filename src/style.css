@@ -59,11 +59,10 @@ input {
   border-radius: 8px;
   border: none;
 }
-
+/* 
 button {
   width: 100%;
   height: 2em;
-  /* font-family: "Roboto Flex"; */
   font-family: "Roboto Slab", serif;
   font-size: 1.2em;
   color: #ffff;
@@ -73,7 +72,7 @@ button {
   border: none;
   cursor: pointer;
   margin-top: 2em;
-}
+} */
 
 #buttonCrearPost,
 #selectPublic {
@@ -118,6 +117,7 @@ span img {
 
 .padd-15 {
   padding: 1.5em;
+  background-color:#ffffff;
 }
 
 .margin-t {
@@ -159,7 +159,11 @@ span img {
 .size-70 {
   width: 70%;
 }
-/*muro*/
+/******** CONTENEDOR PRINCIPAL **********/
+main{
+  display: flex;
+}
+/*****************muro**********/
 .imgSize {
   width: 85%;
   height: 4.5em;
@@ -351,8 +355,37 @@ select {
   /* padding: 0.5em 0.3em 0 1.5em; */
 }
 
-/******** HEADER DEL MURO **********/
+/******** ASIDE **********/
+.containerAside{
+  background-color: var(--color-terciario);
+  padding: 1em;
+  width: 40%;
+  
+}
 
+#contImg{
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+  width: 100%;
+
+}
+#imgUser {
+  position: absolute;
+  width: 20uvh;
+  border-radius: 100px 100px 100px 100px;
+}
+#imgPortada{
+  width: 100%;
+}
+/******** POST **********/
+#post-container{
+  background-color: rgb(159, 214, 159);
+  width: 100%;
+  padding: 2em;
+}
 /****************** MEDIA QUERIES ************************************/
 
 @media (max-width: 800px) {

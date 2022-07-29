@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   sendEmailVerification,
+  signOut,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js';
 
@@ -21,11 +22,13 @@ import {
   getDocs,
   onSnapshot,
   deleteDoc,
+  serverTimestamp,
+  updateDoc,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
 import {
-  getStorage,
+  getStorage, ref, uploadBytes, getDownloadURL,
   // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-storage.js';
 
@@ -62,10 +65,15 @@ export {
   doc,
   setDoc,
   getDoc,
-  getStorage,
   addDoc,
   collection,
   getDocs,
   onSnapshot,
   deleteDoc,
+  serverTimestamp,
+  updateDoc,
+  signOut,
+  ref,
+  uploadBytes,
+  getDownloadURL,
 };
