@@ -346,6 +346,7 @@ select {
 .containerAside{
   background-color: var(--color-terciario);
   padding: 1em;
+  width: 40%;
   
 }
 
@@ -355,11 +356,17 @@ select {
   align-items: center;
   justify-content: center;
   margin-bottom: 3em;
+  width: 100%;
+
 }
 #imgUser {
   position: absolute;
+  width: 20uvh;
+  border-radius: 100px 100px 100px 100px;
 }
-
+#imgPortada{
+  width: 100%;
+}
 /******** POST **********/
 #post-container{
   background-color: rgb(159, 214, 159);

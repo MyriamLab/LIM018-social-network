@@ -9,7 +9,6 @@ const userDate = objectsLocalStorage();
 export default () => {
   const crearPostTemplate = `
         <div>
-
               <div  id="MainPost" class="flex-direction size-70">
                 <div>
                   <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario"  width="50px">
@@ -26,14 +25,13 @@ export default () => {
                 <img id = "imgLoad" src="" height="200" alt="Image preview..."  >            
                 <div class="public flex-direction row-end" >                                     
                     <select id="status">
-                      <option value="publico"> &#127758; Público</option>
-                      <option value="privado"> &#128274; Privado </option>
+                      <option value="&#127758"> &#127758; Público</option>
+                      <option value="&#128274"> &#128274; Privado </option>
                     </select>                 
                     <button id="buttonCrearPost">Publicar</button>
                     <button>Cancelar</button>                  
                 </div>
               </div>  
-
         </div>
         <div id = "post-container"></div>                   
           `;
@@ -49,7 +47,6 @@ export const crearPost = (idButton) => {
 
   const inputImg = document.getElementById('cargarImg');
   inputImg.addEventListener('change', previewFile);
-  
   idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
     const getStatusPost = document.getElementById('status');
@@ -58,15 +55,19 @@ export const crearPost = (idButton) => {
     console.log(file);
     const imgPost = await cargarImg(file.name, file);
     // llamar al método crear post
+    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status)
+      .then(() => {
+        
+      }).catch(() => {
 
-    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
+      });
   });
+
   mostrarPost('post-container');
 };
 
 function previewFile() {
   const preview = document.querySelector('#imgLoad');
-  console.log(preview);
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
 

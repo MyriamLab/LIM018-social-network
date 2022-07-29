@@ -6,9 +6,9 @@ const userDate = objectsLocalStorage();
 export default () => {
   const crearPostTemplate = `
              <div class="box-aside">
-                <img id ="imgPortada" src="${userDate.imgPortada}" alt="foto de perfil del usuario"  width="250px">
+                <img id ="imgPortada" src="${userDate.imgPortada}" alt="foto de perfil del usuario">
                 <div id="contImg">
-                  <img id ="imgUser" src="${userDate.imgUsuario}" alt="foto de perfil del usuario"  width="80px">
+                  <img id ="imgUser" src="${userDate.imgUsuario}" alt="foto de perfil del usuario">
                 </div>
                 <h4>${userDate.name}</h4>
                 <h4>Mascotas</h4> 

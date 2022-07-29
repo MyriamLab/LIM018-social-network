@@ -9,8 +9,8 @@ import {
   onSnapshot,
   deleteDoc,
   updateDoc,
-  serverTimestamp,
 } from './config.js';
+import { dateTime } from '../view/datePost.js';
 
 export const userRegisterBD = async (uid, email, name, imgUsuario, imgPortada) => {
   await setDoc(doc(db, 'users', uid), {
@@ -35,7 +35,7 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
     userName,
     userImg,
     status,
-    time: serverTimestamp(),
+    time: dateTime(),
   });
 };
 

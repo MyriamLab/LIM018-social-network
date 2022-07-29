@@ -15,7 +15,7 @@ function TemplateViewPost(
   status,
   time,
 ) {
-  const postCollectionTemplate = `
+  const viewPostTemplate = `
       <div class = "postByUser" id='${idPost}'>
         <img src="${userImg}" width="50px">
         <h4>${userName}  </h4>
@@ -24,10 +24,10 @@ function TemplateViewPost(
       </div>
       <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}"></div>
         <p> ${contentPost} </p>   
-        <img src='${urlImg}' width="50px">
+        <img src='${urlImg}' width="300px">
       <div id="containerDelete"></div>
       <dialog id="modalUpdatePost" class="row-center"></dialog>`;
-  return postCollectionTemplate;
+  return viewPostTemplate;
 }
 
 function EditDeletTemplate(idPost) {
@@ -89,7 +89,7 @@ function eliminarPost(contenedorPost) {
 const templateEditModal = (newPost) => {
   const editModalContent = `
   <form id="postForm">
-    <textarea placeholder="Escribe Algo ..." id='inputUpdatedText'>${newPost}</textarea>    
+    <textarea placeholder="Escribe Algo ..." id='inputUpdatedText'>${newPost}</textarea>        
     <div class="buttonGeneralPublication">
       <button id = "saveUpdate"  type="submit">Guardar</button>
       <button id = "cancelUpdate" >Cancelar</button>
