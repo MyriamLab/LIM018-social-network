@@ -8,21 +8,17 @@ const userDate = objectsLocalStorage();
 
 export default () => {
   const crearPostTemplate = `
-        <div>
-              <div  id="MainPost" class="flex-direction size-70">
-                <div>
-                  <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario"  width="50px">
-                  <div id="namePublic" class="">
-                    <h2>${userDate.name}</h2> 
-                  </div>  
+        <div id="create-post" class="padd-15">
+              <div  id="MainPost" class="flex-direction">
+                <div>                
+                  <img class="imgUserPost" src="${userDate.imgUsuario}" alt="foto de perfil del usuario" >                  
                 </div> 
                 <textarea id = "idPostTextarea" name="textarea"
-                placeholder = "¿Quieres contarnos algo...?"></textarea>    
+                placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>    
               </div>
             
               <div class="size-70" >  
-                <input id="cargarImg" type="file">
-                <img id = "imgLoad" src="" height="200" alt="Image preview..."  >            
+                <div class="imgFile"></div>          
                 <div class="public flex-direction row-end" >                                     
                     <select id="status">
                       <option value="&#127758"> &#127758; Público</option>
@@ -43,27 +39,32 @@ export default () => {
 };
 
 export const crearPost = (idButton) => {
+  const imgFile = document.querySelector('.imgFile');
+  imgFile.innerHTML = `
+    <input id="cargarImg" type="file">
+    <img id = "imgLoad" src="" height="200" alt="Image preview..."  >
+  `;
   const idButtonPost = document.getElementById(idButton);
 
   const inputImg = document.getElementById('cargarImg');
   inputImg.addEventListener('change', previewFile);
+
   idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
     const file = document.querySelector('input[type=file]').files[0];
-    console.log(file);
+
     const imgPost = await cargarImg(file.name, file);
     // llamar al método crear post
-    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status)
-      .then(() => {
-        
-      }).catch(() => {
-
-      });
+    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
+    document.getElementById('idPostTextarea').value = '';
+    document.querySelector('#imgLoad').src = '';
+    document.querySelector('input[type=file]').value = '';
   });
 
   mostrarPost('post-container');
+  // document.querySelector('#imgLoad').style.display = 'flex';
 };
 
 function previewFile() {

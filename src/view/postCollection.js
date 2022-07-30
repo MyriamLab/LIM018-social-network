@@ -3,6 +3,7 @@ import {
   getPostBD, deletePost, getPostEdit, updatePost,
 } from '../firebase/funcionesFirestore.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
+// import { countLike } from './likes.js';
 
 const dataUser = objectsLocalStorage();
 function TemplateViewPost(
@@ -25,6 +26,7 @@ function TemplateViewPost(
       <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}"></div>
         <p> ${contentPost} </p>   
         <img src='${urlImg}' width="300px">
+        <button id="countLike">❤ Like</button>
       <div id="containerDelete"></div>
       <dialog id="modalUpdatePost" class="row-center"></dialog>`;
   return viewPostTemplate;
@@ -39,6 +41,7 @@ function EditDeletTemplate(idPost) {
 }
 
 export const mostrarPost = async (idPostContainer) => {
+  // const likes = countLike('countLike');
   const contenedorPost = document.getElementById(idPostContainer);
   getPostBD((querySnapshot) => {
     let postViewContent = '';
@@ -54,6 +57,7 @@ export const mostrarPost = async (idPostContainer) => {
         data.userImg,
         data.status,
         data.time,
+        // likes,
       );
     });
     contenedorPost.innerHTML = postViewContent;

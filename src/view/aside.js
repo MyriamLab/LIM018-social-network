@@ -10,14 +10,32 @@ export default () => {
                 <div id="contImg">
                   <img id ="imgUser" src="${userDate.imgUsuario}" alt="foto de perfil del usuario">
                 </div>
-                <h4>${userDate.name}</h4>
-                <h4>Mascotas</h4> 
-                <img src="../imagenes/circulo-patita.png" alt="foto de perfil del usuario" width="50px">
-                <spam>Maya</spam>  
+                <div class="aside-h4">
+                  <h4 class="center">${userDate.name}</h4>
+                </div>
+
+                <div class="padd-05 box-label">
+                  <h4 class="padd-05">Mascotas</h4> 
+                  <div class="padd-05 flex-direction" >
+                    <img src="../imagenes/circulo-patita.png" alt="foto de perfil del usuario" width="50px">
+                    <div class="padd-05">
+                      <spam>Maya</spam>
+                    </div>                
+                  </div>                    
+                </div>
+
+                <div class="padd-05 box-label border-top">
+                  <h4 class="padd-05">Amigos</h4> 
+                  <div class="padd-05 flex-direction" >
+                    <img  src="../imagenes/usuario.png" alt="foto de perfil del usuario" width="50px">
+                    <div class="padd-05">
+                      <spam>${userDate.name}</spam>
+                      </div>
+                  </div>
+                </div>
                 
-                <h4>Amigos</h4> 
-                <img  src="../imagenes/usuario.png" alt="foto de perfil del usuario" width="50px">
-                <spam>${userDate.name}</spam> 
+                
+                
               </div>          
                  
           `;
