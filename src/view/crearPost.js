@@ -9,6 +9,7 @@ const userDate = objectsLocalStorage();
 export default () => {
   const crearPostTemplate = `
         <div id="create-post" class="padd-15">
+          <div class="padd-05 box-cPost">
               <div  id="MainPost" class="flex-direction">
                 <div>                
                   <img class="imgUserPost" src="${userDate.imgUsuario}" alt="foto de perfil del usuario" >                  
@@ -17,17 +18,32 @@ export default () => {
                 placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>    
               </div>
             
-              <div class="size-70" >  
-                <div class="imgFile"></div>          
-                <div class="public flex-direction row-end" >                                     
+              <div class="flex-direction divFinalCrearPost">  
+                <div class="imgFile">          
+                  <div class="file">
+                    <label for="cargarImg">
+                      <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">                   
+                    </label>
+                    <input  id="cargarImg" type="file">
+                  </div>
+              
+                  <div>
+                    <img id = "imgLoad" src="" height="50">
+                  </div>                 
+                </div>  
+
+                <div class="public flex-direction row-end" >
+                                                       
                     <select id="status">
                       <option value="&#127758"> &#127758; Público</option>
                       <option value="&#128274"> &#128274; Privado </option>
                     </select>                 
                     <button id="buttonCrearPost">Publicar</button>
-                    <button>Cancelar</button>                  
+                 
                 </div>
-              </div>  
+                
+              </div> 
+          </div> 
         </div>
         <div id = "post-container"></div>                   
           `;
@@ -39,11 +55,6 @@ export default () => {
 };
 
 export const crearPost = (idButton) => {
-  const imgFile = document.querySelector('.imgFile');
-  imgFile.innerHTML = `
-    <input id="cargarImg" type="file">
-    <img id = "imgLoad" src="" height="200" alt="Image preview..."  >
-  `;
   const idButtonPost = document.getElementById(idButton);
 
   const inputImg = document.getElementById('cargarImg');

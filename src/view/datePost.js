@@ -12,7 +12,7 @@ export const dateTime = () => {
 
   const date = new Date().toLocaleDateString('es-Es', datePost);
   const time = new Date().toLocaleTimeString('es-Es', timePost);
-  const dateTimeActual = `${date} ${time}`;
+  const dateTimeActual = `${date} - ${time}`;
 
   return dateTimeActual;
 };

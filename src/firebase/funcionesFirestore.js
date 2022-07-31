@@ -27,6 +27,7 @@ export const getUserBD = (uid) => {
   return dataUser;
 };
 
+
 export const createPost = async (idUser, contentPost, urlImg, userName, userImg, status) => {
   await addDoc(collection(db, 'post'), {
     idUser,
@@ -42,6 +43,12 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
 //  jalar datos desde firestore de los post
 export const getPostBD = (documento) => {
   const dataPost = onSnapshot(collection(db, 'post'), (documento));
+  return dataPost;
+};
+
+//  jalar datos desde firestore de los post
+export const getUser = (documento) => {
+  const dataPost = onSnapshot(collection(db, 'users'), (documento));
   return dataPost;
 };
 

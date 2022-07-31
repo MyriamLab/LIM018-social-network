@@ -17,25 +17,46 @@ function TemplateViewPost(
   time,
 ) {
   const viewPostTemplate = `
-      <div class = "postByUser" id='${idPost}'>
-        <img src="${userImg}" width="50px">
-        <h4>${userName}  </h4>
-        <span> ${time}</span>
-        <span> ${status}</span>
+    <div class="padd-15 box-cPost viewPost">
+      <div class = "flex-direction  postByUser" id='${idPost}'>
+        <img class ="imgUserPost imgPostv" src="${userImg}">
+        <div class="group">
+          <h4>${userName}  </h4>
+          <div>
+            <span> ${status}</span>
+            <span class="post-span"> ${time}</span>
+          </div>          
+        </div>
+        <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}">
+        </div>                 
       </div>
-      <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}"></div>
+
+      <div class="box-postView">
         <p> ${contentPost} </p>   
-        <img src='${urlImg}' width="300px">
-        <button id="countLike">❤ Like</button>
+        <img src='${urlImg}'>
+       
+      </div>
+      <div class="padd-05">
+        <button id="countLike">❤ Me gusta</button>
+        <button id="countLike">✉  Comentar</button>   
+      </div>
+      
       <div id="containerDelete"></div>
-      <dialog id="modalUpdatePost" class="row-center"></dialog>`;
+      <dialog id="modalUpdatePost" class="row-center"></dialog>
+    </div>`;
   return viewPostTemplate;
 }
 
 function EditDeletTemplate(idPost) {
-  const template = `   
+  const template = ` 
+  <span class="icon-edit">
+    <i class="fa fa-ellipsis-v"></i>
+  </span>  
+  <div >
       <button id = "update-post" data-id = ${idPost}>Editar</button>
       <button class = "delete-post" data-id = ${idPost}>Eliminar</button>  
+    </div>  
+      
   `;
   return template;
 }
