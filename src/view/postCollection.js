@@ -1,7 +1,12 @@
 /* eslint-disable no-use-before-define */
 import {
-  getPostBD, deletePost, getPostEdit, updatePost,
+  getPostBD,
+  deletePost,
+  getPostEdit,
+  updatePost,
+  obtenerCollById,
 } from '../firebase/funcionesFirestore.js';
+
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 // import { countLike } from './likes.js';
 
@@ -39,10 +44,10 @@ function TemplateViewPost(
       </div>
       
       <div class="padd-05">
-        <button id="countLike" name="${idPost}">
-        <span> ${likesCount}</span>
-        ❤ Me gusta          
-        </button>
+      <button id="countLike" class="likes" name="${idPost}">          
+        ${likesCount}❤ Me gusta          
+      </button>
+        
         <button id="comentar">✉  Comentar</button>   
       </div>
       
@@ -50,6 +55,24 @@ function TemplateViewPost(
       <dialog id="modalUpdatePost" class="row-center"></dialog>
     </div>`;
   return viewPostTemplate;
+}
+
+async function likesHandler(e) {
+  const idUser = dataUser.uid;
+  const idPost = e.target.getAttribute('name');
+
+  const dataPost = await obtenerCollById(idPost, 'post');
+  console.log(dataPost.likes);
+
+  if (await dataPost.likes.includes(idUser)) {
+    console.log(dataPost.likes.includes(idUser));
+  } else {
+    // esto es para agregar like por usuario
+    console.log('true--> ', dataPost.likes);
+    await updatePost(idPost, {
+      likes: [...dataPost.likes, idUser],
+    });
+  }
 }
 
 function EditDeletTemplate(idPost) {
@@ -64,7 +87,7 @@ function EditDeletTemplate(idPost) {
 }
 
 export const mostrarPost = async (idPostContainer) => {
-  // const likes = countLike('countLike');
+  // mostrar post
   const contenedorPost = document.getElementById(idPostContainer);
   getPostBD((querySnapshot) => {
     let postViewContent = '';
@@ -85,6 +108,11 @@ export const mostrarPost = async (idPostContainer) => {
     });
     contenedorPost.innerHTML = postViewContent;
     editDeletePost(contenedorPost);
+    // const likes = countLike('countLike');
+    const buttonLikes = document.querySelectorAll('.likes');
+    buttonLikes.forEach((likeIcon) => {
+      likeIcon.addEventListener('click', likesHandler);
+    });
   });
 };
 
@@ -93,10 +121,6 @@ function editDeletePost(contenedorPost) {
   editPost.forEach((elements) => {
     const userIdPost = elements.id;
     const idPostPublicado = elements.dataset.id;
-
-    console.log('id de usuario almacenado al momento de crear el post', userIdPost);
-    console.log('user id, local', dataUser.uid);
-
     /** comparar el id del post con del usuario */
     if (userIdPost === dataUser.uid) {
       elements.innerHTML = EditDeletTemplate(idPostPublicado);
@@ -141,13 +165,13 @@ function actualizarPost(contenedorPost) {
     postUser.forEach(async (post) => {
       if (idBtnPost === post.id) {
         const postData = await getPostEdit(post.id);
-        // console.log(postData.data());
+
         const modalUpdate = document.querySelector('#modalUpdatePost');
+        //  jalamos  el contenido del post
         modalUpdate.innerHTML = templateEditModal(postData.data().contentPost);
         modalUpdate.showModal();
         modalUpdate.querySelector('#saveUpdate').addEventListener('click', () => {
           const newTextPost = document.querySelector('#inputUpdatedText').value;
-          console.log(newTextPost);
           updatePost(post.id, {
             contentPost: newTextPost,
           });
