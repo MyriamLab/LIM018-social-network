@@ -16,6 +16,7 @@ function TemplateViewPost(
   userImg,
   status,
   time,
+  likesCount,
 ) {
   const viewPostTemplate = `
     <div class="padd-15 box-cPost viewPost">
@@ -34,11 +35,14 @@ function TemplateViewPost(
 
       <div class="box-postView">
         <p> ${contentPost} </p>   
-        <img src='${urlImg}'>
-       
+        <img src='${urlImg}'>       
       </div>
+      
       <div class="padd-05">
-        <button id="countLike">❤ Me gusta</button>
+        <button id="countLike" name="${idPost}">
+        <span> ${likesCount}</span>
+        ❤ Me gusta          
+        </button>
         <button id="comentar">✉  Comentar</button>   
       </div>
       
@@ -76,7 +80,7 @@ export const mostrarPost = async (idPostContainer) => {
         data.userImg,
         data.status,
         data.time,
-        // likes,
+        1,
       );
     });
     contenedorPost.innerHTML = postViewContent;
