@@ -349,7 +349,10 @@ select {
 /******** ASIDE **********/
 .containerAside{
   width: 45%;
-  padding: 1.5em 2em 1.5em 5em; 
+  padding: 1.5em 2em 1.5em 5em;
+  /* overflow: auto;
+  height: 50%; scrooll*/ 
+
 }
 .box-aside{
   background-color: #fff;
@@ -393,6 +396,7 @@ select {
 .containerCrearPost{
   padding: 1.5em 2em 1.5em 2em; 
   width: 50%;
+  
  
 }
 #create-post{
@@ -504,8 +508,9 @@ select {
 /* actualizar y eliminar post */
 .idUser-postEdit {
   position: relative;
-  display: inline-block;
+  display: flex;
   justify-content: flex-end;
+  width: 45%;
 }
 
 .postEdit {
@@ -518,7 +523,7 @@ select {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  width: 4em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
