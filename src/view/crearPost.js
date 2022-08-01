@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import { createPost } from '../firebase/funcionesFirestore.js';
 import { mostrarPost } from './postCollection.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
@@ -68,20 +69,10 @@ export const crearPost = (idButton) => {
 
     const imgPost = await cargarImg(file.name, file);
     // llamar al método crear post
-<<<<<<< HEAD
-    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status)
-      .then(() => {
-        
-      }).catch(() => {
-
-      });
-   
-=======
     createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
     document.getElementById('idPostTextarea').value = '';
     document.querySelector('#imgLoad').src = '';
     document.querySelector('input[type=file]').value = '';
->>>>>>> 71dede7eee5f786abc33530f312919b07dc2f36f
   });
 
   mostrarPost('post-container');
