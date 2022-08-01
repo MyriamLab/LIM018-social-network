@@ -8,30 +8,42 @@ const userDate = objectsLocalStorage();
 
 export default () => {
   const crearPostTemplate = `
-        <div>
-              <div  id="MainPost" class="flex-direction size-70">
-                <div>
-                  <img src="${userDate.imgUsuario}" alt="foto de perfil del usuario"  width="50px">
-                  <div id="namePublic" class="">
-                    <h2>${userDate.name}</h2> 
-                  </div>  
+        <div id="create-post" class="padd-15">
+          <div class="padd-05 box-cPost">
+              <div  id="MainPost" class="flex-direction">
+                <div>                
+                  <img class="imgUserPost" src="${userDate.imgUsuario}" alt="foto de perfil del usuario" >                  
                 </div> 
                 <textarea id = "idPostTextarea" name="textarea"
-                placeholder = "¿Quieres contarnos algo...?"></textarea>    
+                placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>    
               </div>
             
-              <div class="size-70" >  
-                <input id="cargarImg" type="file">
-                <img id = "imgLoad" src="" height="200" alt="Image preview..."  >            
-                <div class="public flex-direction row-end" >                                     
+              <div class="flex-direction divFinalCrearPost">  
+                <div class="imgFile">          
+                  <div class="file">
+                    <label for="cargarImg">
+                      <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">                   
+                    </label>
+                    <input  id="cargarImg" type="file">
+                  </div>
+              
+                  <div>
+                    <img id = "imgLoad" src="" height="50">
+                  </div>                 
+                </div>  
+
+                <div class="public flex-direction row-end" >
+                                                       
                     <select id="status">
                       <option value="&#127758"> &#127758; Público</option>
                       <option value="&#128274"> &#128274; Privado </option>
                     </select>                 
                     <button id="buttonCrearPost">Publicar</button>
-                    <button>Cancelar</button>                  
+                 
                 </div>
-              </div>  
+                
+              </div> 
+          </div> 
         </div>
         <div id = "post-container"></div>                   
           `;
@@ -47,14 +59,16 @@ export const crearPost = (idButton) => {
 
   const inputImg = document.getElementById('cargarImg');
   inputImg.addEventListener('change', previewFile);
+
   idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
     const file = document.querySelector('input[type=file]').files[0];
-    console.log(file);
+
     const imgPost = await cargarImg(file.name, file);
     // llamar al método crear post
+<<<<<<< HEAD
     createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status)
       .then(() => {
         
@@ -62,9 +76,16 @@ export const crearPost = (idButton) => {
 
       });
    
+=======
+    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
+    document.getElementById('idPostTextarea').value = '';
+    document.querySelector('#imgLoad').src = '';
+    document.querySelector('input[type=file]').value = '';
+>>>>>>> 71dede7eee5f786abc33530f312919b07dc2f36f
   });
 
   mostrarPost('post-container');
+  // document.querySelector('#imgLoad').style.display = 'flex';
 };
 
 function previewFile() {

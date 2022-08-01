@@ -3,6 +3,7 @@ import { registroCorreo } from '../view/register.js';
 import { iniciarSesion } from '../view/login.js';
 import { crearPost } from '../view/crearPost.js';
 import { cerrarSesion } from '../view/home.js';
+// import { mostrarUser } from '../view/aside.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -34,6 +35,7 @@ const changeView = (route) => {
       header.appendChild(components.headerNet());
       cerrarSesion('btnCerrarSesion');
       container.appendChild(components.aside());
+      // mostrarUser();
       container.appendChild(components.createPost());
       crearPost('buttonCrearPost');
       // mostrarPost('post-container');

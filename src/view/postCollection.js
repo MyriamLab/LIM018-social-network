@@ -3,8 +3,10 @@ import {
   getPostBD, deletePost, getPostEdit, updatePost,
 } from '../firebase/funcionesFirestore.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
+// import { countLike } from './likes.js';
 
 const dataUser = objectsLocalStorage();
+
 function TemplateViewPost(
   idPost,
   idUser,
@@ -16,29 +18,49 @@ function TemplateViewPost(
   time,
 ) {
   const viewPostTemplate = `
-      <div class = "postByUser" id='${idPost}'>
-        <img src="${userImg}" width="50px">
-        <h4>${userName}  </h4>
-        <span> ${time}</span>
-        <span> ${status}</span>
+    <div class="padd-15 box-cPost viewPost">
+      <div class = "flex-direction  postByUser" id='${idPost}'>
+        <img class ="imgUserPost imgPostv" src="${userImg}">
+        <div class="group">
+          <h4>${userName}  </h4>
+          <div>
+            <span> ${status}</span>
+            <span class="post-span"> ${time}</span>
+          </div>          
+        </div>
+        <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}">
+        </div>                 
       </div>
-      <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPost}"></div>
+
+      <div class="box-postView">
         <p> ${contentPost} </p>   
-        <img src='${urlImg}' width="300px">
+        <img src='${urlImg}'>
+       
+      </div>
+      <div class="padd-05">
+        <button id="countLike">❤ Me gusta</button>
+        <button id="comentar">✉  Comentar</button>   
+      </div>
+      
       <div id="containerDelete"></div>
-      <dialog id="modalUpdatePost" class="row-center"></dialog>`;
+      <dialog id="modalUpdatePost" class="row-center"></dialog>
+    </div>`;
   return viewPostTemplate;
 }
 
 function EditDeletTemplate(idPost) {
-  const template = `   
-      <button id = "update-post" data-id = ${idPost}>Editar</button>
-      <button class = "delete-post" data-id = ${idPost}>Eliminar</button>  
+  const template = ` 
+  <span class = "postEdit" value="&#8943">&#8943</span>  
+  <div class = "div-del-up">
+      <p id = "update-post" data-id = ${idPost}>Editar</p>
+      <p class = "delete-post" data-id = ${idPost}>Eliminar</p>  
+  </div>        
   `;
   return template;
 }
 
 export const mostrarPost = async (idPostContainer) => {
+  // const likes = countLike('countLike');
   const contenedorPost = document.getElementById(idPostContainer);
   getPostBD((querySnapshot) => {
     let postViewContent = '';
@@ -54,6 +76,7 @@ export const mostrarPost = async (idPostContainer) => {
         data.userImg,
         data.status,
         data.time,
+        // likes,
       );
     });
     contenedorPost.innerHTML = postViewContent;
@@ -66,10 +89,17 @@ function editDeletePost(contenedorPost) {
   editPost.forEach((elements) => {
     const userIdPost = elements.id;
     const idPostPublicado = elements.dataset.id;
+
+    console.log('id de usuario almacenado al momento de crear el post', userIdPost);
+    console.log('user id, local', dataUser.uid);
+
+    /** comparar el id del post con del usuario */
     if (userIdPost === dataUser.uid) {
       elements.innerHTML = EditDeletTemplate(idPostPublicado);
       elements.addEventListener('click', () => {
         console.log('quieres eliminar o editar?');
+
+        /** accede a los métodos eliminar o actualizar */
         eliminarPost(contenedorPost);
         actualizarPost(contenedorPost);
       });
@@ -81,7 +111,7 @@ function eliminarPost(contenedorPost) {
   const btnDelete = contenedorPost.querySelectorAll('.delete-post');
   btnDelete.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      deletePost(event.target.dataset.id);// el target saca el id
+      deletePost(event.target.dataset.id);// el target saca el id alamcenado en el html data-id=""
     });
   });
 }

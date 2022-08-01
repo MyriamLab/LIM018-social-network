@@ -59,8 +59,8 @@ input {
   border-radius: 8px;
   border: none;
 }
-/*
-button {
+
+/* button {
   width: 100%;
   height: 2em;
   font-family: "Roboto Slab", serif;
@@ -73,12 +73,6 @@ button {
   cursor: pointer;
   margin-top: 2em;
 } */
-
-#buttonCrearPost,
-#selectPublic {
-  width: 18%;
-  margin: 0 3% 0 3%;
-}
 
 figure {
   position: absolute;
@@ -354,12 +348,17 @@ select {
 
 /******** ASIDE **********/
 .containerAside{
-  background-color: var(--color-terciario);
-  padding: 1em;
-  width: 40%;
-  
+  width: 45%;
+  padding: 1.5em 2em 1.5em 5em; 
 }
+.box-aside{
+  background-color: #fff;
+  border-radius: 15px 15px 0 0 ;
 
+}
+.aside-h4{
+  margin-top: 20%;
+}
 #contImg{
   position:relative;
   display: flex;
@@ -371,18 +370,176 @@ select {
 }
 #imgUser {
   position: absolute;
-  width: 20uvh;
+  width: 35%;
   border-radius: 100px 100px 100px 100px;
+  border: 0.3em solid #f6e3be;
 }
 #imgPortada{
   width: 100%;
+  height: 20%;
+  border-radius: 15px 15px 0 0 ;
+
 }
+.box-label{
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.border-top{
+  border-top: 1px solid var(--color-primario); 
+
+}
+
+/****************** CREAR POST ************************************/
+.containerCrearPost{
+  padding: 1.5em 2em 1.5em 2em; 
+  width: 50%;
+ 
+}
+#create-post{
+  background-color: #fff; 
+  border-radius: 1em 1em 0 0 ;
+}
+.box-cPost{
+  box-shadow: 0 1px 2px var(--color-cuaternario);
+  border-radius: 1em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.imgUserPost{
+  width: 5em;
+  border-radius: 100px 100px 100px 100px;
+  margin-right: .5em;
+}
+#idPostTextarea{
+  width: 100%;
+  border: 1px solid var(--color-primario); 
+
+}
+#idPostTextarea:focus{
+  outline:none;
+}
+
+/* esconder el input file y mostrar la img */
+.file {
+  padding-left: 6em;
+}
+.file > input{
+  display: none;
+}
+.file  img{
+    width: 2.5em;
+    cursor: pointer;
+}
+/* footer de crear post */
+.divFinalCrearPost{
+  width: 100%;
+  display: flex;
+
+}
+.public{
+  width: 100%;
+  height: 40%;
+  padding-right: .5em;
+}
+
+.public #status{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: none;
+    appearance: none; 
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    padding-top: .7em;
+
+}
+#buttonCrearPost{
+  background-color: var(--color-primario);
+  border: none;
+  width: 10em;
+  height: 3em;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Roboto Slab', serif;
+  
+}
+#buttonCrearPost:hover{
+  background-color:#e09f9f;
+  
+}
+/***************** MOSTRAR POST****************/
 /******** POST **********/
 #post-container{
-  background-color: rgb(159, 214, 159);
+  background-color: #ffffff;
   width: 100%;
-  padding: 2em;
+  padding: 0 2em 2em 2em;
+  
 }
+.viewPost{
+  margin-bottom: 2em;  
+}
+.imgPostv{
+  width: 3em;
+}
+.postByUser {
+  padding-bottom: 1em;
+  display: flex;
+}
+
+.post-span{
+  font-size: .8em;
+  font-weight: lighter;
+}
+.box-postView p{
+  font-size: 1em;
+  font-family: inherit;
+  padding-bottom: 0.5em;
+}
+.box-postView img{
+  width: 100%;
+}
+/* actualizar y eliminar post */
+.idUser-postEdit {
+  position: relative;
+  display: inline-block;
+  justify-content: flex-end;
+}
+
+.postEdit {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.div-del-up {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.div-del-up p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+
+}
+.div-del-up p:hover {
+  background-color: #f1f1f1;
+}
+
+.idUser-postEdit:hover .div-del-up {
+  display: block;
+}
+
+
 /****************** MEDIA QUERIES ************************************/
 
 @media (max-width: 800px) {
@@ -396,6 +553,13 @@ select {
   }
   #modalPadre {
     left: 35%;
+  }
+  .containerAside{
+    display: none;
+  }
+  .containerCrearPost{
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -447,4 +611,11 @@ select {
   /*div:nth-child(2){
     display: none;
   }*/
+  .containerAside{
+    display: none;
+  }
+  .containerCrearPost{
+    width: 100%;
+    padding: 0;
+  }
 }
