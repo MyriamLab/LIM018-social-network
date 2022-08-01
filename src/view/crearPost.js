@@ -20,18 +20,6 @@ export default () => {
                 placeholder = "¿Quieres contarnos algo...?"></textarea>    
               </div>
             
-<<<<<<< HEAD
-              <div class="size-70" >
-               
-                <div class=" public flex-direction row-end " >
-                    <img src="#" alt="Foto">
-                    <img src="#" alt="">
-                    <select id="selectPublic">
-                      <option>Público</option>
-                      <option>Privado</option>
-                    </select>
-                 
-=======
               <div class="size-70" >  
                 <input id="cargarImg" type="file">
                 <img id = "imgLoad" src="" height="200" alt="Image preview..."  >            
@@ -40,7 +28,6 @@ export default () => {
                       <option value="&#127758"> &#127758; Público</option>
                       <option value="&#128274"> &#128274; Privado </option>
                     </select>                 
->>>>>>> 8fb47583aacab4f51e19f582baa2b025fddad483
                     <button id="buttonCrearPost">Publicar</button>
                     <button>Cancelar</button>                  
                 </div>
@@ -74,6 +61,7 @@ export const crearPost = (idButton) => {
       }).catch(() => {
 
       });
+   
   });
 
   mostrarPost('post-container');
