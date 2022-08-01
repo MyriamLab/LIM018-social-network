@@ -491,14 +491,44 @@ select {
 .box-postView img{
   width: 100%;
 }
-/* Icon delete and update */
-.idUser-postEdit{
-  background-color: green;
+/* actualizar y eliminar post */
+.idUser-postEdit {
+  position: relative;
+  display: inline-block;
+  justify-content: flex-end;
+}
+
+.postEdit {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.div-del-up {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.div-del-up p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 
 }
-.icon-edit{
-  background-color: rebeccapurple;
+.div-del-up p:hover {
+  background-color: #f1f1f1;
 }
+
+.idUser-postEdit:hover .div-del-up {
+  display: block;
+}
+
 
 /****************** MEDIA QUERIES ************************************/
 

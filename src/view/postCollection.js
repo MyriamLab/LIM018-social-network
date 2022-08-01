@@ -6,6 +6,7 @@ import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 // import { countLike } from './likes.js';
 
 const dataUser = objectsLocalStorage();
+
 function TemplateViewPost(
   idPost,
   idUser,
@@ -38,7 +39,7 @@ function TemplateViewPost(
       </div>
       <div class="padd-05">
         <button id="countLike">❤ Me gusta</button>
-        <button id="countLike">✉  Comentar</button>   
+        <button id="comentar">✉  Comentar</button>   
       </div>
       
       <div id="containerDelete"></div>
@@ -49,14 +50,11 @@ function TemplateViewPost(
 
 function EditDeletTemplate(idPost) {
   const template = ` 
-  <span class="icon-edit">
-    <i class="fa fa-ellipsis-v"></i>
-  </span>  
-  <div >
-      <button id = "update-post" data-id = ${idPost}>Editar</button>
-      <button class = "delete-post" data-id = ${idPost}>Eliminar</button>  
-    </div>  
-      
+  <span class = "postEdit" value="&#8943">&#8943</span>  
+  <div class = "div-del-up">
+      <p id = "update-post" data-id = ${idPost}>Editar</p>
+      <p class = "delete-post" data-id = ${idPost}>Eliminar</p>  
+  </div>        
   `;
   return template;
 }
@@ -91,10 +89,17 @@ function editDeletePost(contenedorPost) {
   editPost.forEach((elements) => {
     const userIdPost = elements.id;
     const idPostPublicado = elements.dataset.id;
+
+    console.log('id de usuario almacenado al momento de crear el post', userIdPost);
+    console.log('user id, local', dataUser.uid);
+
+    /** comparar el id del post con del usuario */
     if (userIdPost === dataUser.uid) {
       elements.innerHTML = EditDeletTemplate(idPostPublicado);
       elements.addEventListener('click', () => {
         console.log('quieres eliminar o editar?');
+
+        /** accede a los métodos eliminar o actualizar */
         eliminarPost(contenedorPost);
         actualizarPost(contenedorPost);
       });
@@ -106,7 +111,7 @@ function eliminarPost(contenedorPost) {
   const btnDelete = contenedorPost.querySelectorAll('.delete-post');
   btnDelete.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      deletePost(event.target.dataset.id);// el target saca el id
+      deletePost(event.target.dataset.id);// el target saca el id alamcenado en el html data-id=""
     });
   });
 }

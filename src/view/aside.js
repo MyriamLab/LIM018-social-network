@@ -1,7 +1,6 @@
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 // <img src="../imagenes/galeria.png" alt="imagen de galeria"  width ="30px"  >
 /* eslint-disable no-use-before-define */
-import { getUser } from '../firebase/funcionesFirestore.js';
 
 const userDate = objectsLocalStorage();
 
@@ -45,25 +44,25 @@ export default () => {
   return crearPostElement;
 };
 
-export const mostrarUser = async () => {
-  // const likes = countLike('countLike');
-  const contenedorPost = document.getElementById('content-user');
-  getUser((querySnapshot) => {
-    let postViewContent = '';
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log(data.imgUsuario, data.name);
-      postViewContent += TemplateViewUser(data.imgUsuario, data.name);
-    });
-    contenedorPost.innerHTML = postViewContent;
-  });
-};
+// export const mostrarUser = async () => {
+//   // const likes = countLike('countLike');
+//   const contenedorPost = document.getElementById('content-user');
+//   getUser((querySnapshot) => {
+//     let postViewContent = '';
+//     querySnapshot.forEach((doc) => {
+//       const data = doc.data();
+//       console.log(data.imgUsuario, data.name);
+//       postViewContent += TemplateViewUser(data.imgUsuario, data.name);
+//     });
+//     contenedorPost.innerHTML = postViewContent;
+//   });
+// };
 
-function TemplateViewUser(userName, userImg) {
-  const viewPostTemplate = `
-  <img  src="${userImg}" alt="foto de perfil del usuario" width="50px">
-  <div class="padd-05" >
-    <spam>${userName}</spam>
-    </div>`;
-  return viewPostTemplate;
-}
+// function TemplateViewUser(userName, userImg) {
+//   const viewPostTemplate = `
+//   <img  src="${userImg}" alt="foto de perfil del usuario" width="50px">
+//   <div class="padd-05" >
+//     <spam>${userName}</spam>
+//     </div>`;
+//   return viewPostTemplate;
+// }
