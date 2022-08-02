@@ -1,6 +1,5 @@
 import formLogin from './login.js';
 import formRegisters from './register.js';
-import formRegisterPets from './registerPets.js';
 import header from './home.js';
 import crearPos from './crearPost.js';
 import asideHome from './aside.js';
@@ -9,7 +8,6 @@ import asideHome from './aside.js';
 const components = {
   login: formLogin,
   register: formRegisters,
-  registerPets: formRegisterPets,
   headerNet: header,
   createPost: crearPos,
   aside: asideHome,

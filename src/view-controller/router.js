@@ -3,7 +3,7 @@ import { registroCorreo } from '../view/register.js';
 import { iniciarSesion } from '../view/login.js';
 import { crearPost } from '../view/crearPost.js';
 import { cerrarSesion } from '../view/home.js';
-// import { mostrarUser } from '../view/aside.js';
+import { mostrarUser } from '../view/aside.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -26,16 +26,11 @@ const changeView = (route) => {
       //    registrocorreo que se encuentra en register.js
       break;
     }
-    case '#/registerPets': {
-      container.appendChild(components.registerPets());
-      break;
-      //    rompe el ciclo, y retorna solo el form de login
-    }
     case '#/home': {
       header.appendChild(components.headerNet());
       cerrarSesion('btnCerrarSesion');
       container.appendChild(components.aside());
-      // mostrarUser();
+      mostrarUser();
       container.appendChild(components.createPost());
       crearPost('buttonCrearPost');
       // mostrarPost('post-container');

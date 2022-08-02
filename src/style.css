@@ -158,30 +158,29 @@ main{
   display: flex;
 }
 /*****************muro**********/
-.imgSize {
-  width: 85%;
-  height: 4.5em;
+
+.imgSize, #imgLogo {
+  width: 3em;
+  height: 3em;
 }
 
 .header {
   background-color: var(--color-primario);
 }
 
-.header .divLogo {
-  width: 8%;
-  height: 5%;
-}
 
 .header div:nth-child(2) {
   margin-top: 2.8%;
 }
-/* 
-.header div:nth-child(1),
-div:nth-child(3),
-div:nth-child(4),
-div:nth-child(5) {
-  margin-top: 1em;
-} */
+
+#buscar{
+  width: 20em;
+  height: 2em;
+  margin: 0;
+}
+.enlacePerfil img{
+  border-radius: 100px;
+}
 
 .header div:nth-child(2) {
   margin-top: 2.8%;
@@ -261,25 +260,20 @@ div:nth-child(5) {
 }
 
 /******* Vista RegisterPets ********/
-
-.divContainerRegisterPets {
-  /*padre*/
-  display: flex;
-  width: 100%;
-  background-color: #f6e3be; /*blue*/
+#containerRegPets{
+  width: 30em;
+  height: 30em;
 }
-
 .divRegisterPets {
   background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
-  width: 50%;
+  width: 100%;
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
 .divRegisterPets h3 {
-  padding: 1em;
-  margin: auto;
+ text-align: center;
   background-color: #8ae2de;
 }
 
@@ -346,7 +340,7 @@ select {
   /* padding: 0.5em 0.3em 0 1.5em; */
 }
 
-/******** ASIDE **********/
+/********:**************************** ASIDE ******************************/
 .containerAside{
   width: 45%;
   padding: 1.5em 2em 1.5em 5em;
@@ -389,6 +383,13 @@ select {
 }
 .border-top{
   border-top: 1px solid var(--color-primario); 
+
+}
+.addPetsIcon{
+  cursor: pointer;
+}
+#content-user img{
+  border-radius: 100px 100px 100px 100px;
 
 }
 

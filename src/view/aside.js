@@ -1,6 +1,7 @@
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
-// <img src="../imagenes/galeria.png" alt="imagen de galeria"  width ="30px"  >
-/* eslint-disable no-use-before-define */
+import { getUserColl } from '../firebase/funcionesFirestore.js';
+import { registerPets } from '../view/registerPets.js';
+
 
 const userDate = objectsLocalStorage();
 
@@ -16,25 +17,27 @@ export default () => {
                 </div>
 
                 <div class="padd-05 box-label">
-                  <h4 class="padd-05">Mascotas</h4> 
+                  <h4 class="padd-05">Mascotas 
+                    <i class="material-icons addPetsIcon">add</i>
+                  </h4>
+                 
                   <div class="padd-05 flex-direction" >
                     <img src="../imagenes/circulo-patita.png" alt="foto de perfil del usuario" width="50px">
                     <div class="padd-05">
-                      <spam>Maya</spam>
+                      <span>Maya</span>
                     </div>                
                   </div>                    
                 </div>
 
                 <div class="padd-05 box-label border-top">
                   <h4 class="padd-05">Amigos</h4> 
-                  <div class="padd-05 flex-direction" id="content-user" >
+                  <div class="padd-05" id="content-user" >
                     
                   </div>
-                </div>
-                
-                
-                
-              </div>          
+                </div>            
+              </div>
+              <dialog id="containerRegPets">
+              </dialog>        
                  
           `;
   const crearPostElement = document.createElement('aside');
@@ -44,25 +47,39 @@ export default () => {
   return crearPostElement;
 };
 
-// export const mostrarUser = async () => {
-//   // const likes = countLike('countLike');
-//   const contenedorPost = document.getElementById('content-user');
-//   getUser((querySnapshot) => {
-//     let postViewContent = '';
-//     querySnapshot.forEach((doc) => {
-//       const data = doc.data();
-//       console.log(data.imgUsuario, data.name);
-//       postViewContent += TemplateViewUser(data.imgUsuario, data.name);
-//     });
-//     contenedorPost.innerHTML = postViewContent;
-//   });
-// };
+export const mostrarUser = async () => {
+  const contenedorPost = document.getElementById('content-user');
+  getUserColl((querySnapshot) => {
+    let postViewContent = '';
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      postViewContent += TemplateViewUser(data.name, data.imgUsuario);
+    });
+    contenedorPost.innerHTML = postViewContent;
+  });
+  mostrarMascota();
+};
 
-// function TemplateViewUser(userName, userImg) {
-//   const viewPostTemplate = `
-//   <img  src="${userImg}" alt="foto de perfil del usuario" width="50px">
-//   <div class="padd-05" >
-//     <spam>${userName}</spam>
-//     </div>`;
-//   return viewPostTemplate;
-// }
+function TemplateViewUser(userName, userImg) {
+  const viewPostTemplate = `
+  <div class="padd-05">
+    <img  src="${userImg}" alt="foto de perfil del usuario" width="50px"> 
+    <span>${userName}</span>
+  </div>
+  `;
+  return viewPostTemplate;
+}
+
+const mostrarMascota = () => {
+  const container = document.querySelector('#containerRegPets');
+
+  const iconAddPets = document.querySelectorAll('.addPetsIcon');
+  iconAddPets.forEach((addPets) => {
+    addPets.addEventListener('click', () => {
+      container.innerHTML = '';
+      container.innerHTML = registerPets();
+      container.showModal();
+      document.getElementById('regCancel').addEventListener('click', () => container.close());
+    });
+  });
+};
