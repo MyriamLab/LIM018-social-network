@@ -95,8 +95,8 @@ export const registroCorreo = (selectorForm) => {
               user.uid,
               emailRegister,
               nameRegister,
-              'imagenes/usuario.png',
-              'imagenes/portada.jpg',
+              '../imagenes/usuario.png',
+              '../imagenes/portada.jpg',
             );
             //  alert('se registró el correo');
             mostrarModal.innerHTML = '';

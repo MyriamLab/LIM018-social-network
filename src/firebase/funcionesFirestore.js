@@ -37,6 +37,12 @@ export const obtenerCollById = (id, coleccion) => {
   return docSnap;
 };
 
+//  jalar datos desde firestore de los post
+export const getUserColl = (documento) => {
+  const dataPost = onSnapshot(collection(db, 'users'), documento);
+  return dataPost;
+};
+
 /** ************************ IMPLEMENTAR MÉTODOS DE POST ********************** */
 export const createPost = async (idUser, contentPost, urlImg, userName, userImg, status) => {
   await addDoc(collection(db, 'post'), {

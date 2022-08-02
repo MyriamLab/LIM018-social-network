@@ -251,25 +251,20 @@ div:nth-child(5) {
 }
 
 /******* Vista RegisterPets ********/
-
-.divContainerRegisterPets {
-  /*padre*/
-  display: flex;
-  width: 100%;
-  background-color: #f6e3be; /*blue*/
+#containerRegPets{
+  width: 30em;
+  height: 30em;
 }
-
 .divRegisterPets {
   background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
-  width: 50%;
+  width: 100%;
   margin: auto;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
 .divRegisterPets h3 {
-  padding: 1em;
-  margin: auto;
+ text-align: center;
   background-color: #8ae2de;
 }
 
@@ -336,7 +331,7 @@ select {
   /* padding: 0.5em 0.3em 0 1.5em; */
 }
 
-/******** ASIDE **********/
+/********:**************************** ASIDE ******************************/
 .containerAside{
   width: 45%;
   padding: 1.5em 2em 1.5em 5em;
@@ -379,6 +374,13 @@ select {
 }
 .border-top{
   border-top: 1px solid var(--color-primario); 
+
+}
+.addPetsIcon{
+  cursor: pointer;
+}
+#content-user img{
+  border-radius: 100px 100px 100px 100px;
 
 }
 
