@@ -157,30 +157,29 @@ main{
   display: flex;
 }
 /*****************muro**********/
-.imgSize {
-  width: 85%;
-  height: 4.5em;
+
+.imgSize, #imgLogo {
+  width: 3em;
+  height: 3em;
 }
 
 .header {
   background-color: var(--color-primario);
 }
 
-.header .divLogo {
-  width: 8%;
-  height: 5%;
-}
 
 .header div:nth-child(2) {
   margin-top: 2.8%;
 }
-/* 
-.header div:nth-child(1),
-div:nth-child(3),
-div:nth-child(4),
-div:nth-child(5) {
-  margin-top: 1em;
-} */
+
+#buscar{
+  width: 20em;
+  height: 2em;
+  margin: 0;
+}
+.enlacePerfil img{
+  border-radius: 100px;
+}
 
 /********** VISTA LOGIN *********/
 

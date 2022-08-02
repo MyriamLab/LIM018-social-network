@@ -10,25 +10,28 @@ export default () => {
   const headerHomeTemplate = `
         <div class="header flex-direction padd-05 space-around">
 
-            <div class="divLogo">
+            <div class="divLogo" id ="imgLogo">
                 <img class="imgSize" src="./imagenes/logo-pets.png" alt="logo">      
             </div>
 
             <div>
-            <input placeholder="Buscar amigos">
+            <input placeholder="Buscar amigos" id="buscar">
             </div>
-
             
             <div>
                 <img class="imgSize center" src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">
+                <p>Inicio</p>
             </div>
             
             <div>
                 <img class="imgSize" src="./imagenes/amigos.png" id="imgFriends"class=titulo-header" alt="amigos">
+                <p>Amigos</p>
+
             </div>
             
             <div>
-                <img class="imgSize" src="./imagenes/pets.png" id="imgPets"class=titulo-header" alt="home mascotas">
+                <img class="imgSize" src="./imagenes/mascota.png" id="imgPets"class=titulo-header" alt="home mascotas">
+                <p>Mascotas</p>
             </div>
             
             <div class="enlacePerfil">
