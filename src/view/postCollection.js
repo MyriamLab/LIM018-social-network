@@ -64,11 +64,13 @@ async function likesHandler(e) {
   const dataPost = await obtenerCollById(idPost, 'post');
 
   if (await dataPost.likes.includes(idUser)) {
-    console.log(dataPost.likes.includes(idUser));
-    console.log('eliminar post');
+    console.log('quitar like');
+    await updatePost(idPost, {
+      likes: dataPost.likes.filter((item) => item !== idUser),
+    });
   } else {
     // esto es para agregar like por usuario
-    console.log('agregar post');
+    console.log('agregar like');
     await updatePost(idPost, {
       likes: [...dataPost.likes, idUser],
     });
@@ -103,7 +105,7 @@ export const mostrarPost = async (idPostContainer) => {
         data.userImg,
         data.status,
         data.time,
-        1,
+        data.likes.length,
       );
     });
     contenedorPost.innerHTML = postViewContent;

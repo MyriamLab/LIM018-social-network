@@ -24,6 +24,8 @@ import {
   deleteDoc,
   serverTimestamp,
   updateDoc,
+  query,
+  orderBy,
 // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.8.4/firebase-firestore.js';
 
@@ -76,4 +78,6 @@ export {
   ref,
   uploadBytes,
   getDownloadURL,
+  query,
+  orderBy,
 };

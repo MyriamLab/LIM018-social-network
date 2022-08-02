@@ -10,6 +10,8 @@ import {
   deleteDoc,
   updateDoc,
   serverTimestamp,
+  query,
+  orderBy,
 } from './config.js';
 import { dateTime } from '../view/datePost.js';
 
@@ -52,7 +54,7 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
 
 //  jalar datos desde firestore de los post
 export const getPostBD = (documento) => {
-  const dataPost = onSnapshot(collection(db, 'post'), (documento));
+  const dataPost = onSnapshot(query(collection(db, 'post'), orderBy('timestamp', 'desc')), (documento));
   return dataPost;
 };
 
@@ -64,9 +66,3 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
-
-// export const updateLikes = async (idPost, arrayLikes) => {
-//   await updateDoc(doc(db, 'post', idPost), {
-//     likes: arrayLikes,
-//   });
-// };
