@@ -9,6 +9,7 @@ import {
   onSnapshot,
   deleteDoc,
   updateDoc,
+  serverTimestamp,
 } from './config.js';
 import { dateTime } from '../view/datePost.js';
 
@@ -28,10 +29,9 @@ export const getUserBD = (uid) => {
   return dataUser;
 };
 
-//  jalar datos desde firestore del usuario por id y colección
-export const obtenerUserById = (userId, colection) => {
-  const docRef = doc(db, colection, userId);
-  const docSnap = getDoc(docRef).then((userDoc) => userDoc.data());
+//  jalar datos desde firestore del usuario por id y colección=''
+export const obtenerCollById = (id, coleccion) => {
+  const docSnap = getDoc(doc(db, coleccion, id)).then((userDoc) => userDoc.data());
   return docSnap;
 };
 
@@ -45,6 +45,8 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
     userImg,
     status,
     time: dateTime(),
+    likes: [],
+    timestamp: serverTimestamp(),
   });
 };
 
@@ -62,3 +64,9 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
+
+// export const updateLikes = async (idPost, arrayLikes) => {
+//   await updateDoc(doc(db, 'post', idPost), {
+//     likes: arrayLikes,
+//   });
+// };
