@@ -58,15 +58,14 @@ export default () => {
 export const crearPost = (idButton) => {
   const idButtonPost = document.getElementById(idButton);
   idButtonPost.disabled = false;
+  const inputImg = document.getElementById('cargarImg');
+  inputImg.addEventListener('change', previewFile);
 
   idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
 
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
-
-    const inputImg = document.getElementById('cargarImg');
-    inputImg.addEventListener('change', previewFile);
 
     const inputTypeFile = document.getElementById('cargarImg');
 

@@ -6,7 +6,7 @@ export const cargarImg = async (nameImg, file) => {
   await uploadBytes(storageRef, file).then((snapshot) => {
     console.log('cargo el archivo', snapshot);
   });
-   const traerFile = await getDownloadURL(storageRef);
+  const traerFile = await getDownloadURL(storageRef);
   console.log('url de img ', traerFile);
   return traerFile;
 };
