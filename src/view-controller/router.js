@@ -9,6 +9,7 @@ const changeView = (route) => {
   const container = document.getElementById('container');
   const header = document.querySelector('#headerContainer');
   container.innerHTML = '';
+  header.innerHTML = '';
   // const headerContainer = document.querySelector('header');
 
   switch (route) {
@@ -21,7 +22,7 @@ const changeView = (route) => {
     case '#/register': {
       container.appendChild(components.register());
       //  crea como hijo del container el formulario de registro
-      registroCorreo('formRegister');
+      registroCorreo();
       //    recibe el id del formulario ya creado y realiza el evento "submit" desde
       //    registrocorreo que se encuentra en register.js
       break;
@@ -37,6 +38,18 @@ const changeView = (route) => {
       // container.appendChild(components.postCollect());
       break;
       //    rompe el ciclo, y retorna solo el form de login
+    }
+    case '#/perfil': {
+      header.appendChild(components.headerNet());
+      break;
+    }
+    case '#/registerPets': {
+      header.appendChild(components.headerNet());
+      break;
+    }
+    case '#/friends': {
+      header.appendChild(components.headerNet());
+      break;
     }
     default:
       break;

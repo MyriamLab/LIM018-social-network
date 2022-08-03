@@ -22,7 +22,7 @@ export default () => {
                 <div class="imgFile">          
                   <div class="file">
                     <label for="cargarImg">
-                      <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">                   
+                      <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
                     </label>
                     <input  id="cargarImg" type="file">
                   </div>
@@ -56,26 +56,34 @@ export default () => {
 
 export const crearPost = (idButton) => {
   const idButtonPost = document.getElementById(idButton);
-
-  const inputImg = document.getElementById('cargarImg');
-  inputImg.addEventListener('change', previewFile);
+  idButtonPost.disabled = false;
 
   idButtonPost.addEventListener('click', async () => {
     const contentPost = document.getElementById('idPostTextarea').value;
+
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
-    const file = document.querySelector('input[type=file]').files[0];
 
-    const imgPost = await cargarImg(file.name, file);
-    // llamar al método crear post
-    createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
-    document.getElementById('idPostTextarea').value = '';
-    document.querySelector('#imgLoad').src = '';
-    document.querySelector('input[type=file]').value = '';
+    const inputImg = document.getElementById('cargarImg');
+    inputImg.addEventListener('change', previewFile);
+
+    const inputTypeFile = document.getElementById('cargarImg');
+
+    let imgPost = '';
+    if (inputTypeFile.value) {
+      const file = document.querySelector('input[type=file]').files[0];
+      imgPost = await cargarImg(file.name, file);
+    }
+    if (inputTypeFile.value || contentPost) {
+      // llamar al método crear post
+      createPost(userDate.uid, contentPost, imgPost, userDate.name, userDate.imgUsuario, status);
+      document.getElementById('idPostTextarea').value = '';
+      document.querySelector('#imgLoad').src = '';
+      document.querySelector('input[type=file]').value = '';
+    }
   });
-
-  mostrarPost('post-container');
   // document.querySelector('#imgLoad').style.display = 'flex';
+  mostrarPost('post-container');
 };
 
 function previewFile() {
