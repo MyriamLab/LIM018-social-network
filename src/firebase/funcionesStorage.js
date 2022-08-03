@@ -1,4 +1,6 @@
-import { storage, ref, uploadBytes, getDownloadURL } from './config.js';
+import {
+  storage, ref, uploadBytes, getDownloadURL,
+} from './config.js';
 
 export const cargarImg = async (nameImg, file) => {
   const storageRef = ref(storage, nameImg);

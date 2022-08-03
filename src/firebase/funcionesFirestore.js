@@ -12,10 +12,12 @@ import {
   serverTimestamp,
   query,
   orderBy,
+  where,
+  getDocs,
 } from './config.js';
 import { dateTime } from '../view/datePost.js';
 
-/** ************************ IMPLEMENTAR MÉTODOS DE USUARIO ********************** */
+/** ************************ IMPLEMENTAR MÉTODOS DE USUARIO CRUD ********************** */
 export const userRegisterBD = async (uid, email, name, imgUsuario, imgPortada) => {
   await setDoc(doc(db, 'users', uid), {
     email,
@@ -43,7 +45,14 @@ export const getUserColl = (documento) => {
   return dataPost;
 };
 
-/** ************************ IMPLEMENTAR MÉTODOS DE POST ********************** */
+// Obtener post de cada user guardado en firestore
+export const getPostsByUser = async (idUser) => {
+  const docSnap = query(collection(db, 'posts'), where('userId', '==', `${idUser}`));
+  const querySnapshot = await getDocs(docSnap);
+  return querySnapshot;
+};
+
+/** ************************ IMPLEMENTAR MÉTODOS DE POST CRUD ********************** */
 export const createPost = async (idUser, contentPost, urlImg, userName, userImg, status) => {
   await addDoc(collection(db, 'post'), {
     idUser,
@@ -58,9 +67,9 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
   });
 };
 
-//  jalar datos desde firestore de los post
-export const getPostBD = (documento) => {
-  const dataPost = onSnapshot(query(collection(db, 'post'), orderBy('timestamp', 'desc')), (documento));
+//  jalar datos desde firestore de los post .where('privacy', '==', '1')
+export const getPostBD = (callback) => {
+  const dataPost = onSnapshot(query(collection(db, 'post'), orderBy('timestamp', 'desc')), (callback));
   return dataPost;
 };
 
@@ -72,3 +81,6 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
+
+
+/** */
