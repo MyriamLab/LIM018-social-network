@@ -12,7 +12,7 @@ import {
   sendEmailVerificationUser,
 } from '../src/firebase/funcionesAuth.js';
 
-jest.mock('../src/firebase/config.js');
+jest.mock('../src/firebase/config.js'); //  mock habilitado para cargar el config falso no el original
 // eslint-disable-next-line no-console
 
 describe('register correo', () => {
