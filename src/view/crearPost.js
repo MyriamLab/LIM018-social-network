@@ -54,6 +54,21 @@ export default () => {
   return crearPostElement;
 };
 
+function previewFile() {
+  const preview = document.querySelector('#imgLoad');
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener('load', () => {
+    // convierte la imagen a una cadena en base64
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
 export const crearPost = (idButton) => {
   const idButtonPost = document.getElementById(idButton);
   idButtonPost.disabled = false;
@@ -65,6 +80,7 @@ export const crearPost = (idButton) => {
 
     const getStatusPost = document.getElementById('status');
     const status = getStatusPost.selectedOptions[0].value;
+    console.log(status);
 
     const inputTypeFile = document.getElementById('cargarImg');
 
@@ -84,18 +100,3 @@ export const crearPost = (idButton) => {
   // document.querySelector('#imgLoad').style.display = 'flex';
   mostrarPost('post-container');
 };
-
-function previewFile() {
-  const preview = document.querySelector('#imgLoad');
-  const file = document.querySelector('input[type=file]').files[0];
-  const reader = new FileReader();
-
-  reader.addEventListener('load', () => {
-    // convierte la imagen a una cadena en base64
-    preview.src = reader.result;
-  }, false);
-
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-}

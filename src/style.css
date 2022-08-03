@@ -253,141 +253,6 @@ main{
   width: 2.5em;
   height: 2.5em;
 }
-
-/******* Vista RegisterPets ********/
-#containerRegPets{
-  width: 30em;
-  height: 30em;
-}
-.divRegisterPets {
-  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
-  width: 100%;
-  margin: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-.divRegisterPets h3 {
- text-align: center;
-  background-color: #8ae2de;
-}
-
-.divRegisterPets figure img {
-  padding: 0.5em;
-  width: 30%;
-  height: 20%;
-  top: 2%;
-}
-
-.divFormPets {
-  background-color: #8ae2de;
-  width: 90%;
-  margin: auto;
-}
-
-.groupPets {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.groupPets input,
-textarea,
-select {
-  width: 85%;
-  height: 70%;
-  padding: 0.7em;
-  margin: 0.5em;
-  border-radius: 8px;
-  border: none;
-}
-
-.buttonsRegister {
-  display: flex;
-  padding: 0.5em;
-  margin: 1em;
-  margin-bottom: 5.5em;
-  justify-content: space-around;
-  text-align: center;
-}
-
-/* MODALES DE REGISTRO */
-#modalPadre {
-  z-index: 10;
-  position: fixed;
-  top: 40%;
-  left: 65%;
-  width: 15em;
-  border: none;
-  height: 8em;
-  padding: 0;
-  flex-direction: column;
-}
-.modalMedio {
-  width: 100%;
-  height: 50%;
-  padding: 1em 0.5em 0.5em 0.5em;
-}
-.modalArriba {
-  background-color: var(--color-primario);
-}
-.modalAbajo {
-  background-color: #ffffff;
-  /* padding: 0.5em 0.3em 0 1.5em; */
-}
-
-/********:**************************** ASIDE ******************************/
-.containerAside{
-  width: 45%;
-  padding: 1.5em 2em 1.5em 5em;
-  /* overflow: auto;
-  height: 50%; scrooll*/ 
-
-}
-.box-aside{
-  background-color: #fff;
-  border-radius: 15px 15px 0 0 ;
-
-}
-.aside-h4{
-  margin-top: 20%;
-}
-#contImg{
-  position:relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3em;
-  width: 100%;
-
-}
-#imgUser {
-  position: absolute;
-  width: 35%;
-  border-radius: 100px 100px 100px 100px;
-  border: 0.3em solid #f6e3be;
-}
-#imgPortada{
-  width: 100%;
-  height: 20%;
-  border-radius: 15px 15px 0 0 ;
-
-}
-.box-label{
-  margin-left: 3em;
-  margin-right: 3em;
-}
-.border-top{
-  border-top: 1px solid var(--color-primario); 
-
-}
-.addPetsIcon{
-  cursor: pointer;
-}
-#content-user img{
-  border-radius: 100px 100px 100px 100px;
-
-}
-
 /****************** CREAR POST ************************************/
 .containerCrearPost{
   padding: 1.5em 2em 1.5em 2em; 
@@ -540,6 +405,142 @@ select {
   display: block;
 }
 
+
+
+/******* Vista RegisterPets ********/
+#containerRegPets{
+  width: 30em;
+  height: 30em;
+}
+.divRegisterPets {
+  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
+  width: 100%;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.divRegisterPets h3 {
+ text-align: center;
+  background-color: #8ae2de;
+}
+
+.divRegisterPets figure img {
+  padding: 0.5em;
+  width: 30%;
+  height: 20%;
+  top: 2%;
+}
+
+.divFormPets {
+  background-color: #8ae2de;
+  width: 90%;
+  margin: auto;
+}
+
+.groupPets {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.groupPets input,
+textarea,
+select {
+  width: 85%;
+  height: 70%;
+  padding: 0.7em;
+  margin: 0.5em;
+  border-radius: 8px;
+  border: none;
+}
+
+.buttonsRegister {
+  display: flex;
+  padding: 0.5em;
+  margin: 1em;
+  margin-bottom: 5.5em;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* MODALES DE REGISTRO */
+#modalPadre {
+  z-index: 10;
+  position: fixed;
+  top: 40%;
+  left: 65%;
+  width: 15em;
+  border: none;
+  height: 8em;
+  padding: 0;
+  flex-direction: column;
+}
+.modalMedio {
+  width: 100%;
+  height: 50%;
+  padding: 1em 0.5em 0.5em 0.5em;
+}
+.modalArriba {
+  background-color: var(--color-primario);
+}
+.modalAbajo {
+  background-color: #ffffff;
+  /* padding: 0.5em 0.3em 0 1.5em; */
+}
+
+
+/********:**************************** ASIDE ******************************/
+.containerAside{
+  width: 45%;
+  padding: 1.5em 2em 1.5em 5em;
+  /* overflow: auto;
+  height: 50%; scrooll*/ 
+
+}
+.box-aside{
+  background-color: #fff;
+  border-radius: 15px 15px 0 0 ;
+
+}
+.aside-h4{
+  margin-top: 20%;
+}
+#contImg{
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+  width: 100%;
+
+}
+#imgUser {
+  position: absolute;
+  width: 35%;
+  border-radius: 100px 100px 100px 100px;
+  border: 0.3em solid #f6e3be;
+}
+#imgPortada{
+  width: 100%;
+  height: 20%;
+  border-radius: 15px 15px 0 0 ;
+
+}
+.box-label{
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.border-top{
+  border-top: 1px solid var(--color-primario); 
+
+}
+.addPetsIcon{
+  cursor: pointer;
+}
+#content-user img{
+  border-radius: 100px 100px 100px 100px;
+
+}
 
 /****************** MEDIA QUERIES ************************************/
 

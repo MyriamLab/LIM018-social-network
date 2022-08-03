@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-use-before-define */
 import {
   getPostBD,
@@ -5,6 +6,7 @@ import {
   getPostEdit,
   updatePost,
   obtenerCollById,
+  getPostsByUser,
 } from '../firebase/funcionesFirestore.js';
 
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
@@ -105,9 +107,11 @@ export const mostrarPost = async (idPostContainer) => {
         data.time,
         data.likes.length,
       );
+      console.log(getPostsByUser(data.idUser));
     });
     contenedorPost.innerHTML = postViewContent;
     editDeletePost(contenedorPost);
+
     // const likes = countLike('countLike');
     const buttonLikes = document.querySelectorAll('.likes');
     buttonLikes.forEach((likeIcon) => {

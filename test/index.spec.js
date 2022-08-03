@@ -53,14 +53,14 @@ describe('Iniciar sesión con google', () => {
     }));
 });
 
-describe('Envía correo de verificación', () => {
-  it('debería ser una función', () => {
-    expect(typeof sendEmailVerificationUser).toBe('function');
-  });
+// describe('Envía correo de verificación', () => {
+//   it('debería ser una función', () => {
+//     expect(typeof sendEmailVerificationUser).toBe('function');
+//   });
 
-  it('Debería poder enviar un correo de verificación', () => sendEmailVerificationUser()
-    .then(() => {
-      console.log(sendEmailVerification.mock.calls);
-      expect(signInWithPopup.mock.calls[0]).toBe();
-    }));
-});
+//   it('Debería poder enviar un correo de verificación', () => sendEmailVerificationUser()
+//     .then(() => {
+//       console.log(sendEmailVerification.mock.calls);
+//       expect(signInWithPopup.mock.calls[0]).toBe();
+//     }));
+// });

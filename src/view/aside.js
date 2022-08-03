@@ -1,6 +1,6 @@
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 import { getUserColl } from '../firebase/funcionesFirestore.js';
-import { registerPets } from '../view/registerPets.js';
+import { registerPets } from './registerPets.js';
 
 const userDate = objectsLocalStorage();
 
@@ -46,19 +46,6 @@ export default () => {
   return crearPostElement;
 };
 
-export const mostrarUser = async () => {
-  const contenedorPost = document.getElementById('content-user');
-  getUserColl((querySnapshot) => {
-    let postViewContent = '';
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      postViewContent += TemplateViewUser(data.name, data.imgUsuario);
-    });
-    contenedorPost.innerHTML = postViewContent;
-  });
-  mostrarMascota();
-};
-
 function TemplateViewUser(userName, userImg) {
   const viewPostTemplate = `
   <div class="padd-05">
@@ -81,4 +68,17 @@ const mostrarMascota = () => {
       document.getElementById('regCancel').addEventListener('click', () => container.close());
     });
   });
+};
+
+export const mostrarUser = async () => {
+  const contenedorPost = document.getElementById('content-user');
+  getUserColl((querySnapshot) => {
+    let postViewContent = '';
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      postViewContent += TemplateViewUser(data.name, data.imgUsuario);
+    });
+    contenedorPost.innerHTML = postViewContent;
+  });
+  mostrarMascota();
 };
