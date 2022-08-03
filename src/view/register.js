@@ -75,8 +75,8 @@ export default () => {
 };
 
 // Aqui creamos una const registroCorreo donde almacenamos el evento submit del form
-export const registroCorreo = (selectorForm) => {
-  const formRegister = document.getElementById(selectorForm);
+export const registroCorreo = () => {
+  const formRegister = document.getElementById('formRegister');
   formRegister.addEventListener('submit', (event) => {
     event.preventDefault();
     const nameRegister = document.getElementById('idNameRegister').value;

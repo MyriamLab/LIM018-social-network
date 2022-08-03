@@ -64,13 +64,11 @@ async function likesHandler(e) {
   const dataPost = await obtenerCollById(idPost, 'post');
 
   if (await dataPost.likes.includes(idUser)) {
-    console.log('quitar like');
     await updatePost(idPost, {
       likes: dataPost.likes.filter((item) => item !== idUser),
     });
   } else {
     // esto es para agregar like por usuario
-    console.log('agregar like');
     await updatePost(idPost, {
       likes: [...dataPost.likes, idUser],
     });

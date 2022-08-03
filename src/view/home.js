@@ -18,28 +18,34 @@ export default () => {
             <input placeholder="Buscar amigos" id="buscar">
             </div>
             
-            <div>
+            <div >
+                <a href="#/home">
                 <img class="imgSize center" src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">
                 <p>Inicio</p>
+                </a>
             </div>
             
             <div>
+                <a  href="#/friends">
                 <img class="imgSize" src="./imagenes/amigos.png" id="imgFriends"class=titulo-header" alt="amigos">
                 <p>Amigos</p>
-
+                </a>
             </div>
             
             <div>
+                <a  href="#/registerPets">
                 <img class="imgSize" src="./imagenes/mascota.png" id="imgPets"class=titulo-header" alt="home mascotas">
                 <p>Mascotas</p>
+                </a>
             </div>
             
             <div class="enlacePerfil">
-                <a imgSize href="#/rutaPerfilUsuario"><img src="${userObject.imgUsuario}" class="imagenUsuario"  width="50px"></a>
-                <p>${userObject.name}</p>              
+                <a  href="#/perfil"><img src="${userObject.imgUsuario}" class="imagenUsuario"  width="50px">
+                <p>${userObject.name}</p>
+                </a>              
             </div>
-            <div>
-                <button id="btnCerrarSesion">Cerrar Sesión</button>
+            <div class = "homeLogOut">
+                  <i class="fa fa-sign-out" id="btnCerrarSesion"></i>                    
             </div>
         </div>
        

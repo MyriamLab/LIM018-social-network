@@ -181,6 +181,11 @@ main{
 .enlacePerfil img{
   border-radius: 100px;
 }
+.homeLogOut{
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .header div:nth-child(2) {
   margin-top: 2.8%;
@@ -567,6 +572,9 @@ select {
     width: 100%;
     padding: 0;
   }
+  #imgLogo, #buscar{
+    display: none;
+  }
 }
 
 @media (max-width: 420px) {
@@ -623,5 +631,12 @@ select {
   .containerCrearPost{
     width: 100%;
     padding: 0;
+  }
+  .imgSize, #imgLogo, .enlacePerfil img{
+    width: 2em;
+    height: 2em;
+  }
+  .header p{
+    font-size: .7em;
   }
 }

@@ -148,7 +148,7 @@ export const iniciarSesion = (selectorForm) => {
       .then((userCredential) => {
         // un objeto para manipular los datos de google de cada usuario por medio del IUD
         const user = userCredential.user;
-        userRegisterBD(user.uid, user.email, user.displayName, user.photoURL, 'imagenes/portada.jpg');
+        userRegisterBD(user.uid, user.email, user.displayName, user.photoURL, '../imagenes/portada.jpg');
         getUserBD(user.uid).then((userData) => {
           const data = userData;
           const uidUser = user.uid;
