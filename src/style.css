@@ -407,62 +407,67 @@ main{
 
 
 
-/******* Vista RegisterPets ********/
-#containerRegPets{
-  width: 30em;
-  height: 30em;
-}
-.divRegisterPets {
-  background-color: #8ae2de; /*aqui colocamos #cee5d0;*/
-  width: 100%;
-  margin: auto;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-.divRegisterPets h3 {
- text-align: center;
-  background-color: #8ae2de;
-}
-
-.divRegisterPets figure img {
-  padding: 0.5em;
-  width: 30%;
-  height: 20%;
-  top: 2%;
-}
-
-.divFormPets {
-  background-color: #8ae2de;
-  width: 90%;
-  margin: auto;
-}
-
-.groupPets {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.groupPets input,
-textarea,
-select {
-  width: 85%;
-  height: 70%;
-  padding: 0.7em;
-  margin: 0.5em;
+/*************************************** Vista RegisterPets ************************/
+.containerCrearPets{
+  background-color: #fff; 
+  margin: 2em;
+  width: 45%;
   border-radius: 8px;
+}
+.divRegisterPets{
+  margin-bottom: 3em;
+
+}
+#idNameRegister{
+  width: 50%;
+  border: 1px solid var(--color-primario); 
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+#idNameRegister:focus{
+  outline:none;
+}
+
+#idTextareaRegPets{
+  width: 100%;
+  border: 1px solid var(--color-primario); 
+
+}
+#idTextareaRegPets:focus{
+  outline:none;
+}
+
+.filePets > input{
+  display: none;
+}
+.filePets  img{
+    width: 3em;
+    cursor: pointer;
+}
+.buttons{
+  background-color: var(--color-primario);
   border: none;
+  width: 10em;
+  height: 3em;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Roboto Slab', serif;
+  margin: 0 0 1em 2em;
+  
 }
-
-.buttonsRegister {
-  display: flex;
-  padding: 0.5em;
-  margin: 1em;
-  margin-bottom: 5.5em;
-  justify-content: space-around;
-  text-align: center;
+.buttons:hover{
+  background-color:#e09f9f;
+  
 }
-
+/* ********************view pets */
+.viewPets{
+  margin-bottom: 1.5em;
+}
+.imgPets{
+  width: 30%;
+  border-radius: 5px;
+}
 /* MODALES DE REGISTRO */
 #modalPadre {
   z-index: 10;

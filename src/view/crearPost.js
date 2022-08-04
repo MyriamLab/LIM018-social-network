@@ -21,7 +21,7 @@ export default () => {
               <div class="flex-direction divFinalCrearPost">  
                 <div class="imgFile">          
                   <div class="file">
-                    <label for="cargarImg">
+                    <label for="cargarImg"> 
                       <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
                     </label>
                     <input  id="cargarImg" type="file">

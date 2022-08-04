@@ -7,37 +7,33 @@ const userDate = objectsLocalStorage();
 export const registerPets = () => {
   const viewRegisterPetsTemplate = ` 
  
-<div class = "divRegisterPets">    
-    <h3>Registra a tu mascota</h3> 
-         
-        <div class = "divFormPets" >
-            <div class="groupPets">
-                <input id="idNameRegister" type="text" placeholder="Name" required>
-            </div>
-            <div class="groupPets">               
-                <textarea id = "idTextareaRegPets" name="textareaRegPets"
-                placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>  
-            </div>
-            <div class="imgFile">          
-                  <div class="file">
-                    <label for="cargarImgPets">
-                      <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="../imagenes/galeria.png">
-                    </label>
-                    <input  id="cargarImgPets" type="file">
-                  </div>
-              
-                  <div>
-                    <img id = "imgLoadPets" src="" height="50">
-                  </div>                 
-                </div> 
-            <div class="buttonsRegister">
-                <button class="buttons" id="idButtonRegisterPets">Registrar</button>
-                <button class="buttons" id="regCancel">Cancelar</button>
-            </div>
-        </div> 
-   
-</div>
-<div class="containerPetsRegistradas" id="containerPetsRegistradas"></div>
+    <div class = "padd-15 box-cPost divRegisterPets">
+      <div class="padd-05">
+      
+        <div class="padd-05">   
+          <h4 class="center" >Registra a tu mascota<h4>               
+          <input id="idNameRegister" type="text" placeholder="Nombre de tu mascota" required>                
+          <textarea id = "idTextareaRegPets" name="textareaRegPets"
+          placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>  
+        </div>
+        <div>     
+            <div class="filePets">
+              <label for="cargarImgPets">
+                <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="../imagenes/galeria.png">
+              </label>
+              <input  id="cargarImgPets" type="file">
+            </div>              
+            <div>
+              <img id = "imgLoadPets" src="" height="50">
+            </div> 
+                          
+        </div>      
+             
+      </div>
+      <button class="buttons" id="idButtonRegisterPets">Registrar</button>
+      <button class="buttons" id="regCancel">Cancelar</button>
+    </div>
+    <div class="containerPetsRegistradas" id="containerPetsRegistradas"></div>
  `;
   const crearPostElement = document.createElement('section');
   crearPostElement.setAttribute('class', 'containerCrearPets');
@@ -79,6 +75,11 @@ export const crearPets = () => {
     if (inputTypeFile.value || contentPets || namePets) {
       // llamar al método crear post idUser, namePets, imgPets, infoPets
       crearMascota(userDate.uid, namePets, imgPets, contentPets);
+      document.getElementById('idTextareaRegPets').value = '';
+      document.querySelector('#imgLoadPets').src = '';
+      document.querySelector('#idNameRegister').src = '';
+      document.querySelector('input[type=file]').value = '';
+    
       console.log('llego al final, se registro mascota');
     }
   });
@@ -94,20 +95,16 @@ export function TemplateViewPets(
   infoPets,
 ) {
   const viewPostTemplate = `
-        <div class="padd-15 box-cPost viewPost">
-          <div class = "flex-direction  postByUser" id='${idPets}'>
-            <img class ="imgUserPost imgPostv" src="${imgPets}">
-            <div class="group">
-              <h4>${namePets}  </h4>                    
-            </div>
-            <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPets}">
+        <div class="padd-15 box-cPost viewPets">
+          <div class = "flex-direction" id='${idPets}'>
+            <img class ="imgPets" src="${imgPets}">            
+            <div class="padd-15">
+              <h4>${namePets}  </h4>   
+              <div class = "idUser-postEdit" id = '${idUser}' data-id = "${idPets}">
+              </div>
+              <p> ${infoPets} </p>
             </div>                 
-          </div>
-    
-          <div class="box-postView">
-            <p> ${infoPets} </p>   
-                  
-          </div>      
+          </div>  
           
           <div id="containerDeletePets"></div>
           <dialog id="modalUpdatePostPets" class="row-center"></dialog>
