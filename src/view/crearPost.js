@@ -54,7 +54,7 @@ export default () => {
   return crearPostElement;
 };
 
-function previewFile() {
+export function previewFile() {
   const preview = document.querySelector('#imgLoad');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();

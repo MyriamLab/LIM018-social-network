@@ -4,6 +4,8 @@ import { iniciarSesion } from '../view/login.js';
 import { crearPost } from '../view/crearPost.js';
 import { cerrarSesion } from '../view/home.js';
 import { mostrarUser } from '../view/aside.js';
+import { mostrarPostPerfil } from '../view/perfil.js';
+import { registerPets, crearPets } from '../view/registerPets.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -41,10 +43,19 @@ const changeView = (route) => {
     }
     case '#/perfil': {
       header.appendChild(components.headerNet());
+      container.appendChild(components.aside());
+      mostrarUser();
+      container.appendChild(components.perfilUser());
+      mostrarPostPerfil();
       break;
     }
     case '#/registerPets': {
       header.appendChild(components.headerNet());
+      container.appendChild(components.aside());
+      mostrarUser();
+      container.appendChild(registerPets());
+      crearPets();
+
       break;
     }
     case '#/friends': {

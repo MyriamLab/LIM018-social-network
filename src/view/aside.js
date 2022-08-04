@@ -1,6 +1,6 @@
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 import { getUserColl } from '../firebase/funcionesFirestore.js';
-import { registerPets } from './registerPets.js';
+import { registerPets, crearPets } from './registerPets.js';
 
 const userDate = objectsLocalStorage();
 
@@ -35,8 +35,7 @@ export default () => {
                   </div>
                 </div>            
               </div>
-              <dialog id="containerRegPets">
-              </dialog>        
+               
                  
           `;
   const crearPostElement = document.createElement('aside');
@@ -56,16 +55,18 @@ function TemplateViewUser(userName, userImg) {
   return viewPostTemplate;
 }
 
-const mostrarMascota = () => {
-  const container = document.querySelector('#containerRegPets');
+const mostrarRegMascota = () => {
+  // const container = document.querySelector('#containerRegPets');
 
   const iconAddPets = document.querySelectorAll('.addPetsIcon');
   iconAddPets.forEach((addPets) => {
     addPets.addEventListener('click', () => {
-      container.innerHTML = '';
-      container.innerHTML = registerPets();
-      container.showModal();
-      document.getElementById('regCancel').addEventListener('click', () => container.close());
+      window.location.hash = '#/registerPets';
+      // container.innerHTML = '';
+      // container.innerHTML = registerPets();
+      // container.showModal();
+      // crearPets();
+      // document.getElementById('regCancel').addEventListener('click', () => container.close());
     });
   });
 };
@@ -80,5 +81,5 @@ export const mostrarUser = async () => {
     });
     contenedorPost.innerHTML = postViewContent;
   });
-  mostrarMascota();
+  mostrarRegMascota();
 };

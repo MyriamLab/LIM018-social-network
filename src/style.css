@@ -541,8 +541,13 @@ select {
   border-radius: 100px 100px 100px 100px;
 
 }
-
 /****************** MEDIA QUERIES ************************************/
+
+.containerPerfil{
+  background-color: #ffffff;
+  width: 55%;
+  margin: 2em 2em 2em 2em;
+}
 
 @media (max-width: 800px) {
   .divImgLogin {
