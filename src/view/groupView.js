@@ -4,6 +4,7 @@ import header from './home.js';
 import crearPos from './crearPost.js';
 import asideHome from './aside.js';
 import perfil from './perfil.js';
+import amigos from './amigos.js';
 //  import mensajeExito from './modalesMensajes.js';
 
 const components = {
@@ -13,6 +14,7 @@ const components = {
   createPost: crearPos,
   aside: asideHome,
   perfilUser: perfil,
+  amigosUser: amigos,
   // mensajeExito: modalesMensajes,
 };
 

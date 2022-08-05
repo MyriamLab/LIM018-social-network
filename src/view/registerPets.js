@@ -79,8 +79,6 @@ export const crearPets = () => {
       document.querySelector('#imgLoadPets').src = '';
       document.querySelector('#idNameRegister').src = '';
       document.querySelector('input[type=file]').value = '';
-    
-      console.log('llego al final, se registro mascota');
     }
   });
   // document.querySelector('#imgLoad').style.display = 'flex';

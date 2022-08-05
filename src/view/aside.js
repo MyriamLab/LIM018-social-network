@@ -1,6 +1,5 @@
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 import { getUserColl } from '../firebase/funcionesFirestore.js';
-import { registerPets, crearPets } from './registerPets.js';
 
 const userDate = objectsLocalStorage();
 
