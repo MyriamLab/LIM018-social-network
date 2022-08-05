@@ -586,9 +586,10 @@ main{
   #imgLogo, #buscar{
     display: none;
   }
-  .containerCrearPets{
+  .containerCrearPets, .containerPerfil, .containerAmigos{
     width: 100%;
   }
+ 
 }
 
 @media (max-width: 420px) {
