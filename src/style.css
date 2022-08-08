@@ -168,11 +168,11 @@ main{
   background-color: var(--color-primario);
 }
 
-
+/*
 .header div:nth-child(2) {
   margin-top: 2.8%;
 }
-
+*/
 #buscar{
   width: 20em;
   height: 2em;
