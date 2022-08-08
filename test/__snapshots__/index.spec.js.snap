@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`register correo Debería de coincidir con el template 1`] = `
+<section
+  class="divForm"
+>
+  
+  
+
+  <div
+    class="flex-direction divContainerImgForm"
+  >
+    
+  
+  
+    <div
+      class="flex-direction center divImgLogin"
+    >
+      
+    
+      <img
+        alt="imágen de perritos y redes sociales"
+        src="./imagenes/portada-dogs.png "
+      />
+      
+  
+    </div>
+    
+  
+    <!--DIV DERECHO-->
+    
+  
+    <div
+      class="row-center divFormLogin"
+    >
+      
+  
+      <figure
+        class="center padd-05"
+      >
+        
+  
+        <img
+          alt="logo"
+          src="./imagenes/logo-pets.png"
+        />
+        
+
+      </figure>
+      
+
+    
+      <!--inicio form register-->
+      
+    
+      <div
+        class="form-container"
+      >
+        
+      
+      
+        <h3
+          class="center"
+        >
+          Regístrate
+        </h3>
+        
+      
+        <form
+          class="formLogin"
+          id="formRegister"
+        >
+          
+        
+          <label
+            class="group m-label"
+          >
+            Nombre Completo
+          </label>
+          
+        
+          <input
+            id="idNameRegister"
+            placeholder="Ej: María"
+            required=""
+            type="text"
+          />
+          
+
+        
+          <label
+            class="group m-label"
+          >
+            E-mail
+          </label>
+          
+
+        
+          <input
+            id="idEmailRegister"
+            placeholder="pets@gmail.com"
+            required=""
+            type="email"
+          />
+          
+
+        
+          <label
+            class="group m-label"
+          >
+            Contraseña 
+          </label>
+          
+
+        
+          <input
+            id="idPasswordRegister"
+            placeholder="Mínimo de 8 caracteres"
+            required=""
+            type="password"
+          />
+          
+
+        
+          <div
+            class="buttonClass center"
+          >
+            
+          
+            <button
+              id="idButtonRegister"
+              type="submit"
+            >
+              Registrarse
+            </button>
+            
+        
+          </div>
+          
+        
+          <dialog
+            class="row-center"
+            id="modalPadre"
+          />
+          
+        
+          <div
+            class="flex-direction space-around padd-05"
+          >
+            
+        
+            <p>
+              ¿Ya tienes una cuenta?
+            </p>
+            
+        
+            <a
+              href="#/login"
+            >
+              
+         Inicia Sesión
+        
+            </a>
+            
+      
+          </div>
+          
+      
+        </form>
+        
+    
+      </div>
+      
+  
+    </div>
+    
+
+  </div>
+  
+  
+</section>
+`;

@@ -22,7 +22,7 @@ export default () => {
               <div class="flex-direction divFinalCrearPost">  
                 <div class="imgFile">          
                   <div class="file">
-                    <label for="cargarImg">
+                    <label for="cargarImg"> 
                       <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
                     </label>
                     <input  id="cargarImg" type="file">
@@ -55,7 +55,7 @@ export default () => {
   return crearPostElement;
 };
 
-function previewFile() {
+export function previewFile() {
   const preview = document.querySelector('#imgLoad');
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();

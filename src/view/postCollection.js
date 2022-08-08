@@ -14,7 +14,7 @@ import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
 
 const dataUser = objectsLocalStorage();
 
-function TemplateViewPost(
+export function TemplateViewPost(
   idPost,
   idUser,
   contentPost,
@@ -48,13 +48,13 @@ function TemplateViewPost(
       <div class="padd-05">
       <button id="countLike" class="likes" name="${idPost}">          
         ${likesCount}❤ Me gusta          
-      </button>
-        
-        <button id="comentar">✉  Comentar</button>   
+      </button>  
       </div>
       
       <div id="containerDelete"></div>
       <dialog id="modalUpdatePost" class="row-center"></dialog>
+      <dialog id="modalDeletePost" class="row-center"></dialog>
+
     </div>`;
   return viewPostTemplate;
 }
@@ -107,7 +107,6 @@ export const mostrarPost = async (idPostContainer) => {
         data.time,
         data.likes.length,
       );
-      console.log(getPostsByUser(data.idUser));
     });
     contenedorPost.innerHTML = postViewContent;
     editDeletePost(contenedorPost);
@@ -129,8 +128,6 @@ function editDeletePost(contenedorPost) {
     if (userIdPost === dataUser.uid) {
       elements.innerHTML = EditDeletTemplate(idPostPublicado);
       elements.addEventListener('click', () => {
-        console.log('quieres eliminar o editar?');
-
         /** accede a los métodos eliminar o actualizar */
         eliminarPost(contenedorPost);
         actualizarPost(contenedorPost);
@@ -143,15 +140,25 @@ function eliminarPost(contenedorPost) {
   const btnDelete = contenedorPost.querySelectorAll('.delete-post');
   btnDelete.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      deletePost(event.target.dataset.id);// el target saca el id alamcenado en el html data-id=""
+      const modalEliminar = document.querySelector('#modalDeletePost');
+      modalEliminar.innerHTML = templateEliminarAlert();
+      modalEliminar.showModal();
+      const btnConfirmar = document.getElementById('si');
+      btnConfirmar.addEventListener('click', () => {
+        deletePost(event.target.dataset.id);// el target saca el id alamcenado en el html data-id=""
+      });
+      const btnCancelar = document.getElementById('no');
+      btnCancelar.addEventListener('click', () => {
+        modalEliminar.close();
+      });
     });
   });
 }
 
-const templateEditModal = (newPost) => {
+const templateEditModal = (post) => {
   const editModalContent = `
   <form id="postForm">
-    <textarea placeholder="Escribe Algo ..." id='inputUpdatedText'>${newPost}</textarea>        
+    <textarea placeholder="Escribe Algo ..." id='inputUpdatedText'>${post}</textarea>        
     <div class="buttonGeneralPublication">
       <button id = "saveUpdate"  type="submit">Guardar</button>
       <button id = "cancelUpdate" >Cancelar</button>
@@ -186,3 +193,37 @@ function actualizarPost(contenedorPost) {
     });
   });
 }
+
+function templateEliminarAlert() {
+  const template = `
+    <p>¿Estas seguro que quieres eliminar esta publicación?</p>        
+    <div>
+      <button id = "si">Confirmar</button>
+      <button id = "no">Cancelar</button>
+    </div>`;
+  return template;
+}
+
+// PERFIL DE USUARIO
+
+export const mostrarPostPerfil = async (idPostContainer) => {
+  const contenedorPost = document.getElementById(idPostContainer);
+  const postByUsers = await getPostsByUser(objectsLocalStorage().uid);
+  let postViewContent = '';
+  postByUsers.forEach((doc) => {
+    const data = doc.data();
+    const idPost = doc.id;
+    postViewContent += TemplateViewPost(
+      idPost,
+      data.idUser,
+      data.contentPost,
+      data.urlImg,
+      data.userName,
+      data.userImg,
+      data.status,
+      data.time,
+      data.likes.length,
+    );
+    contenedorPost.innerHTML = postViewContent;
+  });
+};

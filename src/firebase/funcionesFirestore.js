@@ -45,13 +45,6 @@ export const getUserColl = (documento) => {
   return dataPost;
 };
 
-// Obtener post de cada user guardado en firestore
-export const getPostsByUser = async (idUser) => {
-  const docSnap = query(collection(db, 'posts'), where('userId', '==', `${idUser}`));
-  const querySnapshot = await getDocs(docSnap);
-  return querySnapshot;
-};
-
 /** ************************ IMPLEMENTAR MÉTODOS DE POST CRUD ********************** */
 export const createPost = async (idUser, contentPost, urlImg, userName, userImg, status) => {
   await addDoc(collection(db, 'post'), {
@@ -67,10 +60,17 @@ export const createPost = async (idUser, contentPost, urlImg, userName, userImg,
   });
 };
 
-//  jalar datos desde firestore de los post .where('privacy', '==', '1')
+//  jalar datos desde firestore de los post .where('status', '==', 'publico')
+// // Obtener todos los documentos de la coleccion 'post' usando onsnapshot
 export const getPostBD = (callback) => {
   const dataPost = onSnapshot(query(collection(db, 'post'), orderBy('timestamp', 'desc')), (callback));
   return dataPost;
+};
+// Obtener post de cada user guardado en firestore
+export const getPostsByUser = async (idUser) => {
+  const docSnap = query(collection(db, 'post'), where('idUser', '==', `${idUser}`));
+  const querySnapshot = await getDocs(docSnap);
+  return querySnapshot;
 };
 
 //  eliminar  post por id
@@ -82,4 +82,21 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
 
+<<<<<<< HEAD
 /** */
+=======
+/** ***************************************  CRUD DE MASCOTAS ******************************************** */
+export const crearMascota = async (idUser, namePets, imgPets, infoPets) => {
+  await addDoc(collection(db, 'pets'), {
+    idUser,
+    namePets,
+    imgPets,
+    infoPets,
+  });
+};
+
+export const verPets = (callback) => {
+  const dataPost = onSnapshot(collection(db, 'pets'), (callback));
+  return dataPost;
+};
+>>>>>>> a9ba55bba2ac3ea17cf65d5e5830375436d92e22
