@@ -7,10 +7,10 @@ Nuestro proyecto es una página web que le permite a las persona registrarse en 
 
 ### Imágenes finales del proyecto:
 
-![producto final vista Login 1](./src/imagenes/prototipo_alta_Login.png)
+![producto final vista Login 1](git asrc/imagenes/prototipo_alta_Login.png)
 
 
-![producto final vista Register 2](./src/imagenes/prototipo_alta_Register.png)
+![producto final vista Register 2](src/imagenes/prototipo_alta_Register.png)
 
 ## Investigación UX
 
