@@ -5,12 +5,30 @@
 
 Nuestro proyecto es una página web que le permite a las persona registrarse en una red social de mascotas. Les permite compartir fotos de sus mascotitas con otras personas e interactuar con ellas a través de publicaciones en su muro, conocer nuevos amigos y darles Like a sus publicaciones.
 
-### Imágenes finales del proyecto:
+### Imágenes finales del proyecto versión Desktop:
 
 ![producto final vista Login 1](./src/imagenes/prototipo_alta_Login.png)
 
 
 ![producto final vista Register 2](./src/imagenes/prototipo_alta_Register.png)
+
+### Imágenes finales del proyecto versión Mobile:
+
+
+![producto final vista Login mobil 1](./src/imagenes/vista_Login_mobil.png)
+
+
+![producto final vista Register mobil 2](./src/imagenes/vista_Register_mobil.png)
+
+
+Imágenes del proyecto al inicio. Este fue nuestro primer diseño y sobre él se hicieron algunos cambios:
+
+
+![producto vista Login v1](./src/imagenes/prototipo_alta_fidelidad_v1.png)
+
+
+![producto vista Register v1](./src/imagenes/prototipo_alta_fidelidad_register_v1.png)
+
 
 ## Investigación UX
 

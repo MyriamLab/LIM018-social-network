@@ -188,6 +188,18 @@ main {
   background-color: var(--color-primario);
 }
 
+a[class="a"]{
+  text-decoration: none;
+}
+
+a[class="a"] p{
+ color: #fff;
+}
+
+a[class="a"] p:hover{
+  color: var(--color-cuaternario);
+ }
+
 /*
 .header div:nth-child(2) {
   margin-top: 2.8%;
