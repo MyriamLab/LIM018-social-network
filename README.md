@@ -2,20 +2,24 @@
 
 
 # Red social - Pets 
+
 Nuestro proyecto es una página web que le permite a las persona registrarse en una red social de mascotas. Les permite compartir fotos de sus mascotitas con otras personas e interactuar con ellas a través de publicaciones en su muro, conocer nuevos amigos y darles Like a sus publicaciones.
 
 ### Imágenes finales del proyecto:
 
 ![producto final vista Login 1](./src/imagenes/prototipo_alta_Login.png)
 
+
 ![producto final vista Register 2](./src/imagenes/prototipo_alta_Register.png)
 
 ## Investigación UX
 
 1. ¿Quiénes son los principales usuarios de producto?
+
 Personas que amen y respeten a sus mascotas que desean compartir las aventuras de sus engreídos con otros usuarios. 
 
 2. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
+
 Nuestra red social le permite a los usuarios subir fotos y contar historias de sus mascotas. Ver fotos de las maacotas de su red de amigos e interactuar con ellos.
 
 ### Primeros prototipos de baja fidelidad
