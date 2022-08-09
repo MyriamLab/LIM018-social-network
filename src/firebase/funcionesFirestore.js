@@ -81,7 +81,7 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
-
+/** */
 /** ***************************************  CRUD DE MASCOTAS ******************************************** */
 export const crearMascota = async (idUser, namePets, imgPets, infoPets) => {
   await addDoc(collection(db, 'pets'), {

@@ -64,12 +64,12 @@ export default () => {
 
           <div>
             <button id="idImgGoogle">
-              <span><img src="imagenes/google.png"></span>  Acceder con Google
+              <span ><img src="imagenes/google.png">Acceder con Google </span> 
             </button>
           </div>
           <dialog id="modalPadre" class="row-center"></dialog>
-          <div class="flex-direction space-around padd-05">
-            <p>¿Aún no tienes una cuenta?</p>
+          <div class="flex-direction space-evenly padd-05">
+            <p>¿No tienes una cuenta?</p>
             <a href="#/register">
              Regístrate aqui
             </a>

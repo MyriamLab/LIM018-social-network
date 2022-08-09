@@ -1,7 +1,69 @@
+
+
+
+# Red social - Pets 
+
+Nuestro proyecto es una página web que le permite a las persona registrarse en una red social de mascotas. Les permite compartir fotos de sus mascotitas con otras personas e interactuar con ellas a través de publicaciones en su muro, conocer nuevos amigos y darles Like a sus publicaciones.
+
+### Imágenes finales del proyecto versión Desktop:
+
+![producto final vista Login 1](./src/imagenes/prototipo_alta_Login.png)
+
+
+![producto final vista Register 2](./src/imagenes/prototipo_alta_Register.png)
+
+
+### Imágenes finales del proyecto versión Mobile:
+
+
+![producto final vista Login mobil 1](./src/imagenes/vista_Login_mobil.png)
+
+
+![producto final vista Register mobil 2](./src/imagenes/vista_Register_mobil.png)
+
+
+### Imágenes del proyecto en alta fidelidad al inicio. Este fue nuestro primer diseño y sobre él se hicieron algunos cambios:
+
+
+![producto vista Login v1](./src/imagenes/prototipo_alta_fidelidad_v1.png)
+
+
+![producto vista Register v1](./src/imagenes/prototipo_alta_fidelidad_register_v1.png)
+
+![producto vista muro v1](./src/imagenes/prototipo_alta_fidelidad_muro.png)
+
+![producto vista muro mobil](./src/imagenes/prototipo_alta_fidelidad_muro.mobil.png)
+
+
+### Imágenes del proyecto en baja fidelidad:
+
+Elizabeth
+
+![producto baja fidelidad formulario Elizabeth](./src/imagenes/Prototipo_baja_fidelidad_Elizabeth.jpeg)
+
+Myriam
+
+![producto baja fidelidad formulario Myriam](./src/imagenes/Prototipo_baja_fidelidad_Myriam.jpeg)
+
+
+
+## Investigación UX
+
+1. ¿Quiénes son los principales usuarios de producto?
+
+Personas que amen y respeten a sus mascotas que desean compartir las aventuras de sus engreídos con otros usuarios. 
+
+2. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
+
+Nuestra red social le permite a los usuarios subir fotos y contar historias de sus mascotas. Ver fotos de las maacotas de su red de amigos e interactuar con ellos.
+
+### Primeros prototipos de baja fidelidad
+--
+
+
+
 # Creando una Red Social
-
-## Índice
-
+### Índice
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)

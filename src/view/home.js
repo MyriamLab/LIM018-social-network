@@ -19,28 +19,28 @@ export default () => {
             </div>
             
             <div >
-                <a href="#/home">
+                <a class="a"href="#/home">
                 <img class="imgSize center" src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">
                 <p>Inicio</p>
                 </a>
             </div>
             
             <div>
-                <a  href="#/friends">
+                <a class="a" href="#/friends">
                 <img class="imgSize" src="./imagenes/amigos.png" id="imgFriends"class=titulo-header" alt="amigos">
                 <p>Amigos</p>
                 </a>
             </div>
             
             <div>
-                <a  href="#/registerPets">
+                <a class="a" href="#/registerPets">
                 <img class="imgSize" src="./imagenes/mascota.png" id="imgPets"class=titulo-header" alt="home mascotas">
                 <p>Mascotas</p>
                 </a>
             </div>
             
             <div class="enlacePerfil">
-                <a  href="#/perfil"><img src="${userObject.imgUsuario}" class="imagenUsuario"  width="50px">
+                <a class="a" href="#/perfil"><img src="${userObject.imgUsuario}" class="imagenUsuario"  width="50px">
                 <p>${userObject.name}</p>
                 </a>              
             </div>

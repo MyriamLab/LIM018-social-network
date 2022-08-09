@@ -27,10 +27,10 @@ export default () => {
       <h3 class="center">Regístrate</h3>
       <form class="formLogin" id="formRegister">
         <label class="group m-label">Nombre Completo</label>
-        <input
+        <input class="idNameRegister"
           id="idNameRegister"
           type="text"
-          placeholder="Ej: María"
+          placeholder="Ej: María Flores"
           required
         />
 
@@ -56,11 +56,12 @@ export default () => {
           <button id="idButtonRegister" type="submit">Registrarse</button>
         </div>
         <dialog id="modalPadre" class="row-center"></dialog>
-        <div class="flex-direction space-around padd-05">
-        <p>¿Ya tienes una cuenta?</p>
-        <a href="#/login">
-         Inicia Sesión
-        </a>
+
+        <div class="flex-direction space-between padd-05">
+        
+        <p>¿Tienes una cuenta?</p>
+        <a href="#/login">Inicia Sesión</a>
+     
       </div>
       </form>
     </div>
@@ -91,7 +92,7 @@ export const registroCorreo = () => {
         const user = userCredential.user;
         sendEmailVerificationUser()
           .then(() => {
-            userRegisterBD(//  registro de usuario BD
+            userRegisterBD(//  registro de usuario BD. Proceso asíncrono
               user.uid,
               emailRegister,
               nameRegister,

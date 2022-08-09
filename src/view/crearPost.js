@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 import { createPost } from '../firebase/funcionesFirestore.js';
 import { mostrarPost } from './postCollection.js';
 import { objectsLocalStorage } from '../firebase/funcionesLocalStorage.js';
