@@ -12,6 +12,8 @@ Nuestro proyecto es una página web que le permite a las persona registrarse en 
 
 ![producto final vista Register 2](./src/imagenes/prototipo_alta_Register.png)
 
+![producto final vista Register 2](./src/imagenes/prototipo_alta_fidelidad_muro.png)
+
 ### Imágenes finales del proyecto versión Mobile:
 
 
@@ -21,13 +23,21 @@ Nuestro proyecto es una página web que le permite a las persona registrarse en 
 ![producto final vista Register mobil 2](./src/imagenes/vista_Register_mobil.png)
 
 
-Imágenes del proyecto al inicio. Este fue nuestro primer diseño y sobre él se hicieron algunos cambios:
+###Imágenes del proyecto en alta fidelidad al inicio. Este fue nuestro primer diseño y sobre él se hicieron algunos cambios:
 
 
 ![producto vista Login v1](./src/imagenes/prototipo_alta_fidelidad_v1.png)
 
 
 ![producto vista Register v1](./src/imagenes/prototipo_alta_fidelidad_register_v1.png)
+
+### Imágenes del proyecto en baja fidelidad:
+
+![producto baja fidelidad formulario Elizabeth](./src/imagenes/Prototipo_baja_fidelidad_Elizabeth.jpeg)
+
+
+![producto baja fidelidad formulario Myriam](./src/imagenes/Prototipo_baja_fidelidad_Myriam.jpeg)
+
 
 
 ## Investigación UX
