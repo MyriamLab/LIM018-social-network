@@ -12,7 +12,7 @@ export const registerPets = () => {
       
         <div class="padd-05">   
           <h4 class="center" >Registra a tu mascota<h4>               
-          <input id="idNameRegister" type="text" placeholder="Nombre de tu mascota" required>                
+          <input class="nameRegisterPets" id="idNameRegister" type="text" placeholder="Nombre de tu mascota" required>                
           <textarea id = "idTextareaRegPets" name="textareaRegPets"
           placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>  
         </div>

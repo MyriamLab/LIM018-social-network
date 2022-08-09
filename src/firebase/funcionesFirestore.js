@@ -81,10 +81,7 @@ export const getPostEdit = (id) => getDoc(doc(db, 'post', id));
 
 //  actualizar  post por id y el enviamos la nueva data
 export const updatePost = (id, newFileds) => updateDoc(doc(db, 'post', id), newFileds);
-
-<<<<<<< HEAD
 /** */
-=======
 /** ***************************************  CRUD DE MASCOTAS ******************************************** */
 export const crearMascota = async (idUser, namePets, imgPets, infoPets) => {
   await addDoc(collection(db, 'pets'), {
@@ -99,4 +96,3 @@ export const verPets = (callback) => {
   const dataPost = onSnapshot(collection(db, 'pets'), (callback));
   return dataPost;
 };
->>>>>>> a9ba55bba2ac3ea17cf65d5e5830375436d92e22

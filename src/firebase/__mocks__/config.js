@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export const createUserWithEmailAndPassword = jest.fn();
 export const signInWithEmailAndPassword = jest.fn();
 export const signInWithPopup = jest.fn();
@@ -20,4 +19,4 @@ export const addDoc = jest.fn((Collection, data) => Promise.resolve({ [Collectio
 export const doc = jest.fn((_db_, nameCol, idDoc) => Object({ [nameCol]: idDoc }));
 export const serverTimestamp = jest.fn();
 export const getDoc = jest.fn(() => Promise.resolve({}));
->>>>>>> a9ba55bba2ac3ea17cf65d5e5830375436d92e22
+
