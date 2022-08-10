@@ -10,22 +10,29 @@ const userDate = objectsLocalStorage();
 export default () => {
   const crearPostTemplate = `
         <div id="create-post" class="padd-15">
-          <div class="padd-05 box-cPost">
+          <div class="padd-15 box-cPost">
               <div  id="MainPost" class="flex-direction">
                 <div>                
-                  <img class="imgUserPost" src="${userDate.imgUsuario}" alt="foto de perfil del usuario" >                  
+                  <img class="imgUserPost " src="${userDate.imgUsuario}" alt="foto de perfil del usuario" >                  
                 </div> 
                 <textarea id = "idPostTextarea" name="textarea"
-                placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>    
+                placeholder = "  ¿Quieres contarnos algo? "rows="4" cols="30"></textarea>    
               </div>
+
+              
+              <select class="selectPrivate margin-t-8" id="status">
+                <option value="&#127758"> &#127758; Público</option>
+                <option value="&#128274"> &#128274; Privado </option>
+              </select>    
             
-              <div class="flex-direction divFinalCrearPost">  
-                <div class="imgFile">          
-                  <div class="file">
-                    <label for="cargarImg"> 
-                      <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
-                    </label>
-                    <input  id="cargarImg" type="file">
+              <div class="flex-direction  flex-wrap divFinalCrearPost">  
+                <div class="imgFile padd-05">          
+                  <div class="file  flex-direction">
+                       <p class=" pAgregarFoto">Agregar a tu publicación</p>
+                       <label for="cargarImg"> 
+                          <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
+                        </label>
+                      <input  id="cargarImg" type="file">
                   </div>
               
                   <div>
@@ -33,17 +40,11 @@ export default () => {
                   </div>                 
                 </div>  
 
-                <div class="public flex-direction row-end" >
-                                                       
-                    <select id="status">
-                      <option value="&#127758"> &#127758; Público</option>
-                      <option value="&#128274"> &#128274; Privado </option>
-                    </select>                 
-                    <button id="buttonCrearPost">Publicar</button>
-                 
-                </div>
-                
+            
               </div> 
+              <div class="center">
+              <button id="buttonCrearPost">Publicar</button>
+              </div>
           </div> 
         </div>
         <div id = "post-container"></div>                   

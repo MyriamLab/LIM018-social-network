@@ -2,10 +2,11 @@ import { getUserColl } from '../firebase/funcionesFirestore.js';
 
 export default () => {
   const viewTemplate = `
-          <div id="amigos" class="padd-15 box-cPost">                 
-          </div>`;
-
+          <h3 class="amigosTitle padd-05 margin-t center">Mis amigos</h3>
+          <div id="amigos" class="padd-15 box-cPost">           
+          </div>`; 
   const sectionElement = document.createElement('section');
+
   sectionElement.setAttribute('class', 'containerAmigos');
   sectionElement.innerHTML = viewTemplate;
 
@@ -14,9 +15,10 @@ export default () => {
 
 function TemplateViewAmigos(userName, userImg) {
   const viewPostTemplate = `
-    <div class="padd-05 viewAmigos">
+   
+    <div class="padd-06 flex-direction viewAmigos">
       <img  src="${userImg}" alt="foto de perfil del usuario" width="50px"> 
-      <span>${userName}</span>
+     <div class="padd-05"> <span>${userName}</span></div>
     </div>
     `;
   return viewPostTemplate;

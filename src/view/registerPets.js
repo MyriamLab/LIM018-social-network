@@ -7,17 +7,18 @@ const userDate = objectsLocalStorage();
 export const registerPets = () => {
   const viewRegisterPetsTemplate = ` 
  
-    <div class = "padd-15 box-cPost divRegisterPets">
+    <div class = "padd-15  divRegisterPets">
       <div class="padd-05">
       
-        <div class="padd-05">   
-          <h4 class="center" >Registra a tu mascota<h4>               
-          <input class="nameRegisterPets" id="idNameRegister" type="text" placeholder="Nombre de tu mascota" required>                
-          <textarea id = "idTextareaRegPets" name="textareaRegPets"
-          placeholder = "¿Quieres contarnos algo...? "rows="4" cols="30"></textarea>  
+        <div class="padd-06">   
+          <h3 class="center" >Registra a tu mascota<h3>               
+          <input class="nameRegisterPets" id="idNameRegister" type="text" placeholder="  Nombre de tu mascota" required>                
+          <textarea class="padd-06" id = "idTextareaRegPets" name="textareaRegPets"
+          placeholder =" ¿Quieres contarnos algo? "rows="4" cols="30"></textarea>  
         </div>
         <div>     
-            <div class="filePets">
+            <div class="filePets flex-direction">
+              <p class=" pAgregarFoto">Agregar a tu publicación</p>
               <label for="cargarImgPets">
                 <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="../imagenes/galeria.png">
               </label>
@@ -30,8 +31,12 @@ export const registerPets = () => {
         </div>      
              
       </div>
-      <button class="buttons" id="idButtonRegisterPets">Registrar</button>
+
+      <button class="buttons" id=" idButtonRegisterPets">Registrar</button>
       <button class="buttons" id="regCancel">Cancelar</button>
+      
+
+
     </div>
     <div class="containerPetsRegistradas" id="containerPetsRegistradas"></div>
  `;
