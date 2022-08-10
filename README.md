@@ -34,7 +34,13 @@ Nuestro proyecto es una página web que le permite a las persona registrarse en 
 
 ![producto vista muro mobil](./src/imagenes/prototipo_alta_fidelidad_muro.mobil.png)
 
+### Resumen del feedback recibido
+Es una interfaz bonita y llamativa acorde con el tema, algunas mejoras a realizar pueden ser:
 
+.
+Que las tarjetas de los Pokémon sean más llamativas y resalten del fondo para que no se vean planas.
+Poner una tipografía más llamativa.
+Que tanto el logo de Pokémon Go como la imagen de Pikachu, tengan tamaños similares.
 ### Imágenes del proyecto en baja fidelidad:
 
 Elizabeth

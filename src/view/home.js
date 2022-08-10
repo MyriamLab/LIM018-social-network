@@ -8,16 +8,12 @@ export default () => {
   console.log(userLocal); */
 
   const headerHomeTemplate = `
-        <div class="header flex-direction padd-05 space-around">
+        <div class="header flex-direction space-around">
 
             <div class="divLogo" id ="imgLogo">
                 <img class="imgSize" src="./imagenes/logo-pets.png" alt="logo">      
             </div>
-
-            <div>
-            <input placeholder="Buscar amigos" id="buscar">
-            </div>
-            
+ 
             <div >
                 <a class="a"href="#/home">
                 <img class="imgSize center" src="./imagenes/inicio-casa.png" id="imgHome" class=titulo-header" alt="home">

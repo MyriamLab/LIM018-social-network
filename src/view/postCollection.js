@@ -27,7 +27,7 @@ export function TemplateViewPost(
 ) {
   const viewPostTemplate = `
     <div class="padd-15 box-cPost viewPost">
-      <div class = "flex-direction  postByUser" id='${idPost}'>
+      <div class = "flex-direction  space-evenly postByUser" id='${idPost}'>
         <img class ="imgUserPost imgPostv" src="${userImg}">
         <div class="group">
           <h4>${userName}  </h4>
@@ -45,9 +45,9 @@ export function TemplateViewPost(
         <img src='${urlImg}'>       
       </div>
       
-      <div class="padd-05">
+      <div class="padd-06">
       <button id="countLike" class="likes" name="${idPost}">          
-        ${likesCount}❤ Me gusta          
+        ${likesCount} ❤ Me gusta          
       </button>  
       </div>
       

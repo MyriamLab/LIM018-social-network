@@ -11,12 +11,12 @@ export default () => {
                   <img id ="imgUser" src="${userDate.imgUsuario}" alt="foto de perfil del usuario">
                 </div>
                 <div class="aside-h4">
-                  <h4 class="center">${userDate.name}</h4>
+                  <h4 class="center padd-05">${userDate.name}</h4>
                 </div>
 
-                <div class="padd-05 box-label">
-                  <h4 class="padd-05">Mascotas 
-                    <i class="material-icons addPetsIcon">add</i>
+                <div class="padd-05 margin-t box-label">
+                  <h4 class="padd-05">Mis mascotas 
+                    <i class="material-icons padd-06 addPetsIcon">add</i>
                   </h4>
                  
                   <div class="padd-05 flex-direction" >
@@ -28,7 +28,7 @@ export default () => {
                 </div>
 
                 <div class="padd-05 box-label border-top">
-                  <h4 class="padd-05">Amigos</h4> 
+                  <h4 class="padd-05">Mis amigos</h4> 
                   <div class="padd-05" id="content-user" >
                     
                   </div>
