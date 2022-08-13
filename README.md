@@ -41,9 +41,13 @@ Nuestro proyecto es una página web que le permite a las personas registrarse en
 Es una interfaz visualmente agradable. Se usó una paleta de colores pasteles. Recibimos feedback de muestros coaches y compañeras para implementar algunas mejoras:
 
 Mejorar la jerarquía de la ubicación y colores de los botones.
+
 Estandarizar el ancho de los botones y los inputs.
+
 Se mejoró la usabilidad del fondo.
+
 Retiro el Header de la vista de Registro y Login.
+
 
 ### Imágenes del proyecto en baja fidelidad:
 
@@ -61,11 +65,12 @@ Myriam
 
 1. ¿Quiénes son los principales usuarios de producto?
 
-Personas que amen y respeten a sus mascotas que desean compartir las aventuras de sus engreídos con otros usuarios. 
+Personas que valoran y quieren a sus mascotas como un miembro más de la familia y buscan pertenecer a grupos donde puedan compartir sus experiencias.
 
 2. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
 
-Nuestra red social le permite a los usuarios subir fotos y contar historias de sus mascotas. Ver fotos de las maacotas de su red de amigos e interactuar con ellos.
+Nuestra red social le ofrece a los usuarios una plataforma donde pueden guardar y registrar las etapas de vida de sus mascotas.
+
 
 ### Primeros prototipos de baja fidelidad
 --
