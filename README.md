@@ -49,7 +49,7 @@ Se mejoró la usabilidad del fondo.
 Retiro el Header de la vista de Registro y Login.
 
 
-### Imágenes del proyecto en baja fidelidad:
+### Primeros prototipos de baja fidelidad
 
 Elizabeth
 
@@ -72,7 +72,7 @@ Personas que valoran y quieren a sus mascotas como un miembro más de la familia
 Nuestra red social le ofrece a los usuarios una plataforma donde pueden guardar y registrar las etapas de vida de sus mascotas.
 
 
-### Primeros prototipos de baja fidelidad
+
 --
 
 
