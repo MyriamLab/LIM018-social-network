@@ -40,13 +40,13 @@ Nuestro proyecto es una página web que le permite a las personas registrarse en
 ### Resumen del feedback recibido
 Es una interfaz visualmente agradable. Se usó una paleta de colores pasteles. Recibimos feedback de muestros coaches y compañeras para implementar algunas mejoras:
 
-Mejorar la jerarquía de la ubicación y colores de los botones.
+* Mejorar la jerarquía de la ubicación y colores de los botones.
 
-Estandarizar el ancho de los botones y los inputs.
+* Estandarizar el ancho de los botones y los inputs.
 
-Se mejoró la usabilidad del fondo.
+* Se mejoró la usabilidad del fondo.
 
-Retiro el Header de la vista de Registro y Login.
+* Retiro el Header de la vista de Registro y Login.
 
 
 ### Primeros prototipos de baja fidelidad
