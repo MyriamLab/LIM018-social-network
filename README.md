@@ -4,7 +4,7 @@ Elizabeth Farfán
 
 Myriam Rivera 
 
-# Red social - Pets 
+# Pets - Social Network  
 
 Nuestro proyecto es una página web que le permite a las personas registrarse en una red social de mascotas donde pueden crear, editar, borrar y dar Like a las publicacciones de su red de amistades. También pueden postear fotos y temas que sean de su interés.
 
