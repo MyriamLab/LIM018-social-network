@@ -7,7 +7,7 @@ const userDate = objectsLocalStorage();
 export const registerPets = () => {
   const viewRegisterPetsTemplate = ` 
  
-    <div class = "padd-15  divRegisterPets">
+    <div class = "padd-15 divRegisterPets">
       <div class="padd-05">
       
         <div class="padd-06">   
@@ -16,14 +16,16 @@ export const registerPets = () => {
           <textarea class="padd-06" id = "idTextareaRegPets" name="textareaRegPets"
           placeholder =" ¿Quieres contarnos algo? "rows="4" cols="30"></textarea>  
         </div>
+        
         <div>     
-            <div class="filePets flex-direction">
+            <div class="filePets flex-direction padd-06">
               <p class=" pAgregarFoto">Agregar a tu publicación</p>
               <label for="cargarImgPets">
                 <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="../imagenes/galeria.png">
               </label>
               <input  id="cargarImgPets" type="file">
-            </div>              
+            </div>  
+
             <div>
               <img id = "imgLoadPets" src="" height="50">
             </div> 
@@ -32,9 +34,10 @@ export const registerPets = () => {
              
       </div>
 
-      <button class="buttons" id=" idButtonRegisterPets">Registrar</button>
+      <div class= "padd-06">
+      <button class="buttons" id="idButtonRegisterPets">Registrar</button>
       <button class="buttons" id="regCancel">Cancelar</button>
-      
+      </div>
 
 
     </div>
@@ -65,7 +68,7 @@ export const crearPets = () => {
   const idButtonPost = document.getElementById('idButtonRegisterPets');
   const inputImg = document.getElementById('cargarImgPets');
   inputImg.addEventListener('change', previewFilePets);
-  console.log('img previa');
+  //  console.log('img previa');
 
   idButtonPost.addEventListener('click', async () => {
     const contentPets = document.getElementById('idTextareaRegPets').value;

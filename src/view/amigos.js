@@ -4,7 +4,7 @@ export default () => {
   const viewTemplate = `
           <h3 class="amigosTitle padd-05 margin-t center">Mis amigos</h3>
           <div id="amigos" class="padd-15 box-cPost">           
-          </div>`; 
+          </div>`;
   const sectionElement = document.createElement('section');
 
   sectionElement.setAttribute('class', 'containerAmigos');
