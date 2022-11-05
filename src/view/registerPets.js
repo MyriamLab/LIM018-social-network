@@ -127,7 +127,7 @@ export const mostrarPets = async () => {
     let postViewContent = '';
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      console.log(data);
+      //  console.log(data);
       const idPets = doc.id;
       postViewContent += TemplateViewPets(
         idPets,

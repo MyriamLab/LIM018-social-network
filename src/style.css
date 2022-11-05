@@ -468,7 +468,7 @@ a[class="a"] p:hover{
 
 /***********  Vista RegisterPets **************/
 
-.containerCrearPets{
+.containerCrearPets, .containerAmigos{
   border-radius: 1em 1em 0 0;
   background-color: #fff; 
   margin: 2em;
@@ -620,14 +620,6 @@ a[class="a"] p:hover{
 
 }
 /* ********************************** AMIGOS ************** */
-.containerAmigos{
-  width: 45%;
-  padding: 0 1.5em 1.5em 1.5em;
-  background-color: #fff;
-  margin: auto;
-  border-radius: 1em 1em 0 0;
-}
-
 
 .viewAmigos{
   margin: 2em;
