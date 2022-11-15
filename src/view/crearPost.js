@@ -30,7 +30,7 @@ export default () => {
                   <div class="file  flex-direction">
                        <p class=" pAgregarFoto">Agregar a tu publicación</p>
                        <label for="cargarImg"> 
-                          <img id="imgPost" for="cargarImg" class="imgUserPost" src="../imagenes/galeria.png">
+                          <img id="imgPost" for="cargarImg" class="imgUserPost" src="./imagenes/galeria.png">
                         </label>
                       <input  id="cargarImg" type="file">
                   </div>

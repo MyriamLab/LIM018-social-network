@@ -21,7 +21,7 @@ export const registerPets = () => {
             <div class="filePets flex-direction padd-06">
               <p class=" pAgregarFoto">Agregar a tu publicación</p>
               <label for="cargarImgPets">
-                <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="../imagenes/galeria.png">
+                <img id="imgPets" for="cargarImgPets" class="imgUserPost" src="./imagenes/galeria.png">
               </label>
               <input  id="cargarImgPets" type="file">
             </div>  
