@@ -1,9 +1,12 @@
+# Integrantes
 
+Elizabeth Farfán
 
+Myriam Rivera 
 
-# Red social - Pets 
+# Pets - Social Network  
 
-Nuestro proyecto es una página web que le permite a las persona registrarse en una red social de mascotas. Les permite compartir fotos de sus mascotitas con otras personas e interactuar con ellas a través de publicaciones en su muro, conocer nuevos amigos y darles Like a sus publicaciones.
+Nuestro proyecto es una página web que le permite a las personas registrarse en una red social de mascotas donde pueden crear, editar, borrar y dar Like a las publicaciones de su red de amistades. También pueden postear fotos y temas que sean de su interés.
 
 ### Imágenes finales del proyecto versión Desktop:
 
@@ -35,13 +38,18 @@ Nuestro proyecto es una página web que le permite a las persona registrarse en 
 ![producto vista muro mobil](./src/imagenes/prototipo_alta_fidelidad_muro.mobil.png)
 
 ### Resumen del feedback recibido
-Es una interfaz bonita y llamativa acorde con el tema, algunas mejoras a realizar pueden ser:
+Es una interfaz visualmente agradable. Se usó una paleta de colores pasteles. Recibimos feedback de muestros coaches y compañeras para implementar algunas mejoras:
 
-.
-Que las tarjetas de los Pokémon sean más llamativas y resalten del fondo para que no se vean planas.
-Poner una tipografía más llamativa.
-Que tanto el logo de Pokémon Go como la imagen de Pikachu, tengan tamaños similares.
-### Imágenes del proyecto en baja fidelidad:
+* Mejorar la jerarquía de la ubicación y colores de los botones.
+
+* Estandarizar el ancho de los botones y los inputs.
+
+* Se mejoró la usabilidad del fondo.
+
+* Retiro el Header de la vista de Registro y Login.
+
+
+### Primeros prototipos de baja fidelidad
 
 Elizabeth
 
@@ -57,13 +65,14 @@ Myriam
 
 1. ¿Quiénes son los principales usuarios de producto?
 
-Personas que amen y respeten a sus mascotas que desean compartir las aventuras de sus engreídos con otros usuarios. 
+Personas que valoran y quieren a sus mascotas como un miembro más de la familia y buscan pertenecer a grupos donde puedan compartir sus experiencias.
 
 2. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
 
-Nuestra red social le permite a los usuarios subir fotos y contar historias de sus mascotas. Ver fotos de las maacotas de su red de amigos e interactuar con ellos.
+Nuestra red social le ofrece a los usuarios una plataforma donde pueden guardar y registrar las etapas de vida de sus mascotas.
 
-### Primeros prototipos de baja fidelidad
+
+
 --
 
 
