@@ -1,6 +1,6 @@
 # Integrantes
 
-Elizabeth Farfán
+Elisabeth Farfán
 
 Myriam Rivera 
 
