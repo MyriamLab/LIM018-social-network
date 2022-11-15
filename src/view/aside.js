@@ -20,9 +20,9 @@ export default () => {
                   </h4>
                  
                   <div class="padd-05 flex-direction" >
-                    <img src="../imagenes/circulo-patita.png" alt="foto de perfil del usuario" width="50px">
+                    <img src="./imagenes/circulo-patita.png" alt="foto de perfil del usuario" width="50px">
                     <div class="padd-05">
-                      <span>Maya</span>
+                      <span>Scarllet Juno</span>
                     </div>                
                   </div>                    
                 </div>
